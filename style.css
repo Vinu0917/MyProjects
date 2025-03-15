@@ -3,90 +3,97 @@
     padding: 0;
     font-family: 'popins', sans-serif;
     box-sizing: border-box;
+}
+.container{
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #2563d5, #b369de);
+    padding: 10px;
 
 }
-body{
-    background-color: #222;
+.todo-app{
+    width:100%;
+    max-width: 540px;
+    background: #fff;
+    margin: 100px auto 20px;
+    padding: 40px 30px 70px;
+    border-radius: 10px;   
 }
-.search{
-    width: 100%;
+.todo-app h2{
+    color: rgb(5, 3, 120);
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px; 
+}
+.todo-app img{
+    width: 80px;
+    margin-left:10px; 
+}
+.row{
+    display: flex;
     align-items: center;
     justify-content: space-between;
+    background: #d7d7d7;
+    border-radius: 30px;
+    padding-left: 20px;
+    margin-bottom: 25px;
 }
-.search input{
-   border:0;
-   outline: 0;
-   background: #ebfffc;
-   color: #555;
-   padding:10px 25px;
-   height:60px;
-   border-radius: 30px;
-   flex: 1;
-   margin-right:16px;
-   font-size: 18px;
+input{
+    flex:1;
+    border: none;
+    outline: line;
+    background: transparent;
+    padding:10px;
 }
-.search button{
-    border:0;
-    outline: 0;
-    background-color: #ebfffc;
-    border-radius: 50%;
-    width:60px;
-    height: 60px;
+button{
+    border: none;
+    outline: none;
+    padding: 16px 50px;
+    background: #ef5603;
+    color:whitesmoke;
+    font-size: 16px;
     cursor: pointer;
+    border-radius: 40px;
 }
-.search button img{
-    width: 16px;
+ul li{
+    list-style: none;
+    font-size: 17px;
+    padding:12px 8px 12px 50px;
+    user-select:none;
+    cursor: pointer;
+    position: relative;
 }
-.card{
-    width: 90%;
-    max-width: 470px;
-    background: linear-gradient(135deg, #00feba, #5b548a);
-    color: #fff;
-    margin:100px auto 0;
-    border-radius:20px;
-    padding: 40px 35px;
-    text-align:center;
+ul li::before{
+    content:'';
+    position: absolute;
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    background-image: url(images/unchecked.png);
+    background-size: cover;
+    background-position: center;
+    top: 12px;
+    left: 8px;
 }
-.weather-icon{
-    width: 170px;
-    margin-top: 30px;
+ul li.checked{
+    color:#747a96;
+    text-decoration: line-through;
 }
-.weather h1{
-    font-size: 80px;
-    font-weight: 500;
+ul li.checked::before{
+    background-image: url(images/checked.png);
 }
-.weather h2{
-    font-size: 45px;
-    font-weight: 400;
-    margin-top: -10px;
-}
-.details{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 20px;
-    margin-top: 50px;   
-}
-.col{
-    display: flex;
-    align-items: center;
-    text-align: left;
-}
-.col img{
+ul li span{
+    position: absolute;
+    right: 0;
+    top: 5px;
     width: 40px;
-    margin-right: 10px;
+    height: 40px;
+    font-size: 22px;
+    color: #555;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
 }
-.humidity, .wind{
-    font-size: 28px;
-    margin-top: -6px;
-}
-.weather{
-    display: none;
-}
-.error{
-    text-align: left;
-    margin-left: 10px;
-    font-size: 14px;
-    margin-top: 10px;
-    display: none;
+ul li span:hover{
+    background: #dfdfe2;
 }
