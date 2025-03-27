@@ -65,7 +65,10 @@ function renderCalendar() {
   // current month days
   // Modify the current month days generation
   for (let i = 1; i <= lastDayDate; i++) {
-      const dateStr = `${currentYear}-${currentMonth+1}-${i}`;
+      // Fix month padding to ensure proper date format
+      const month = (currentMonth + 1).toString().padStart(2, '0');
+      const day = i.toString().padStart(2, '0');
+      const dateStr = `${currentYear}-${month}-${day}`;
       const hasEvent = events[dateStr] ? 'has-event' : '';
       
       if (
