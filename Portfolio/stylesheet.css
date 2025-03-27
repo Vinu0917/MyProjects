@@ -1,0 +1,579 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    color: aliceblue;
+    background: linear-gradient(rgb(7, 50, 102), rgb(100, 216, 255));
+}
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px 10px;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    background:#0B396D;
+    height: 100px;
+}
+
+.logo {
+    position: relative;
+    font-size: 25px;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    margin-left: 30px;
+    cursor: default;
+    opacity: 0;
+    animation: slideRight 1s ease forwards;
+}
+
+.navbar {
+    display: flex;
+}
+
+.navbar a {
+    display: inline-block;
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 30px;
+    padding-right: 15px;
+    transition: 0.3s;
+    opacity: 0;
+    animation: slideTop 1s ease forwards;
+}
+
+.navbar a:hover {
+    color: rgb(40, 237, 255);
+}
+.home {
+    margin-top: 100px;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(rgb(9, 66, 136), rgb(100, 216, 255));
+    display: flex;
+    align-items: center;
+    padding: 70px 10%;
+    justify-content: space-between;
+}
+
+.home-content {
+    max-width: 800px;
+    padding-right: 50px;
+    margin-top: 270px;
+    margin-bottom: 215px;
+}
+
+.home-content h3 {
+    font-size: 40px;
+    font-weight: 700;
+    opacity: 0;
+    animation: slideBottom 1s ease forwards;
+    animation-delay: .7s;
+}
+
+.home-content h3:nth-of-type(2) {
+    margin-bottom: 30px;
+    animation: slideTop 1s ease forwards;
+    animation-delay: .7s;
+}
+
+.home-content h3 span {
+    color: rgb(151, 229, 255);
+}
+
+.home-content h1 {
+    font-size: 56px;
+    font-weight: 700;
+    margin: -3px 0;
+    opacity: 0;
+    animation: slideRight 1s ease forwards;
+    animation-delay: 1s;
+}
+
+.home-content p {
+    font-size: 25px;
+    opacity: 0;
+    animation: slideLeft 1s ease forwards;
+    animation-delay: 1s;
+}
+
+.home-sci {
+    margin-top: 20px;
+}
+
+.home-sci a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid rgb(12, 83, 171);
+    border-radius: 50%;
+    font-size: 20px;
+    color: rgb(12, 83, 171);
+    text-decoration: none;
+    margin: 10px 8px;
+    transition: .5s ease;
+    opacity: 0;
+    animation: slideLeft 1s ease forwards;
+    animation-delay: calc(.2s * var(--i));
+}
+
+.home-sci a:hover {
+    background: rgb(151, 229, 255);
+    color: rgb(12, 83, 171);
+}
+
+.btn-box {
+    display: inline-block;
+    margin: 20px auto;
+    padding: 12px 18px;
+    background: rgb(96, 214, 253);
+    border-radius: 14px;
+    font-size: 16px;
+    color: rgb(12, 86, 177);
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-weight: 600;
+    text-align: center;
+    width: 180px;
+    opacity: 0;
+    animation: slideTop 1s ease forwards;
+    animation-delay: 2s;
+    box-shadow: 0 0 5px rgb(78, 174, 206),
+        0 0 25px rgb(78, 174, 206);
+}
+
+.btn-box:hover {
+    box-shadow: 0 0 10px white,
+        0 0 25px white,
+        0 0 50px white;
+}
+.btn-box01 {
+    position: relative;
+    top: -50px;
+    display: inline-block;
+    margin-top:20px;
+    padding: 12px 18px;
+    background: rgb(96, 214, 253);
+    border-radius: 14px;
+    font-size: 16px;
+    color: rgb(12, 86, 177);
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-weight: 600;
+    text-align: center;
+    width: 180px;
+    opacity: 0;
+    animation: slideTop 1s ease forwards;
+    animation-delay: 2s;
+    box-shadow: 0 0 5px rgb(78, 174, 206),
+        0 0 25px rgb(78, 174, 206);
+}
+
+.btn-box01:hover {
+    box-shadow: 0 0 10px white,
+        0 0 25px white,
+        0 0 50px white;
+}
+.avatar-container {
+    position: absolute;
+    right: 200px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: inline-block;
+    text-align: center;
+}
+
+.avatar {
+    width: 350px;
+    height: 500px;
+    border-radius: 20%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 
+                0 6px 20px rgba(0, 0, 0, 0.3); 
+    opacity: 0;
+    animation: slideBottom 1s ease forwards;
+    animation-delay: .7s;
+}
+
+.tooltip {
+    visibility: hidden;
+    width: 140px;
+    background-color: rgb(37, 65, 158);
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    padding: 3px;
+    position: absolute;
+    bottom: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.avatar-container:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+.about{
+    display: grid;
+    grid-template-columns:repeat(2, 1fr);
+    align-items: center;
+    gap:1.5rem;
+    background: linear-gradient(rgb(9, 66, 136), rgb(100, 216, 255));
+}
+.about-img {
+    position: relative; 
+}
+.about-img img{
+    width: 550px;
+    height: 550px;
+    border-radius: 20%;
+    margin-left: 50px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 
+                0 6px 20px rgba(0, 0, 0, 0.3); 
+    opacity: 0;
+    animation: slideBottom 1s ease forwards;
+    animation-delay: .7s;
+}
+.tooltip01 {
+    visibility: hidden;
+    width: 140px;
+    background-color: rgb(37, 65, 158);
+    color: #fff;
+    text-align: center;
+    padding: 8px 12px;
+    border-radius: 5px;
+    white-space: nowrap;
+    position: absolute;
+    top: 95%; 
+    left: 43%;
+    transform: translateX(-50%); 
+    transition: opacity 0.3s ease-in-out;
+}
+.about-img:hover .tooltip01{
+    visibility: visible;
+    opacity: 1;
+}
+.about-text{
+    margin-top: 125px;
+    margin-right: 50px;
+    font-size: 60px;
+}
+.about-text h2 span{
+    color:rgb(96, 214, 253);
+}
+.about-text h4{
+    font-size: 29px;
+    font-weight: 600;
+    color:#fff;
+    line-height: 1.7;
+    margin: 15px 0 30px;
+}
+.about-text p{
+    color:aliceblue;
+    font-size: 20px;
+    line-height: 1.4;
+    margin-bottom: 4rem;
+}
+.skills-section {
+    padding-top: 70px;  
+    padding-bottom: 150px; 
+    background:linear-gradient(rgb(9, 66, 136), rgb(100, 216, 255));
+}
+.skills-section h2{ 
+    text-align: center;
+    font-size: 100px;
+    padding-bottom: 20px;
+}
+.skills-section h2 span{
+    color: rgb(96, 214, 253);
+}
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+.skill-card {
+    background: rgb(127, 214, 255);
+    width: 250px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(6, 48, 103, 0.816);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-card img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.skill-card h3 {
+    font-size: 1.2em;
+    margin: 10px 0;
+    color: rgb(0, 87, 134);
+}
+
+.skill-card p {
+    font-size: 0.9em;
+    color: #555;
+}
+.skill-card:hover {
+    transform: translateY(-10px); /* Moves the card slightly upwards */
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2); /* Adds a shadow effect */
+}
+.projects-section {
+    padding: 50px 20px;
+    background:linear-gradient(rgb(9, 66, 136), rgb(100, 216, 255));
+}
+.projects-section h2{
+    font-size: 100px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.projects-section h2 span{
+    color: rgb(96, 214, 253);
+}
+
+/* Scrollable Container */
+.projects-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    max-width: 90%;
+    margin: auto;
+}
+
+/* Scrollable Wrapper */
+.projects-wrapper {
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    width: 80%;
+}
+
+/* Projects */
+.projects {
+    display: flex;
+    gap: 20px;
+    padding: 10px;
+    white-space: nowrap;
+}
+
+/* Individual Project Card */
+.project-card {
+    background:linear-gradient(rgb(102, 217, 255),rgb(99, 172, 255));
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 70, 145, 0.96);
+    padding: 20px;
+    width: 300px;
+    height:400px;
+    flex: 0 0 auto;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+.project-card01 {
+    background:linear-gradient(rgb(102, 217, 255),rgb(99, 172, 255));
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 70, 145, 0.96);
+    padding: 20px;
+    width: 1000px;
+    height:auto;
+    flex: 0 0 auto;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.project-card img {
+    width: 100%;
+    border-radius: 10px;
+    height: 280px;
+    object-fit: auto;
+}
+.project-card01 img {
+    width: 900px;
+    border-radius: 10px;
+    height: 500px;
+    object-fit: auto;
+}
+
+.project-card h3 {
+    margin: 15px 0 10px;
+    font-size: 1.4rem;
+}
+.project-card01 h3 {
+    margin: 15px 0 10px;
+    font-size: 1.4rem;
+}
+
+/* Hover Effect */
+.project-card:hover {
+    transform: translateY(-10px);
+}
+.project-card01:hover {
+    transform: translateY(-10px);
+}
+.scroll-left,
+.scroll-right {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(23, 74, 152, 0.912);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 24px;
+    z-index: 10;
+}
+
+.scroll-left { left: 0; }
+.scroll-right { right: 0; }
+
+.scroll-left:hover, .scroll-right:hover {
+    background-color: rgba(0, 0, 0, 0.851);
+}
+.project-link {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Keep text color same */
+}
+
+.project-link .project-card {
+    transition: transform 0.3s ease-in-out;
+}
+
+.project-link .project-card:hover {
+    transform: translateY(-10px);
+}
+.contact-section{
+    padding: 50px 20px;
+    background:linear-gradient(rgb(9, 66, 136), rgb(100, 216, 255));
+}
+.conatct-section {
+    padding: 50px 20px;
+    background:linear-gradient(rgb(9, 66, 136), rgb(100, 216, 255));
+}
+.contact-section h2{
+    font-size: 100px;
+    text-align: right;
+    margin-bottom: 20px;
+    margin-right: 100px;
+}
+.contact-section h2 span{
+    color: rgb(96, 214, 253);
+}
+.contact-container {
+    background: rgb(172, 219, 255);
+    padding: 20px;
+    margin-left: 900px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 5px 15px rgba(0, 70, 145, 0.96);
+    position: relative;
+}
+.contact-container input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #135d96;
+    border-radius: 5px;
+}
+.contact-container button{
+    width: 100%;
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.contact-container button:hover {
+    background-color: #0056b3;
+}
+.contact-img{
+    width: 550px;
+    height: 520px;
+    border-radius: 50%;
+    margin-left: 100px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 
+                0 6px 20px rgba(0, 0, 0, 0.3); 
+    opacity: 0;
+    animation: slideBottom 1s ease forwards;
+    animation-delay: .7s;
+    position: absolute;
+    top: 3800px;       
+}
+@keyframes slideRight {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes slideLeft {
+    0% {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes slideTop {
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes slideBottom {
+    0% {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
