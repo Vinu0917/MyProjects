@@ -4,18 +4,13 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <!-- STYLESHEET -->
     <link rel="stylesheet" href="style.css" />
-
-    <!-- FONTAWESOME -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-    />
-    <title>Mini Calendar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <title>Diary Planner</title>
   </head>
   <body>
+    <!-- Add this div for tooltip -->
+    <div id="eventTooltip" class="tooltip"></div>
     <div class="container">
       <div class="calendar">
         <div class="header">
@@ -41,12 +36,27 @@
           <div class="day">Fri</div>
           <div class="day">Sat</div>
         </div>
-        <div class="days">
-          <!-- lets add days using js -->
+        <div class="days"></div>
+      </div>
+      
+      <!-- Add Event Modal -->
+      <div class="modal" id="eventModal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h2>Add Event</h2>
+          <form id="eventForm">
+            <input type="text" id="eventTitle" placeholder="Event Title" required>
+            <select id="eventType" required>
+              <option value="birthday">Birthday</option>
+              <option value="meeting">Meeting</option>
+              <option value="reminder">Reminder</option>
+            </select>
+            <textarea id="eventDescription" placeholder="Description"></textarea>
+            <button type="submit">Save Event</button>
+          </form>
         </div>
       </div>
     </div>
-    <!-- SCRIPT -->
     <script src="script.js"></script>
   </body>
 </html>

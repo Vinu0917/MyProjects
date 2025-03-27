@@ -31,6 +31,15 @@ let currentMonth = date.getMonth();
 let currentYear = date.getFullYear();
 
 // function to render days
+// Add new variables for modal handling
+const modal = document.getElementById("eventModal");
+const closeBtn = document.getElementsByClassName("close")[0];
+const eventForm = document.getElementById("eventForm");
+
+// Create events storage
+let events = JSON.parse(localStorage.getItem('events')) || {};
+
+// Modify renderCalendar function
 function renderCalendar() {
   // get prev month current month and next month days
   date.setDate(1);
@@ -54,19 +63,20 @@ function renderCalendar() {
   }
 
   // current month days
+  // Modify the current month days generation
   for (let i = 1; i <= lastDayDate; i++) {
-    // check if its today then add today class
-    if (
-      i === new Date().getDate() &&
-      currentMonth === new Date().getMonth() &&
-      currentYear === new Date().getFullYear()
-    ) {
-      // if date month year matches add today
-      days += `<div class="day today">${i}</div>`;
-    } else {
-      //else dont add today
-      days += `<div class="day ">${i}</div>`;
-    }
+      const dateStr = `${currentYear}-${currentMonth+1}-${i}`;
+      const hasEvent = events[dateStr] ? 'has-event' : '';
+      
+      if (
+          i === new Date().getDate() &&
+          currentMonth === new Date().getMonth() &&
+          currentYear === new Date().getFullYear()
+      ) {
+          days += `<div class="day today ${hasEvent}" data-date="${dateStr}">${i}</div>`;
+      } else {
+          days += `<div class="day ${hasEvent}" data-date="${dateStr}">${i}</div>`;
+      }
   }
 
   // next MOnth days
@@ -77,8 +87,54 @@ function renderCalendar() {
   // run this function with every calendar render
   hideTodayBtn();
   daysContainer.innerHTML = days;
+
+  // Add click event listeners to days
+  setTimeout(() => {
+      document.querySelectorAll('.days .day:not(.prev):not(.next)').forEach(day => {
+          day.addEventListener('click', () => openModal(day.dataset.date));
+      });
+  }, 0);
 }
 
+// Add new functions for event handling
+function openModal(date) {
+    modal.style.display = "block";
+    eventForm.dataset.date = date;
+}
+
+function closeModal() {
+    modal.style.display = "none";
+    eventForm.reset();
+}
+
+function saveEvent(e) {
+    e.preventDefault();
+    const date = eventForm.dataset.date;
+    const eventData = {
+        title: document.getElementById('eventTitle').value,
+        type: document.getElementById('eventType').value,
+        description: document.getElementById('eventDescription').value
+    };
+
+    events[date] = events[date] || [];
+    events[date].push(eventData);
+    localStorage.setItem('events', JSON.stringify(events));
+    
+    closeModal();
+    renderCalendar();
+}
+
+// Add event listeners
+closeBtn.onclick = closeModal;
+eventForm.onsubmit = saveEvent;
+
+window.onclick = (event) => {
+    if (event.target == modal) {
+        closeModal();
+    }
+};
+
+// Initialize
 renderCalendar();
 
 nextBtn.addEventListener("click", () => {
@@ -126,3 +182,59 @@ function hideTodayBtn() {
     todayBtn.style.display = "flex";
   }
 }
+
+// Add at the top with other constants
+const tooltip = document.getElementById('eventTooltip');
+
+// Add this function to show tooltip
+function showTooltip(date, x, y) {
+    const dateEvents = events[date];
+    if (!dateEvents || dateEvents.length === 0) return;
+
+    let tooltipContent = '';
+    dateEvents.forEach(event => {
+        tooltipContent += `
+            <div class="event-item">
+                <div class="event-title">${event.title}</div>
+                <div class="event-type">${event.type}</div>
+                ${event.description ? `<div class="event-description">${event.description}</div>` : ''}
+            </div>
+        `;
+    });
+
+    tooltip.innerHTML = tooltipContent;
+    tooltip.style.display = 'block';
+    tooltip.style.left = `${x + 10}px`;
+    tooltip.style.top = `${y + 10}px`;
+}
+
+// Add this function to hide tooltip
+function hideTooltip() {
+    tooltip.style.display = 'none';
+}
+
+// Modify the renderCalendar function where you add click events
+setTimeout(() => {
+    document.querySelectorAll('.days .day:not(.prev):not(.next)').forEach(day => {
+        day.addEventListener('click', () => openModal(day.dataset.date));
+        
+        // Add mouse events for tooltip
+        day.addEventListener('mouseover', (e) => {
+            if (events[day.dataset.date]) {
+                showTooltip(day.dataset.date, e.pageX, e.pageY);
+            }
+        });
+        
+        day.addEventListener('mouseout', () => {
+            hideTooltip();
+        });
+        
+        // Update tooltip position on mouse move
+        day.addEventListener('mousemove', (e) => {
+            if (events[day.dataset.date]) {
+                tooltip.style.left = `${e.pageX + 10}px`;
+                tooltip.style.top = `${e.pageY + 10}px`;
+            }
+        });
+    });
+}, 0);
