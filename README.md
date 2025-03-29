@@ -40,6 +40,39 @@ A stylish music player that brings your favorite tunes to life.
 * 🎨 Beautiful visualizations
 * 🔊 High-quality audio output
 
+### 💼 Portfolio
+<img src="https://img.shields.io/badge/Status-Active-blue"/>
+
+A professional portfolio website showcasing my skills and projects.
+
+**✨ Key Features**
+* 🌐 Responsive design for all devices
+* 🎨 Modern UI/UX principles
+* 📊 Project showcase with details
+* 📱 Contact form integration
+
+### ✅ To Do List
+<img src="https://img.shields.io/badge/Status-Complete-brightgreen"/>
+
+A productivity application to manage tasks and stay organized.
+
+**✨ Key Features**
+* ✏️ Create, edit, and delete tasks
+* 🔄 Mark tasks as complete
+* 🗂️ Categorize tasks by priority
+* 📅 Set due dates for better planning
+
+### ☁️ Weather App
+<img src="https://img.shields.io/badge/Status-Active-blue"/>
+
+A real-time weather application providing accurate forecasts.
+
+**✨ Key Features**
+* 🌦️ Current weather conditions
+* 📊 5-day weather forecast
+* 🔍 Location-based weather data
+* 📱 Responsive design for all devices
+
 ## 🛠️ Technologies
 
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
@@ -54,10 +87,6 @@ Each project includes detailed setup instructions in its respective directory. C
 ## 📫 Contact
 
 Feel free to reach out for questions or collaborations!
-
-## 📝 License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
 
 ---
 <p align="center">Made with ❤️ by Vinuji</p>
