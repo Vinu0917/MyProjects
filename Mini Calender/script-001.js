@@ -17,18 +17,18 @@ const months = [
   "October",
   "November",
   "December",
-];
+]
 
-const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
 
 // get current date
-const date = new Date();
+const date = new Date()
 
 // get current month
-let currentMonth = date.getMonth();
+let currentMonth = date.getMonth()
 
 // get current year
-let currentYear = date.getFullYear();
+let currentYear = date.getFullYear()
 
 // function to render days
 // Add new variables for modal handling
@@ -80,6 +80,8 @@ function renderCalendar() {
       } else {
           days += `<div class="day ${hasEvent}" data-date="${dateStr}">${i}</div>`;
       }
+
+      //days += `<div class="day ${i === new Date().getDate() && currentMonth === new Date().getMonth() && currentYear === new Date().getFullYear() && 'today'} ${hasEvent}" data-date="${dateStr}">${i}</div>`;
   }
 
   // next MOnth days
@@ -97,6 +99,8 @@ function renderCalendar() {
           day.addEventListener('click', () => openModal(day.dataset.date));
       });
   }, 0);
+
+  ordersToDates()
 }
 
 // Add new functions for event handling
@@ -217,7 +221,7 @@ function hideTooltip() {
 }
 
 // Modify the renderCalendar function where you add click events
-setTimeout(() => {
+/* setTimeout(() => {
     document.querySelectorAll('.days .day:not(.prev):not(.next)').forEach(day => {
         day.addEventListener('click', () => openModal(day.dataset.date));
         
@@ -240,4 +244,33 @@ setTimeout(() => {
             }
         });
     });
-}, 0);
+}, 0); */
+
+function ordersToDates(){
+  document.querySelectorAll('.days .day:not(.prev):not(.next)').forEach(day => {
+    day.addEventListener('click', () => openModal(day.dataset.date));
+    
+    // Add mouse events for tooltip
+    day.addEventListener('mouseover', (e) => {
+        if (events[day.dataset.date]) {
+          console.log(day.dataset.date)
+          showTooltip(day.dataset.date, e.pageX, e.pageY);
+        }
+    });
+    
+    day.addEventListener('mouseout', () => {
+        hideTooltip();
+    });
+    
+    // Update tooltip position on mouse move
+    day.addEventListener('mousemove', (e) => {
+        if (events[day.dataset.date]) {
+            tooltip.style.left = `${e.pageX + 10}px`;
+            tooltip.style.top = `${e.pageY + 10}px`;
+        }
+    });
+  });
+
+  return
+}
+ordersToDates()

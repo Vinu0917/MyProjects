@@ -12,6 +12,9 @@
 <body>
     <header class="header">
         <a href="#" class="logo">Portfolio.</a>
+        <div class="menu-btn">
+            <span class="menu-icon"></span>
+        </div>
         <nav class="navbar">
             <a href="#home" style="--i:1"class="active">Home</a>
             <a href="#about" style="--i:2">About</a>
@@ -148,54 +151,63 @@
                     <div class="project-card">
                         <img src="images/weatherapp.png" alt="Project 1">
                         <h3>Weather App</h3>
+                        <p>A responsive weather application that provides real-time weather data for any location with a clean, intuitive interface.</p>
                     </div>
                 </a>
                 <a href="http://minicalendermyprojects.netlify.app" class="project-link" target="_blank">
                     <div class="project-card">
                         <img src="images/minicalender.png" alt="Project 2">
                         <h3>Mini Calender</h3>
+                        <p>A lightweight calendar application that helps users track dates and events with a minimalist design.</p>
                     </div>
                 </a>
                 <a href="http://calculatormyprojects.netlify.app" class="project-link" target="_blank">
                     <div class="project-card">
                         <img src="images/calculator.png" alt="Project 3">
                         <h3>Calculator</h3>
+                        <p>A fully functional calculator with a modern interface that handles basic and advanced mathematical operations.</p>
                     </div>
                 </a>
                 <a href="http://musicplayermyprojects.netlify.app" class="project-link" target="_blank">
                     <div class="project-card">
                         <img src="images/musicplayer.png" alt="Project 4">
                         <h3>Music Player</h3>
+                        <p>A sleek music player with playlist management, audio controls, and a visually appealing interface.</p>
                     </div>
                 </a>
                 <a href="http://to-dolistmyprojects.netlify.app" class="project-link" target="_blank">
                     <div class="project-card">
                         <img src="images/todolist.png" alt="Project 5">
-                        <h3>To-Do List</h3>  
+                        <h3>To-Do List</h3>
+                        <p>A task management application that helps users organize their daily activities with features like task prioritization.</p>
                     </div>
                 </a>
                 <a href="https://ssplashscreen.netlify.app/" class="project-link" target="_blank">
                     <div class="project-card01">
                         <img src="images/splashscreen.png" alt="Project 6">
-                        <h3>Splash screen</h3>  
+                        <h3>Splash screen</h3>
+                        <p>An engaging splash screen design with smooth animations and transitions for improved user experience.(Group-Project)</p>
                     </div>
                 </a>
                 <a href="https://volunteerpage01.netlify.app" class="project-link" target="_blank">
                     <div class="project-card01">
                         <img src="images/volunteerpage01.png" alt="Project 7">
                         <h3>Volunteer Page 01</h3>
+                        <p>A responsive volunteer recruitment page with an engaging layout, designed to connect organizations with potential volunteers for community service projects.(Group-Project)</p>
                     </div>
                 </a>
                 <a href="https://volunteerpage02.netlify.app" class="project-link" target="_blank">
                     <div class="project-card01">
                         <img src="images/volunteerpage02.png" alt="Project 8">
                         <h3>Volunteer Page 02</h3>
+                        <p>An alternative volunteer page design featuring interactive elements and a user-friendly interface to streamline the volunteer registration process.(Group-Project)</p>
                     </div>
                 </a>
                 <a href="https://friendly-cucurucho-78ff12.netlify.app/" class="project-link" target="_blank">
                     <div class="project-card01">
-                        <img src="images/contentpage.png" alt="Project 8">
+                        <img src="images/contentpage.png" alt="Project 9">
                         <h3>Content Page</h3>
+                        <p>A modern content display page with clean typography and responsive design, showcasing information in an organized and visually appealing format.(Group-Project)</p>
                     </div>
                 </a>
             </div>
@@ -203,21 +215,99 @@
         <button class="scroll-right">&#10095;</button>
     </div>
 </section>
+<!-- Previous section ends -->
+</section>
+
+<!-- New Contact Section -->
 <section class="contact-section" id="contact">
-    <h2>Contact<span>Me</span></h2>
-    <div class="contact-container">
-        <form action="https://formspree.io/f/xdkeernz" id="contactForm" method="post">
-            <input type="text" name="name" placeholder="Your Name" required />
-            <input type="email" name="email" placeholder="Your Email" required />
-            <input type="text" name="subject" placeholder="Subject" required />
-            <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
-            <button type="submit">Send Message</button>
-        </form>
+    <div class="contact-header">
+        <h2>Contact<span>Me</span></h2>
+        <p>Feel free to reach out if you'd like to collaborate or have any questions!</p>
     </div>
-    <div class="contact-img">
-        <img src="images/contactme.png"alt="contact-img">
+    
+    <div class="contact-wrapper">
+        <div class="contact-info">
+            <div class="contact-card">
+                <i class='bx bx-envelope'></i>
+                <h3>Email</h3>
+                <p>balasooriya.vinuji@gmail.com</p>
+                <a href="mailto:balasooriya.vinuji@gmail.com" class="card-link"></a>
+            </div>
+            <div class="contact-card">
+                <i class='bx bx-phone'></i>
+                <h3>Phone</h3>
+                <p>+94 75 724 0725</p>
+            </div>
+            <div class="contact-card">
+                <i class='bx bx-map'></i>
+                <h3>Location</h3>
+                <p>Colombo, Sri Lanka</p>
+            </div>
+            
+            <!-- Robot Animation Container -->
+            <div class="robot-animation-container">
+                <div class="robot">
+                    <div class="robot-head">
+                        <div class="robot-eye left"></div>
+                        <div class="robot-eye right"></div>
+                        <div class="robot-mouth"></div>
+                    </div>
+                    <div class="robot-body">
+                        <div class="robot-arm left"></div>
+                        <div class="robot-arm right"></div>
+                    </div>
+                </div>
+                <div class="robot-shadow"></div>
+            </div>
+        </div>
+        
+        <div class="contact-form-container">
+            <form action="https://formspree.io/f/xdkeernz" id="contactForm" method="post">
+                <div class="input-row">
+                    <div class="input-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" required />
+                    </div>
+                    <div class="input-group">
+                        <label for="email">Your Email</label>
+                        <input type="email" id="email" name="email" required />
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" name="subject" required />
+                </div>
+                <div class="input-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Message <i class='bx bx-send'></i></button>
+                
+                <!-- Form status indicator -->
+                <div class="form-status">
+                    <div class="status-indicator">
+                        <div class="status-dot"></div>
+                        <p>Your message will be delivered instantly</p>
+                    </div>
+                    <p class="privacy-note">Your information is protected and will never be shared with third parties.</p>
+                </div>
+            </form>
+        </div>
     </div>
 </section>
+
+<!-- Footer section -->
+<footer class="footer">
+    <div class="footer-content">
+        <p>&copy; 2023 Vinuji Balasooriya. All Rights Reserved.</p>
+        <div class="footer-social">
+            <a href="https://www.facebook.com/"><i class='bx bxl-facebook'></i></a>
+            <a href="https://www.instagram.com/"><i class='bx bxl-instagram'></i></a>
+            <a href="https://www.linkedin.com/"><i class='bx bxl-linkedin'></i></a>
+            <a href="https://github.com/"><i class='bx bxl-github'></i></a>
+        </div>
+    </div>
+</footer>
     <script src="script.js"></script>
 </body>
 </html>

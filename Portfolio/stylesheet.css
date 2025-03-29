@@ -57,22 +57,17 @@ body {
     color: rgb(40, 237, 255);
 }
 .home {
-    margin-top: 100px;
-    position: relative;
     width: 100%;
-    height: 100vh;
+    min-height: calc(100vh - 100px);
     background: linear-gradient(rgb(9, 66, 136), rgb(100, 216, 255));
     display: flex;
     align-items: center;
-    padding: 70px 10%;
+    padding: 10px 10%;
     justify-content: space-between;
+    margin-top: 100px;
 }
 
 .home-content {
-    max-width: 800px;
-    padding-right: 50px;
-    margin-top: 270px;
-    margin-bottom: 215px;
 }
 
 .home-content h3 {
@@ -190,10 +185,6 @@ body {
         0 0 50px white;
 }
 .avatar-container {
-    position: absolute;
-    right: 200px;
-    top: 50%;
-    transform: translateY(-50%);
     display: inline-block;
     text-align: center;
 }
@@ -209,27 +200,76 @@ body {
     animation-delay: .7s;
 }
 
-.tooltip {
+/* Fix for the home section tooltip */
+.avatar-container {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+}
+
+.tooltip{
     visibility: hidden;
     width: 140px;
     background-color: rgb(37, 65, 158);
     color: #fff;
     text-align: center;
     border-radius: 5px;
-    padding: 3px;
+    padding: 5px;
     position: absolute;
     bottom: -35px;
     left: 50%;
     transform: translateX(-50%);
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
+    z-index: 10;
 }
 
 .avatar-container:hover .tooltip {
     visibility: visible;
     opacity: 1;
 }
+
+/* Fix for the about section tooltip - remove duplicate definition */
+.about-img {
+    position: relative;
+    text-align: center; 
+}
+
+.about-img img {
+    width: 550px;
+    height: 550px;
+    border-radius: 20%;
+    margin: 50px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 
+                0 6px 20px rgba(0, 0, 0, 0.3); 
+    opacity: 0;
+    animation: slideBottom 1s ease forwards;
+    animation-delay: .7s;
+}
+
+/* Fix for the about section tooltip */
+.tooltip01 {
+    visibility: hidden;
+    width: 140px;
+    background-color: rgb(37, 65, 158);
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    position: absolute;
+    bottom: -8px; /* Adjusted position */
+    left: 65%; /* Moved slightly to the right */
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    z-index: 10;
+}
+
+.about-img:hover .tooltip01 {
+    visibility: visible;
+    opacity: 1;
+}
 .about{
+    min-height: calc(100vh - 100px);
     display: grid;
     grid-template-columns:repeat(2, 1fr);
     align-items: center;
@@ -392,10 +432,35 @@ body {
     box-shadow: 0 5px 15px rgba(0, 70, 145, 0.96);
     padding: 20px;
     width: 300px;
-    height:400px;
+    height: auto; /* Changed from fixed height to auto */
     flex: 0 0 auto;
     text-align: center;
     transition: transform 0.3s ease-in-out;
+}
+
+
+
+.project-card img {
+    width: 100%;
+    border-radius: 10px;
+    height: 200px; /* Reduced height to make room for description */
+    object-fit: cover; /* Changed from auto to cover for better image display */
+}
+
+
+.project-card h3 {
+    margin: 15px 0 10px;
+    font-size: 1.4rem;
+    color: #0B396D;
+}
+
+.project-card p {
+    color: #0B396D;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    line-height: 1.4;
+    /* Allow text to wrap */
+    white-space: normal;
 }
 .project-card01 {
     background:linear-gradient(rgb(102, 217, 255),rgb(99, 172, 255));
@@ -403,34 +468,57 @@ body {
     box-shadow: 0 5px 15px rgba(0, 70, 145, 0.96);
     padding: 20px;
     width: 1000px;
-    height:auto;
+    height: auto; /* Changed from fixed height to auto */
     flex: 0 0 auto;
     text-align: center;
     transition: transform 0.3s ease-in-out;
 }
 
-.project-card img {
-    width: 100%;
-    border-radius: 10px;
-    height: 280px;
-    object-fit: auto;
-}
 .project-card01 img {
     width: 900px;
     border-radius: 10px;
-    height: 500px;
-    object-fit: auto;
+    height: 400px; /* Reduced height to make room for description */
+    object-fit: cover;
 }
 
-.project-card h3 {
-    margin: 15px 0 10px;
-    font-size: 1.4rem;
-}
 .project-card01 h3 {
     margin: 15px 0 10px;
     font-size: 1.4rem;
+    color: #0B396D;
 }
 
+/* New styles for project description in larger cards */
+.project-card01 p {
+    color: #0B396D;
+    font-size: 1rem;
+    margin: 10px 0 15px;
+    line-height: 1.4;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    /* Allow text to wrap */
+    white-space: normal;
+}
+
+/* Adjust responsive styles for project cards */
+@media screen and (max-width: 480px) {
+    .project-card,
+    .project-card01 {
+        width: 280px;
+        height: auto;
+    }
+    
+    .project-card img,
+    .project-card01 img {
+        width: 100%;
+        height: 180px;
+    }
+    
+    .project-card p,
+    .project-card01 p {
+        font-size: 0.85rem;
+    }
+}
 /* Hover Effect */
 .project-card:hover {
     transform: translateY(-10px);
@@ -474,30 +562,672 @@ body {
     padding: 50px 20px;
     background:linear-gradient(rgb(9, 66, 136), rgb(100, 216, 255));
 }
-.conatct-section {
+/* Animated availability indicator */
+.contact-availability {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 15px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.contact-availability:hover {
+    transform: translateY(-5px);
+}
+
+.availability-indicator {
+    width: 15px;
+    height: 15px;
+    background-color: #4CAF50;
+    border-radius: 50%;
+    position: relative;
+    animation: pulse 1.5s infinite;
+}
+
+.contact-availability p {
+    color: rgb(220, 240, 255);
+    font-weight: 500;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(76, 175, 80, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(76, 175, 80, 0);
+    }
+}
+/* New Contact Section Styles */
+/* Robot Animation Styles */
+.robot-animation-container {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    padding: 25px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.robot-animation-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+.robot-animation-container::before{
+    content: '';
+    position: absolute;
+    width: 150%;
+    height: 40px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    top:-20px;
+    left: -25%;
+    transform: rotate(45deg);
+    animation: shine 4s infinite;
+}
+@keyframes shine {
+    0%{
+        left: -150%;
+    }
+    100%{
+        left: 150%;
+    }
+}
+.robot {
+    position: relative;
+    width: 120px;
+    height: 160px;
+    animation: float 4s ease-in-out infinite;
+    z-index: 2;
+}
+
+.robot-head {
+    position: relative;
+    width: 70px;
+    height: 65px;
+    background: linear-gradient(135deg, #60d6fd, #3aa0ff);
+    border-radius: 18px;
+    margin: 0 auto;
+    box-shadow:0 6px 12px rgba(0, 0, 0, 0.3);
+    z-index: 2;
+    overflow: hidden;
+}
+.robot-head::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transform: translate(5px, -5px);
+}
+.robot-antenna {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 8px;
+    height: 15px;
+    background: #0b396d;
+    border-radius: 4px;
+    z-index: 1;
+}
+
+.robot-antenna::after {
+    content: '';
+    position: absolute;
+    top: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10px;
+    height: 10px;
+    background: #ff5e5e;
+    border-radius: 50%;
+    animation: pulse-light 1.5s infinite alternate;
+}
+@keyframes pulse-light {
+    0% { box-shadow: 0 0 5px #ff5e5e, 0 0 10px #ff5e5e; opacity: 0.7; }
+    100% { box-shadow: 0 0 10px #ff5e5e, 0 0 20px #ff5e5e; opacity: 1; }
+}
+.robot-eye {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: #fff;
+    border-radius: 50%;
+    top: 20px;
+    animation: blink 4s infinite;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3);
+}
+.robot-eye::after {
+    content: '';
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    background: #0b396d;
+    border-radius: 50%;
+    top: 4px;
+    left: 4px;
+    animation: look 5s infinite;
+}
+.robot-eye.left {
+    left: 15px;
+}
+
+.robot-eye.right {
+    right: 15px;
+}
+
+.robot-mouth {
+    position: absolute;
+    width: 25px;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: talk 2s infinite;
+    box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.2);
+}
+
+.robot-body {
+    position: relative;
+    width: 80px;
+    height: 90px;
+    background: linear-gradient(to bottom, #0b396d, #0a2d5a);
+    border-radius: 15px;
+    margin: -10px auto 0;
+    z-index: 1;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    overflow: visible;
+}
+.robot-body::before {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 10px;
+    background: #60d6fd;
+    border-radius: 5px;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 0 5px rgba(96, 214, 253, 0.7);
+    animation: pulse-button 2s infinite alternate;
+}
+.robot-body::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 5px;
+    background: #60d6fd;
+    border-radius: 3px;
+    top: 35px;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 0 5px rgba(96, 214, 253, 0.7);
+    animation: pulse-button 2s infinite alternate 0.5s;
+}
+
+@keyframes pulse-button {
+    0% { opacity: 0.7; }
+    100% { opacity: 1; }
+}
+.robot-arm {
+    position: absolute;
+    width: 18px;
+    height: 60px;
+    background: linear-gradient(to bottom, #60d6fd, #3aa0ff);
+    border-radius: 10px;
+    top: 10px;
+    z-index: 1; /* Add z-index to ensure arms appear correctly */
+}
+
+.robot-arm.left {
+    left: -12px;
+    transform-origin: top center;
+    animation: waveLeft 3s infinite;
+}
+
+.robot-arm.right {
+    right: -12px;
+    transform-origin: top center;
+    animation: waveRight 3s infinite;
+}
+
+.robot-arm::after {
+    content: '';
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    background: linear-gradient(to bottom, #60d6fd, #3aa0ff);
+    border-radius: 50%;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+}
+.robot-shadow {
+    position: absolute;
+    bottom: 15px;
+    width: 100px;
+    height: 20px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    filter: blur(5px);
+    animation: shadow 4s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    25% {
+        transform: translateY(-10px) rotate(-2deg);
+    }
+    50% {
+        transform: translateY(-15px) rotate(0deg);
+    }
+    75% {
+        transform: translateY(-10px) rotate(2deg);
+    }
+}
+
+@keyframes blink {
+    0%, 45%, 55%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(0.1);
+        opacity: 0.5;
+    }
+}
+
+@keyframes talk {
+    0%, 100% {
+        width: 25px;
+        height: 6px;
+    }
+    50% {
+        width: 20px;
+        height: 8px;
+    }
+}
+
+@keyframes waveLeft {
+    0%, 100% {
+        transform: rotate(-5deg);
+    }
+    50% {
+        transform: rotate(25deg);
+    }
+}
+
+@keyframes waveRight {
+    0%, 100% {
+        transform: rotate(5deg);
+    }
+    50% {
+        transform: rotate(-25deg);
+    }
+}
+
+@keyframes shadow {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+    50% {
+        transform: scale(0.8);
+        opacity: 0.3;
+    }
+}
+
+/* Make sure the contact section background is darker as requested */
+.contact-section {
+    padding: 80px 20px;
+    background: linear-gradient(rgb(9, 66, 136), rgb(7, 42, 87));
+}
+.contact-section {
+    padding: 80px 20px;
+    background: linear-gradient(rgb(9, 66, 136), rgb(59, 164, 226));
+}
+
+.contact-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.contact-header h2 {
+    font-size: 80px;
+    margin-bottom: 15px;
+}
+
+.contact-header h2 span {
+    color: rgb(96, 214, 253);
+}
+
+.contact-header p {
+    font-size: 18px;
+    max-width: 600px;
+    margin: 0 auto;
+    color: rgb(220, 240, 255);
+}
+
+.contact-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 40px;
+    justify-content: center;
+}
+
+.contact-info {
+    flex: 1;
+    min-width: 300px;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.contact-card i {
+    font-size: 32px;
+    color: rgb(96, 214, 253);
+    margin-bottom: 10px;
+}
+
+.contact-card h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.contact-card p {
+    color: rgb(220, 240, 255);
+}
+/* Make email card clickable */
+.email-card {
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.email-card:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.card-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+}
+
+/* Add a subtle indicator that the card is clickable */
+.email-card::after {
+    content: 'Click to send email';
+    position: absolute;
+    bottom: 8px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+    color: rgb(96, 214, 253);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.email-card:hover::after {
+    opacity: 1;
+}
+.contact-social {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.contact-social a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 45px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    font-size: 22px;
+    color: rgb(96, 214, 253);
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.contact-social a:hover {
+    background: rgb(96, 214, 253);
+    color: rgb(9, 66, 136);
+    transform: translateY(-5px);
+}
+
+.contact-form-container {
+    flex: 1;
+    min-width: 300px;
+    max-width: 600px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+/* Form status indicator */
+.form-status {
+    margin-top: 25px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.status-indicator {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.status-dot {
+    width: 12px;
+    height: 12px;
+    background-color: #140d7d;
+    border-radius: 50%;
+    position: relative;
+    animation: status-pulse 1.5s infinite;
+}
+
+.status-indicator p {
+    color: rgb(220, 240, 255);
+    font-size: 19px;
+}
+
+.privacy-note {
+    color: rgba(220, 240, 255, 0.7);
+    font-size: 14px;
+    font-style: italic;
+}
+
+@keyframes status-pulse {
+    0% {
+        box-shadow: 0 0 0 0 #4134f7;
+    }
+    70% {
+        box-shadow: 0 0 0 6px rgba(76, 175, 80, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(76, 175, 80, 0);
+    }
+}
+.input-row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.input-group {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: rgb(220, 240, 255);
+}
+
+.input-group input,
+.input-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgb(96, 214, 253);
+    box-shadow: 0 0 10px rgba(96, 214, 253, 0.3);
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 14px;
+    background: rgb(96, 214, 253);
+    color: rgb(9, 66, 136);
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.submit-btn i {
+    font-size: 18px;
+}
+
+.submit-btn:hover {
+    background: rgb(120, 230, 255);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(96, 214, 253, 0.4);
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .contact-header h2 {
+        font-size: 60px;
+    }
+    
+    .input-row {
+        flex-direction: column;
+        gap: 0;
+    }
+    
+    .contact-wrapper {
+        gap: 30px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .contact-header h2 {
+        font-size: 45px;
+    }
+    
+    .contact-form-container {
+        padding: 20px;
+    }
+}
+.contact-container{
     padding: 50px 20px;
     background:linear-gradient(rgb(9, 66, 136), rgb(100, 216, 255));
 }
-.contact-section h2{
-    font-size: 100px;
-    text-align: right;
-    margin-bottom: 20px;
-    margin-right: 100px;
-}
-.contact-section h2 span{
-    color: rgb(96, 214, 253);
-}
-.contact-container {
+.contact-container{
     background: rgb(172, 219, 255);
     padding: 20px;
-    margin-left: 900px;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 45%;
+    max-width: 450px;
+    box-shadow: 0 5px 15px rgba(0, 70, 145, 0.96);
+    margin-right: 100px;
+    order: 2;
+}
+
+.contact-img {
+    width: 45%;
+    max-width: 450px;
+    margin-left: 100px;
+    order: 1;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-img img {
     width: 100%;
     max-width: 400px;
-    box-shadow: 0 5px 15px rgba(0, 70, 145, 0.96);
-    position: relative;
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 
+                0 6px 20px rgba(0, 0, 0, 0.3);
+    opacity: 1;
+    animation: slideBottom 1s ease forwards;
+    animation-delay: .7s;
 }
+
 .contact-container input, textarea {
     width: 100%;
     padding: 10px;
@@ -576,4 +1306,290 @@ body {
         transform: translateY(0px);
         opacity: 1;
     }
+}
+
+/* Add these styles at the beginning after your imports */
+:root {
+    --mobile-padding: 20px;
+    --tablet-padding: 40px;
+}
+
+/* Add mobile menu button styles */
+.menu-btn {
+    display: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 101;
+}
+
+.menu-icon {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background: white;
+    position: relative;
+    transition: 0.3s;
+}
+
+.menu-icon::before,
+.menu-icon::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: white;
+    transition: 0.3s;
+}
+
+.menu-icon::before { top: -8px; }
+.menu-icon::after { top: 8px; }
+
+.menu-btn.active .menu-icon {
+    background: transparent;
+}
+
+.menu-btn.active .menu-icon::before {
+    top: 0;
+    transform: rotate(45deg);
+}
+
+.menu-btn.active .menu-icon::after {
+    top: 0;
+    transform: rotate(-45deg);
+}
+
+/* Add these media queries at the end of your CSS file */
+@media screen and (max-width: 1024px) {
+    .home-content h1 { font-size: 45px; }
+    .home-content h3 { font-size: 30px; }
+    .home-content p { font-size: 18px; }
+    
+    .about-img img { width: 400px; height: 400px; }
+    .about-text { font-size: 40px; }
+    
+    .project-card01 {
+        width: 700px;
+        height: auto;
+    }
+    
+    .project-card01 img {
+        width: 600px;
+        height: 350px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .menu-btn { display: block; }
+    
+    .navbar {
+        position: fixed;
+        top: 100px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 100px);
+        background: #0B396D;
+        flex-direction: column;
+        align-items: center;
+        padding: 40px 0;
+        transition: 0.3s;
+    }
+    
+    .navbar.active { left: 0; }
+    
+    .navbar a {
+        margin: 20px 0;
+        font-size: 18px;
+    }
+    
+    .home {
+        flex-direction: column;
+        padding: 100px var(--mobile-padding);
+        text-align: center;
+    }
+    
+    .home-content {
+        margin-top: 50px;
+        padding-right: 0;
+    }
+    
+    .avatar-container {
+        position: relative;
+        right: 0;
+        margin-top: 50px;
+    }
+    
+    .about {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .about-img img{
+        width: 300px;
+        height: 300px;
+        margin: 20px auto;
+    }
+    
+    .skills-section h2,
+    .projects-section h2,
+    .contact-section h2 {
+        font-size: 60px;
+    }
+    
+    .contact-container {
+        margin: 0 auto;
+    }
+    
+    .contact-img {
+        position: relative;
+        top: 0;
+        margin: 40px auto;
+        width: 300px;
+        height: 300px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .home-content h1 { font-size: 35px; }
+    .home-content h3 { font-size: 25px; }
+    .home-content p { font-size: 16px; }
+    
+    .avatar { width: 250px; height: 350px; }
+    
+    .skill-card { width: 100%; }
+    
+    .project-card,
+    .project-card01 {
+        width: 280px;
+        height: auto;
+    }
+    
+    .project-card img,
+    .project-card01 img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.action-image {
+    position: relative;
+    width: 50px;
+}
+
+.action-image::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: nowrap;
+    background-color: #333;
+    color: white;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s, visibility 0.2s;
+    z-index: 10;
+}
+
+.action-image:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Add footer styles */
+.footer {
+    background: #0B396D;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer p {
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.footer-social {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.footer-social a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    background: transparent;
+    border: 2px solid rgb(96, 214, 253);
+    border-radius: 50%;
+    font-size: 18px;
+    color: rgb(96, 214, 253);
+    text-decoration: none;
+    transition: .3s ease;
+}
+
+.footer-social a:hover {
+    background: rgb(96, 214, 253);
+    color: #0B396D;
+}
+
+/* Improve form styling */
+.contact-container input, 
+.contact-container textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #135d96;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.contact-container input:focus, 
+.contact-container textarea:focus {
+    border-color: rgb(96, 214, 253);
+    box-shadow: 0 0 8px rgba(96, 214, 253, 0.5);
+    outline: none;
+}
+
+.contact-container button {
+    width: 100%;
+    padding: 12px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.contact-container button:hover {
+    background-color: #0056b3;
+    transform: translateY(-3px);
+}
+
+.contact-container button:active {
+    transform: translateY(0);
+}
+
+/* Add smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Improve active navigation state */
+.navbar a.active {
+    color: rgb(40, 237, 255);
+    font-weight: 600;
 }
