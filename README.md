@@ -82,7 +82,12 @@ A real-time weather application providing accurate forecasts.
 
 ## 🚀 Getting Started
 
-Each project includes detailed setup instructions in its respective directory. Clone the repository and follow the README in each project folder.
+To explore these projects:
+1. Browse through the project folders
+2. Open the HTML files in your browser to see the applications in action
+3. Feel free to examine the code to understand how each project works
+
+Each project is self-contained with its own HTML, CSS, and JavaScript files.
 
 ## 📫 Contact
 
