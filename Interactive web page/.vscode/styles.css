@@ -1,0 +1,89 @@
+.student-info {
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #eef0f4;
+    border-radius: 8px;
+    font-size: 0.95em;
+    text-align: left;
+}
+    /* Input section floated left */
+.input-section {
+    float: left;
+    width: 55%;
+    padding-right: 20px;
+}
+.input-section label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+.input-section input[type="text"] {
+    width: 95%;
+    padding: 8px;
+    margin-bottom: 5px;
+}
+ #nicknameFeedback {
+    background-color: rgb(231, 231, 231);
+    border-radius: 5px;
+    font-size: 0.9em;
+    padding: 5px;
+    margin-bottom: 20px;
+    height: 40px;
+    line-height: 20px; /* Matches the height for vertical centering */
+    text-align: center; /* Horizontal centering */
+ }
+    /* Thumbnail layout */
+.duck-thumbnails {
+    margin: 20px 0;
+    height: 70px;
+}
+.duck-thumb {
+    border: 2px solid transparent;
+    border-radius: 10px;
+    margin-right: 10px;
+}
+#generateNickname,
+#confirmSelection {
+    padding: 8px 12px;
+    cursor: pointer;
+    float: right;
+    margin-left: 10px;
+    margin-top: 10px;
+    clear: both;
+}
+/* Summary card floated right */
+.summary-card {
+    float: right;
+    width: 40%;
+    border-left: 2px solid #ddd;
+    padding-left: 20px;
+}
+.summary-card h1 {
+    text-align: center;
+}
+.selected-duck-container {
+    width: 120px;
+    height: 120px;
+    margin: 20px auto;
+    border: 2px solid #999;
+    border-radius: 10px;
+    background-color: #fff;
+    overflow: hidden;
+    text-align: center;
+}
+.selected-duck-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+#finalNickname {
+    padding: 8px;
+    width: 80%;
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+}
+.selected {
+    border-color: green;
+}

@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Your Profile</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #f0e6e6;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .student-info {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #666;
+            background-color: rgba(144, 238, 144, 0.2);
+            padding: 10px;
+            border-radius: 5px;
+            display: inline-block;
+        }
+
+        .student-details, .course-details {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        #header-name, #header-id, #header-course {
+            color: #4CAF50;
+            font-size: 16px;
+        }
+
+        .user-details-header {
+            font-weight: bold;
+            text-align: center;
+        }
+
+        main {
+            display: flex;
+            gap: 30px;
+            flex: 1;
+        }
+
+        .profile-form {
+            flex: 1;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-card {
+            width: 300px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        input[type="text"],
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        .note {
+            font-size: 12px;
+            color: #666;
+            margin-top: 5px;
+            font-style: italic;
+        }
+
+        .avatar-selection {
+            display: flex;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            overflow: hidden;
+            cursor: pointer;
+            border: 3px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .avatar:hover {
+            border-color: #4CAF50;
+            transform: scale(1.1);
+        }
+
+        .avatar.selected {
+            border-color: #4CAF50;
+            transform: scale(1.1);
+        }
+
+        .avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .profile-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto 20px;
+            border: 3px solid #4CAF50;
+        }
+
+        .profile-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .profile-details {
+            text-align: left;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+        }
+
+        .profile-details p {
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .validation-message {
+            color: #f44336;
+            font-size: 14px;
+            margin-top: 5px;
+            min-height: 20px;
+        }
+
+        .validation-message.success {
+            color: #4CAF50;
+        }
+
+        .notification {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #f8d7da;
+            color: #721c24;
+            padding: 15px;
+            border-radius: 4px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            display: none;
+            z-index: 1000;
+        }
+
+        .notification.success {
+            background-color: #d4edda;
+            color: #155724;
+        }
+
+        .notification button {
+            background-color: transparent;
+            color: inherit;
+            border: 1px solid currentColor;
+            padding: 5px 10px;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        .notification button:hover {
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            main {
+                flex-direction: column;
+            }
+
+            .profile-card {
+                width: 100%;
+                margin-top: 20px;
+            }
+        }
+
+        fieldset {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        legend {
+            padding: 0 10px;
+            font-weight: bold;
+            color: #333;
+            text-align: center;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Create Your Profile</h1>
+            <div class="student-info">
+                <p class="student-details">Student Full Name: <span id="header-name">Vinuji Balasooriya</span></p>
+                <p class="student-details">Student ID: <span id="header-id">w2120101</span></p>
+                <p class="course-details">The course you study: <span id="header-course">Computer Science</span></p>
+            </div>
+        </header>
+
+        <main>
+            <div class="profile-form">
+                <fieldset>
+                    <legend>User Details</legend>
+                    <div class="form-group">
+                        <label for="username">Enter Your User Name:</label>
+                        <input type="text" id="username" name="username" placeholder="in 7 characters">
+                        <div class="validation-message" id="username-validation"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="age">Enter Your Age:</label>
+                        <select id="age" name="age">
+                            <option value="18-25">Between 18-25</option>
+                        </select>
+                        <div class="note">Do not change the user age</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Select an Avatar:</label>
+                        <div class="avatar-selection">
+                            <div class="avatar" data-avatar="avatar1">
+                                <img src="images/avatar1.png" alt="Avatar 1">
+                            </div>
+                            <div class="avatar" data-avatar="avatar2">
+                                <img src="images/avatar2.png" alt="Avatar 2">
+                            </div>
+                            <div class="avatar" data-avatar="avatar3">
+                                <img src="images/avatar3.png" alt="Avatar 3">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <button id="submit-profile">Submit Profile</button>
+                    </div>
+                </fieldset>
+            </div>
+
+            <div class="profile-card">
+                <h2>Your Profile</h2>
+                <div class="profile-avatar">
+                    <img id="selected-avatar" src="images/avatar1.png" alt="Selected Avatar">
+                </div>
+                <div class="profile-details">
+                    <p>Name: <span id="profile-name">[Your Name]</span></p>
+                    <p>Age: <span id="profile-age">Between 18-25</span></p>
+                </div>
+            </div>
+        </main>
+
+        <div id="notification" class="notification">
+            <p id="notification-message"></p>
+            <button id="close-notification">Close</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // DOM Elements
+            const usernameInput = document.getElementById('username');
+            const ageSelect = document.getElementById('age');
+            const avatars = document.querySelectorAll('.avatar');
+            const submitButton = document.getElementById('submit-profile');
+            
+            // Profile Card Elements
+            const profileName = document.getElementById('profile-name');
+            const profileAge = document.getElementById('profile-age');
+            const profileAvatar = document.getElementById('selected-avatar');
+            
+            // Validation Elements
+            const usernameValidation = document.getElementById('username-validation');
+            const notification = document.getElementById('notification');
+            const notificationMessage = document.getElementById('notification-message');
+            const closeNotification = document.getElementById('close-notification');
+            
+            // State variables
+            let selectedAvatar = 'avatar1';
+
+            // Username validation
+            usernameInput.addEventListener('input', function() {
+                validateUsername();
+            });
+            
+            function validateUsername() {
+                const username = usernameInput.value;
+                
+                if (username.length === 0) {
+                    usernameValidation.textContent = "✗ Username is required";
+                    usernameValidation.className = 'validation-message error';
+                    return false;
+                }
+                
+                if (username.length < 7) {
+                    usernameValidation.textContent = "✗ You have not entered a seven character string";
+                    usernameValidation.className = 'validation-message error';
+                    return false;
+                }
+                
+                if (username.charAt(0) !== 'w') {
+                    usernameValidation.textContent = "✗ User name must be 7 characters long, starting with \"w\".";
+                    usernameValidation.className = 'validation-message error';
+                    return false;
+                }
+                
+                if (username.length !== 7) {
+                    usernameValidation.textContent = "✗ User name must be 7 characters long, starting with \"w\".";
+                    usernameValidation.className = 'validation-message error';
+                    return false;
+                }
+                
+                usernameValidation.textContent = "✓ Valid Username";
+                usernameValidation.className = 'validation-message success';
+                return true;
+            }
+            
+            // Avatar selection
+            avatars.forEach(avatar => {
+                avatar.addEventListener('click', function() {
+                    // Remove selected class from all avatars
+                    avatars.forEach(a => a.classList.remove('selected'));
+                    
+                    // Add selected class to clicked avatar
+                    this.classList.add('selected');
+                    
+                    // Update selected avatar
+                    selectedAvatar = this.getAttribute('data-avatar');
+                });
+            });
+            
+            // Submit profile
+            submitButton.addEventListener('click', function() {
+                if (!validateForm()) {
+                    return;
+                }
+                
+                // Update profile card
+                updateProfileCard();
+                
+                showNotification("Profile created successfully!", true);
+            });
+            
+            function validateForm() {
+                // Check if username is empty
+                if (usernameInput.value.trim() === '') {
+                    showNotification("Please fill all required fields before submitting.", false);
+                    return false;
+                }
+                
+                // Check username validation
+                if (!validateUsername()) {
+                    return false;
+                }
+                
+                // Check if avatar is selected
+                if (!selectedAvatar) {
+                    showNotification("Please select an avatar", false);
+                    return false;
+                }
+                
+                return true;
+            }
+            
+            function updateProfileCard() {
+                // Update name
+                profileName.textContent = usernameInput.value;
+                
+                // Update age
+                profileAge.textContent = ageSelect.options[ageSelect.selectedIndex].text;
+                
+                // Update avatar
+                profileAvatar.src = `images/${selectedAvatar}.png`;
+            }
+            
+            function showNotification(message, isSuccess) {
+                notificationMessage.textContent = message;
+                notification.className = isSuccess ? 'notification success' : 'notification';
+                notification.style.display = 'block';
+                
+                // Auto hide after 5 seconds
+                setTimeout(() => {
+                    notification.style.display = 'none';
+                }, 5000);
+            }
+            
+            // Close notification
+            closeNotification.addEventListener('click', function() {
+                notification.style.display = 'none';
+            });
+            
+            // Initialize the first avatar as selected
+            avatars[0].classList.add('selected');
+        });
+    </script>
+</body>
+</html>

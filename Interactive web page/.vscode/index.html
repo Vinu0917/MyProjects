@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset ="UTF-8">
+  <meta name="width=device-width, intial-scale = 1.0">
+  <title>Moock Practical</title>
+  <link rel="stylesheet" href="styles.css"></link>
+</head>
+<body>
+  <main class="container">
+    <div class="student-info">
+      <p><em>Student Full Name: Vinuji Jayandee Balasooriya<br>Student ID:w2120101<br>Module Name: Web Design and Development<br></em></p>
+    </div>
+    <section class="input-section">
+      <label for="realName">Your Name</label>
+      <input type="text" id="realName" placeholder="Enter your real name:">
+      <label for="duckNickname">Duck Nickname</label>
+      <input type="text" id="duckNickname" placeholder="Enter duck nickname">
+      <span id="nicknameFeedback">Nickname must be 4+ characters, no spaces, and not the same as your real name</span>
+      <button id="generateNickname">Generate Funny Name</button>
+      <div class="duck-thumbnails">
+        <img src="duck1.jpg" class="duck-thumb" id="duck1" alt="duck1">
+        <img src="duck2.jpg" class="duck-thumb" id="duck2" alt="duck2">
+        <img src="duck3.jpg" class="duck-thumb" id="duck3" alt="duck3">
+      </div>
+      <button id="confirmSelection">Confirm</button>
+     </section>
+     <section class="summary-card">
+      <h1>Summary card</h1>
+      <div class="selected-duck-container">
+        <img id="selectedDuck" class="selected-duck" src="duck.jpg" alt="Selected Duck">
+      </div>
+      <input type="text" id="finalNickname" placeholder="combined name" alt="finalNickname" readonly>
+    </section>
+  </main>
+  <script src="mockscript.js"></script>
+</body>
+</html>
