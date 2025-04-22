@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HireLens | AI-Powered CV & Job Match</title>
+  <meta name="description" content="Match your CV to job descriptions with AI-powered analysis">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/main.js"></script>
+  <script src="js/upload.js"></script>
+  <script src="js/results.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="header-content">
+        <div class="logo">
+          <i class="fas fa-search-dollar logo-icon"></i>
+          <h1>HireLens</h1>
+        </div>
+        <nav class="nav">
+          <ul>
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="#how-it-works">How It Works</a></li>
+            <li><a href="#about">About</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h2>Match Your CV to the Perfect Job</h2>
+        <p>AI-powered analysis to help you land your dream job</p>
+      </div>
+    </section>
+
+    <section class="upload-section" id="upload-section">
+      <div class="container">
+        <div class="card">
+          <h3>Upload Your Documents</h3>
+          <form id="upload-form">
+            <div class="upload-area">
+              <h4>Your CV/Resume</h4>
+              <div class="file-drop" id="cv-drop">
+                <i class="fas fa-file-upload"></i>
+                <p>Drag & drop your CV here or <span class="browse-btn">browse</span></p>
+                <input type="file" id="cv-file" accept=".pdf,.doc,.docx" hidden>
+                <p class="file-name" id="cv-file-name"></p>
+              </div>
+            </div>
+
+            <div class="upload-area">
+              <h4>Job Description</h4>
+              <div class="tabs">
+                <button type="button" class="tab-btn active" data-tab="file">Upload File</button>
+                <button type="button" class="tab-btn" data-tab="text">Paste Text</button>
+              </div>
+              
+              <div class="tab-content active" id="file-tab">
+                <div class="file-drop" id="job-drop">
+                  <i class="fas fa-file-upload"></i>
+                  <p>Drag & drop job description here or <span class="browse-btn">browse</span></p>
+                  <input type="file" id="job-file" accept=".pdf,.doc,.docx,.txt" hidden>
+                  <p class="file-name" id="job-file-name"></p>
+                </div>
+              </div>
+              
+              <div class="tab-content" id="text-tab">
+                <textarea id="job-text" placeholder="Paste the job description here..."></textarea>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary" id="analyze-btn">
+              <span class="btn-text">Analyze My CV</span>
+              <span class="spinner hidden"></span>
+            </button>
+          </form>
+        </div>
+
+        <div class="features">
+          <div class="feature">
+            <i class="fas fa-chart-pie"></i>
+            <h4>AI-Powered Match</h4>
+            <p>Get a detailed match score between your CV and the job description.</p>
+          </div>
+          <div class="feature">
+            <i class="fas fa-robot"></i>
+            <h4>ATS Simulation</h4>
+            <p>See how your CV performs against Applicant Tracking Systems.</p>
+          </div>
+          <div class="feature">
+            <i class="fas fa-bolt"></i>
+            <h4>Instant Improvements</h4>
+            <p>Get AI-powered suggestions to improve your CV on the spot.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="results-section hidden" id="results-section">
+      <div class="container">
+        <div class="card">
+          <div class="card-header">
+            <h3>Your CV Analysis Results</h3>
+            <button class="btn btn-text" id="back-btn"><i class="fas fa-arrow-left"></i> Start Over</button>
+          </div>
+          
+          <div class="score-overview">
+            <div class="score-circle">
+              <svg viewBox="0 0 36 36" class="score-chart">
+                <path class="score-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"></path>
+                <path class="score-fill" id="score-fill" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"></path>
+              </svg>
+              <div class="score-text">
+                <span id="score-value">0</span>%
+              </div>
+            </div>
+            <div class="score-details">
+              <h4>Job Match Score</h4>
+              <p id="score-message">Analyzing your CV match...</p>
+            </div>
+          </div>
+          
+          <div class="tabs-container">
+            <div class="tabs">
+              <button type="button" class="tab-btn active" data-result-tab="overview">Overview</button>
+              <button type="button" class="tab-btn" data-result-tab="skills">Skills Gap</button>
+              <button type="button" class="tab-btn" data-result-tab="ats">ATS Check</button>
+              <button type="button" class="tab-btn" data-result-tab="improve">Improvements</button>
+            </div>
+            
+            <div class="tab-content active" id="overview-tab">
+              <div class="skills-grid">
+                <div class="skills-column">
+                  <h4>Matching Skills</h4>
+                  <ul class="skills-list" id="matching-skills"></ul>
+                </div>
+                <div class="skills-column">
+                  <h4>Missing Skills</h4>
+                  <ul class="skills-list" id="missing-skills"></ul>
+                </div>
+              </div>
+              
+              <div class="buzzwords">
+                <h4>Overused Buzzwords</h4>
+                <div class="tags" id="buzzwords-list"></div>
+              </div>
+              
+              <div class="next-steps">
+                <h4>Next Steps</h4>
+                <p>Explore the tabs above to see detailed analysis and suggestions for improving your CV.</p>
+              </div>
+            </div>
+            
+            <div class="tab-content" id="skills-tab">
+              <h4>Skills Gap Analysis</h4>
+              <p>We've identified key skills mentioned in the job description that are missing from your CV.</p>
+              
+              <div class="skills-grid">
+                <div class="skills-column">
+                  <h5>Missing Skills</h5>
+                  <ul class="detailed-list" id="detailed-missing-skills"></ul>
+                </div>
+                <div class="skills-column">
+                  <h5>Recommended Courses</h5>
+                  <div class="courses-list" id="courses-list"></div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="tab-content" id="ats-tab">
+              <h4>ATS Compatibility Check</h4>
+              <p>Applicant Tracking Systems (ATS) are used by 75% of employers to scan and filter resumes.</p>
+              
+              <div class="alert alert-warning">
+                <i class="fas fa-exclamation-triangle"></i>
+                <p id="ats-issues-count">Checking for ATS issues...</p>
+              </div>
+              
+              <div class="ats-issues" id="ats-issues"></div>
+              
+              <div class="ats-tips">
+                <h5>How to Fix ATS Issues</h5>
+                <ul class="tips-list">
+                  <li><i class="fas fa-check"></i> Use standard section headings</li>
+                  <li><i class="fas fa-check"></i> Avoid tables, headers/footers, and text boxes</li>
+                  <li><i class="fas fa-check"></i> Use a clean, simple format with clear section breaks</li>
+                  <li><i class="fas fa-check"></i> Include complete dates for all experiences</li>
+                  <li><i class="fas fa-check"></i> Save your CV as a standard .docx or .pdf file</li>
+                </ul>
+              </div>
+            </div>
+            
+            <div class="tab-content" id="improve-tab">
+              <h4>Improvement Suggestions</h4>
+              <p>Our AI has analyzed your CV and suggests the following improvements:</p>
+              
+              <div class="suggestions" id="suggestions-list"></div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="card download-card">
+          <h4>Download Your Analysis</h4>
+          <p>Save your analysis as a PDF to reference later or share with others.</p>
+          <button class="btn btn-primary" id="download-btn">Download PDF Report</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="how-it-works" id="how-it-works">
+      <div class="container">
+        <h2>How It Works</h2>
+        <div class="steps">
+          <div class="step">
+            <div class="step-number">1</div>
+            <h3>Upload Your CV</h3>
+            <p>Upload your resume/CV in PDF or Word format.</p>
+          </div>
+          <div class="step">
+            <div class="step-number">2</div>
+            <h3>Add Job Description</h3>
+            <p>Upload or paste the job description you're interested in.</p>
+          </div>
+          <div class="step">
+            <div class="step-number">3</div>
+            <h3>Get Analysis</h3>
+            <p>Receive detailed feedback and actionable improvements.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <i class="fas fa-search-dollar logo-icon"></i>
+          <h2>HireLens</h2>
+        </div>
+        <p>&copy; 2023 HireLens. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/upload.js"></script>
+  <script src="js/results.js"></script>
+</body>
+</html>
