@@ -10,37 +10,51 @@ document.addEventListener('DOMContentLoaded', function() {
     const jobDropArea = document.getElementById('job-drop');
     const jobFileName = document.getElementById('job-file-name');
     
+    // Remove any existing click listeners to prevent multiple triggers
+    const newCvDropArea = cvDropArea.cloneNode(true);
+    cvDropArea.parentNode.replaceChild(newCvDropArea, cvDropArea);
+    
+    const newJobDropArea = jobDropArea.cloneNode(true);
+    jobDropArea.parentNode.replaceChild(newJobDropArea, jobDropArea);
+    
+    // Reassign the variables to the new elements
+    const updatedCvDropArea = document.getElementById('cv-drop');
+    const updatedJobDropArea = document.getElementById('job-drop');
+    
     // CV file upload
-    if (cvDropArea && cvFileInput) {
-      cvDropArea.addEventListener('click', function() {
-        cvFileInput.click();
-      });
+    if (updatedCvDropArea && cvFileInput) {
+      // Add direct click event to the drop area
+      updatedCvDropArea.addEventListener('click', function() {
+        cvFileInput.click(); // Trigger file input click
+      }, { once: true }); // Use once option to ensure it only triggers once per click
       
       cvFileInput.addEventListener('change', function() {
         if (this.files.length > 0) {
           cvFileName.textContent = this.files[0].name;
-          cvDropArea.classList.add('has-file');
+          updatedCvDropArea.classList.add('has-file');
         }
       });
       
-      // Drag and drop for CV
-      setupDragAndDrop(cvDropArea, cvFileInput, cvFileName);
+      // Setup drag and drop for CV without click handler
+      setupDragAndDropOnly(updatedCvDropArea, cvFileInput, cvFileName);
     }
     
     // Job file upload
-    if (jobDropArea && jobFileInput) {
-      jobDropArea.addEventListener('click', function() {
-        jobFileInput.click();
-      });
+    if (updatedJobDropArea && jobFileInput) {
+      // Add direct click event to the drop area
+      updatedJobDropArea.addEventListener('click', function() {
+        jobFileInput.click(); // Trigger file input click
+      }, { once: true }); // Use once option to ensure it only triggers once per click
+      
       jobFileInput.addEventListener('change', function() {
         if (this.files.length > 0) {
           jobFileName.textContent = this.files[0].name;
-          jobDropArea.classList.add('has-file');
+          updatedJobDropArea.classList.add('has-file');
         }
       });
       
-      // Drag and drop for job description
-      setupDragAndDrop(jobDropArea, jobFileInput, jobFileName);
+      // Setup drag and drop for job description without click handler
+      setupDragAndDropOnly(updatedJobDropArea, jobFileInput, jobFileName);
     }
     
     // Form submission
@@ -144,8 +158,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// Helper function for drag and drop
-function setupDragAndDrop(dropArea, fileInput, fileNameElement) {
+// Modified helper function for drag and drop only (no click handling)
+function setupDragAndDropOnly(dropArea, fileInput, fileNameElement) {
   ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
     dropArea.addEventListener(eventName, preventDefaults, false);
   });
@@ -171,6 +185,8 @@ function setupDragAndDrop(dropArea, fileInput, fileNameElement) {
     dropArea.classList.remove('highlight');
   }
   
+  // No click handler here - we're handling clicks in the main code
+  
   dropArea.addEventListener('drop', handleDrop, false);
   
   function handleDrop(e) {
@@ -183,6 +199,11 @@ function setupDragAndDrop(dropArea, fileInput, fileNameElement) {
       dropArea.classList.add('has-file');
     }
   }
+}
+
+// Keep the original setupDragAndDrop function for backward compatibility
+function setupDragAndDrop(dropArea, fileInput, fileNameElement) {
+  setupDragAndDropOnly(dropArea, fileInput, fileNameElement);
 }
 
 // Mock results for testing

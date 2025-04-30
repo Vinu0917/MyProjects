@@ -50,23 +50,4 @@ document.addEventListener('DOMContentLoaded', function() {
         alert('PDF download functionality will be implemented with the backend.');
       });
     }
-    
-    // Add drag and drop functionality with proper event handling
-    const dropZone = document.querySelector('.drop-zone');
-    if (dropZone) {
-        // Remove any existing click listeners
-        const fileInput = dropZone.querySelector('input[type="file"]');
-        const oldElement = fileInput.cloneNode(true);
-        fileInput.parentNode.replaceChild(oldElement, fileInput);
-        
-        // Add new click listener to drop zone
-        dropZone.addEventListener('click', function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-            const fileInput = this.querySelector('input[type="file"]');
-            if (fileInput) {
-                fileInput.click();
-            }
-        });
-    }
 });
