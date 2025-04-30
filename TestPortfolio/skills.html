@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills | Tech Portfolio</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/glassmorphism.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Poppins:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+    
+    <!-- Particle Background -->
+    <div id="particles-js"></div>
+    
+    <!-- 3D Background Elements -->
+    <canvas id="webgl-background"></canvas>
+    
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html">YourName<span>.</span></a>
+            </div>
+            <div class="nav-links">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="skills.html" class="active">Skills</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="theme-toggle">
+                <div class="toggle-icon"></div>
+            </div>
+            <div class="hamburger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Transition -->
+    <div class="page-transition"></div>
+    
+    <!-- Skills Section -->
+    <section class="skills">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">My<span class="highlight">Skills</span></h2>
+                <div class="section-line"></div>
+            </div>
+            
+            <div class="skills-intro">
+                <p>I've developed a diverse set of technical and soft skills that enable me to create engaging digital experiences. Here's what I bring to the table:</p>
+            </div>
+            
+            <div class="skills-grid">
+                <div class="skill-card glass-card fade-in">
+                    <div class="skill-icon">
+                        <img src="assets/icons/html5.svg" alt="HTML5">
+                    </div>
+                    <h3>HTML</h3>
+                    <p>Structuring web pages with semantic HTML elements.</p>
+                    <div class="skill-level">
+                        <div class="skill-progress" data-level="90%"></div>
+                    </div>
+                </div>
+                
+                <div class="skill-card glass-card fade-in">
+                    <div class="skill-icon">
+                        <img src="assets/icons/css3.svg" alt="CSS3">
+                    </div>
+                    <h3>CSS</h3>
+                    <p>Styling web pages with modern CSS techniques.</p>
+                    <div class="skill-level">
+                        <div class="skill-progress" data-level="85%"></div>
+                    </div>
+                </div>
+                
+                <div class="skill-card glass-card fade-in">
+                    <div class="skill-icon">
+                        <img src="assets/icons/javascript.svg" alt="JavaScript">
+                    </div>
+                    <h3>JavaScript</h3>
+                    <p>Building interactive and dynamic web applications.</p>
+                    <div class="skill-level">
+                        <div class="skill-progress" data-level="80%"></div>
+                    </div>
+                </div>
+                
+                <div class="skill-card glass-card fade-in">
+                    <div class="skill-icon">
+                        <img src="assets/icons/python.svg" alt="Python">
+                    </div>
+                    <h3>Python</h3>
+                    <p>Writing clean and efficient code for various applications.</p>
+                    <div class="skill-level">
+                        <div class="skill-progress" data-level="75%"></div>
+                    </div>
+                </div>
+                
+                <div class="skill-card glass-card fade-in">
+                    <div class="skill-icon">
+                        <img src="assets/icons/ux-ui.svg" alt="UI/UX Design">
+                    </div>
+                    <h3>UI/UX Design</h3>
+                    <p>Creating user-friendly and engaging designs.</p>
+                    <div class="skill-level">
+                        <div class="skill-progress" data-level="85%"></div>
+                    </div>
+                </div>
+                
+                <div class="skill-card glass-card fade-in">
+                    <div class="skill-icon">
+                        <img src="assets/icons/github.svg" alt="Git & GitHub">
+                    </div>
+                    <h3>Git & GitHub</h3>
+                    <p>Version control and collaboration using Git.</p>
+                    <div class="skill-level">
+                        <div class="skill-progress" data-level="80%"></div>
+                    </div>
+                </div>
+                
+                <div class="skill-card glass-card fade-in">
+                    <div class="skill-icon">
+                        <img src="assets/icons/communication.svg" alt="Communication">
+                    </div>
+                    <h3>Communication</h3>
+                    <p>Effectively expressing ideas and collaborating with teams.</p>
+                    <div class="skill-level">
+                        <div class="skill-progress" data-level="90%"></div>
+                    </div>
+                </div>
+                
+                <div class="skill-card glass-card fade-in">
+                    <div class="skill-icon">
+                        <img src="assets/icons/teamwork.svg" alt="Teamwork">
+                    </div>
+                    <h3>Teamwork</h3>
+                    <p>Working efficiently with diverse teams to achieve goals.</p>
+                    <div class="skill-level">
+                        <div class="skill-progress" data-level="95%"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tools-section">
+                <h3>Tools & <span class="highlight">Technologies</span></h3>
+                
+                <div class="tools-grid">
+                    <div class="tool-item glass-card slide-up">
+                        <img src="assets/icons/react.svg" alt="React.js">
+                        <span>React.js</span>
+                    </div>
+                    <div class="tool-item glass-card slide-up">
+                        <img src="assets/icons/sass.svg" alt="Sass">
+                        <span>Sass</span>
+                    </div>
+                    <div class="tool-item glass-card slide-up">
+                        <img src="assets/icons/figma.svg" alt="Figma">
+                        <span>Figma</span>
+                    </div>
+                    <div class="tool-item glass-card slide-up">
+                        <img src="assets/icons/vscode.svg" alt="VS Code">
+                        <span>VS Code</span>
+                    </div>
+                    <div class="tool-item glass-card slide-up">
+                        <img src="assets/icons/bootstrap.svg" alt="Bootstrap">
+                        <span>Bootstrap</span>
+                    </div>
+                    <div class="tool-item glass-card slide-up">
+                        <img src="assets/icons/tailwind.svg" alt="Tailwind CSS">
+                        <span>Tailwind CSS</span>
+                    </div>
+                    <div class="tool-item glass-card slide-up">
+                        <img src="assets/icons/npm.svg" alt="npm">
+                        <span>npm</span>
+                    </div>
+                    <div class="tool-item glass-card slide-up">
+                        <img src="assets/icons/webpack.svg" alt="Webpack">
+                        <span>Webpack</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Scripts -->
+    <script src="vendor/gsap/gsap.min.js"></script>
+    <script src="vendor/three.js/three.min.js"></script>
+    <script src="vendor/particles.js/particles.min.js"></script>
+    <script src="vendor/barba.js/barba.umd.js"></script>
+    <script src="js/cursor.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/particles.js"></script>
+    <script src="js/three-background.js"></script>
+    <script src="js/page-transitions.js"></script>
+    <script src="js/skills-animation.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
