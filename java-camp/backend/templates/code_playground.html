@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Java Code Runner</title>
+    <link rel="stylesheet" href="/static/runner.css" />
+</head>
+<body>
+    <h1>Java Code Runner</h1>
+    <textarea id="codeInput" placeholder="Write your Java code here...">public class Main {
+    public static void main(String[] args) {
+        System.out.println("Hello, Happy Coding!");
+    }
+}</textarea>
+    <button onclick="runCode()">Run Code</button>
+
+    <h2>Output:</h2>
+    <pre id="output"></pre>
+    <script src="{{ url_for('static', filename='runner.js') }}"></script>
+</body>
+</html>

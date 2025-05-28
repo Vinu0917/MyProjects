@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Programming Documentation</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav id="navbar">
+        <header><i class="fab fa-java"></i> Java Documentation</header>
+        <ul>
+            <li><a class="nav-link" href="#Introduction"><i class="fas fa-info-circle"></i> Introduction</a></li>
+            <li><a class="nav-link" href="#Getting_Started"><i class="fas fa-play-circle"></i> Getting Started</a></li>
+            <li><a class="nav-link" href="#Basic_Syntax"><i class="fas fa-code"></i> Basic Syntax</a></li>
+            <li><a class="nav-link" href="#Object_Oriented_Programming"><i class="fas fa-cube"></i> Object Oriented Programming</a></li>
+            <li><a class="nav-link" href="#Exception_Handling"><i class="fas fa-exclamation-triangle"></i> Exception Handling</a></li>
+            <li><a class="nav-link" href="#Collections_Framework"><i class="fas fa-layer-group"></i> Collections Framework</a></li>
+            <li><a class="nav-link" href="#Multithreading"><i class="fas fa-network-wired"></i> Multithreading</a></li>
+            <li><a class="nav-link" href="#File_IO"><i class="fas fa-file-alt"></i> File IO</a></li>
+            <li><a class="nav-link" href="#Best_Practices"><i class="fas fa-check-circle"></i> Best Practices</a></li>
+            <li><a class="nav-link" href="#Advanced_Topics"><i class="fas fa-graduation-cap"></i> Advanced Topics</a></li>
+        </ul>
+    </nav>
+
+    <main id="main-doc">
+        <section class="main-section" id="Introduction">
+            <header><i class="fas fa-info-circle"></i> Introduction</header>
+            <p>Java is a powerful, versatile, and platform-independent programming language designed to build robust applications.</p>
+            <p>Created by James Gosling at Sun Microsystems in 1995, Java follows the principle of "Write Once, Run Anywhere" (WORA).</p>
+            <p>Key features of Java include:</p>
+            <ul>
+                <li>Object-Oriented Programming</li>
+                <li>Platform Independence</li>
+                <li>Automatic Memory Management</li>
+                <li>Rich Standard Library</li>
+                <li>Security Features</li>
+            </ul>
+            <code>// Your first Java program
+public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, Java!");
+    }
+}</code>
+        </section>
+
+        <section class="main-section" id="Getting_Started">
+            <header><i class="fas fa-play-circle"></i> Getting Started</header>
+            <p>To begin Java development, you need to:</p>
+            <p>1. Download and install the Java Development Kit (JDK)</p>
+            <p>2. Set up environment variables (JAVA_HOME)</p>
+            <p>3. Choose an Integrated Development Environment (IDE)</p>
+            <code>// Check Java version
+java -version
+
+// Compile a Java program
+javac HelloWorld.java
+
+// Run a Java program
+java HelloWorld</code>
+        </section>
+
+        <section class="main-section" id="Basic_Syntax">
+            <header><i class="fas fa-code"></i> Basic Syntax</header>
+            <p>Java syntax is clear and consistent, following C/C++ style conventions.</p>
+            <p>Understanding basic syntax is crucial for writing Java programs:</p>
+            <ul>
+                <li>Case sensitivity</li>
+                <li>Class names start with uppercase</li>
+                <li>Method names start with lowercase</li>
+                <li>Source file name must match class name</li>
+            </ul>
+            <code>public class Calculator {
+    private int result;
+    
+    public int add(int a, int b) {
+        result = a + b;
+        return result;
+    }
+}</code>
+        </section>
+
+        <section class="main-section" id="Object_Oriented_Programming">
+            <header><i class="fas fa-cube"></i> Object Oriented Programming</header>
+            <p>Java is fundamentally object-oriented, built around the concept of objects containing data and code.</p>
+            <p>Core OOP concepts in Java include:</p>
+            <ul>
+                <li>Encapsulation</li>
+                <li>Inheritance</li>
+                <li>Polymorphism</li>
+                <li>Abstraction</li>
+            </ul>
+            <code>// Example of inheritance
+public class Animal {
+    protected String name;
+    
+    public void makeSound() {
+        System.out.println("Some sound");
+    }
+}
+
+public class Dog extends Animal {
+    @Override
+    public void makeSound() {
+        System.out.println("Woof!");
+    }
+}</code>
+        </section>
+
+        <section class="main-section" id="Exception_Handling">
+            <header><i class="fas fa-exclamation-triangle"></i> Exception Handling</header>
+            <p>Java provides robust exception handling mechanisms to deal with runtime errors.</p>
+            <p>Exception handling involves try, catch, finally, throw, and throws keywords.</p>
+            <code>public class ExceptionExample {
+    public static void main(String[] args) {
+        try {
+            int result = divide(10, 0);
+        } catch (ArithmeticException e) {
+            System.out.println("Cannot divide by zero!");
+        } finally {
+            System.out.println("Cleanup code");
+        }
+    }
+    
+    public static int divide(int a, int b) {
+        return a / b;
+    }
+}</code>
+        </section>
+
+        <section class="main-section" id="Collections_Framework">
+            <header><i class="fas fa-layer-group"></i> Collections Framework</header>
+            <p>Java Collections Framework provides a unified architecture for storing and manipulating groups of objects.</p>
+            <p>Main interfaces in the collections framework:</p>
+            <ul>
+                <li>List - Ordered collection</li>
+                <li>Set - Unique elements</li>
+                <li>Queue - FIFO structure</li>
+                <li>Map - Key-value pairs</li>
+            </ul>
+            <code>// Collections examples
+List<String> list = new ArrayList<>();
+Set<Integer> set = new HashSet<>();
+Map<String, Integer> map = new HashMap<>();
+
+list.add("Java");
+set.add(42);
+map.put("key", 100);</code>
+        </section>
+
+        <section class="main-section" id="Multithreading">
+            <header><i class="fas fa-network-wired"></i> Multithreading</header>
+            <p>Java provides built-in support for multithreaded programming.</p>
+            <p>Threads allow concurrent execution of two or more parts of a program.</p>
+            <code>class MyThread extends Thread {
+    public void run() {
+        System.out.println("Thread is running");
+    }
+}
+
+// Using Runnable interface
+class MyRunnable implements Runnable {
+    public void run() {
+        System.out.println("Runnable is running");
+    }
+}</code>
+        </section>
+
+        <section class="main-section" id="File_IO">
+            <header><i class="fas fa-file-alt"></i> File IO</header>
+            <p>Java provides comprehensive support for file input and output operations.</p>
+            <p>Common I/O classes include FileInputStream, FileOutputStream, FileReader, and FileWriter.</p>
+            <code>// Reading from a file
+try (BufferedReader reader = new BufferedReader(new FileReader("file.txt"))) {
+    String line;
+    while ((line = reader.readLine()) != null) {
+        System.out.println(line);
+    }
+} catch (IOException e) {
+    e.printStackTrace();
+}</code>
+        </section>
+
+        <section class="main-section" id="Best_Practices">
+            <header><i class="fas fa-check-circle"></i> Best Practices</header>
+            <p>Following best practices ensures maintainable and efficient Java code:</p>
+            <ul>
+                <li>Follow naming conventions</li>
+                <li>Write clear documentation</li>
+                <li>Handle exceptions properly</li>
+                <li>Use appropriate access modifiers</li>
+                <li>Implement proper resource management</li>
+            </ul>
+            <code>// Example of good practices
+public class UserService {
+    private final UserRepository userRepository;
+    
+    public UserService(UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
+    
+    public User findUserById(Long id) throws UserNotFoundException {
+        return userRepository.findById(id)
+            .orElseThrow(() -> new UserNotFoundException(id));
+    }
+}</code>
+        </section>
+
+        <section class="main-section" id="Advanced_Topics">
+            <header><i class="fas fa-graduation-cap"></i> Advanced Topics</header>
+            <p>Advanced Java concepts for building sophisticated applications:</p>
+            <ul>
+                <li>Generics</li>
+                <li>Lambda Expressions</li>
+                <li>Stream API</li>
+                <li>Optional Class</li>
+                <li>Concurrent Collections</li>
+            </ul>
+            <code>// Advanced Java features
+// Generic class
+public class Box<T> {
+    private T content;
+    
+    public void set(T content) {
+        this.content = content;
+    }
+    
+    public T get() {
+        return content;
+    }
+}
+
+// Lambda and Stream API
+List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
+int sum = numbers.stream()
+    .filter(n -> n % 2 == 0)
+    .mapToInt(Integer::intValue)
+    .sum();</code>
+        </section>
+    </main>
+</body>
+</html>

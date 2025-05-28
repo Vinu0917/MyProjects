@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Master Java from scratch with Java-Camp! Learn, code, and create through an interactive and beginner-friendly platform.">
+  <meta name="keywords" content="Java, Learn Java, Java Playground, Java-Camp">
+  <meta name="author" content="Vinuji Balasooriya">
+  <title>Java-Camp</title>
+  <link rel="stylesheet" href="static/css/styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <header>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Learn Java</a></li>
+        <li><a href="#">Code Playground</a></li>
+        <li><a href="#">Quizzes</a></li>
+        <li><a href="#">Projects</a></li>
+        <li><a href="#">Roadmap</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="hero-section">
+    <div class="hero-text">
+        <img src="{{ url_for('static', filename='images/Java-Camp.png') }}" alt="Java Camp Logo" class="logo" />
+      <h2>Welcome to Java-Camp !</h2>
+      <p>Your Journey to Java Mastery Starts Here</p>
+      <p><strong>Build Your Java Skills from Zero to Pro!</strong></p>
+      <p>Whether you're a complete beginner or an experienced coder, Java-Camp is your go-to platform to master Java programming.</p>
+      <a href="#" class="cta-button">Get Started</a>
+    </div>
+    <div class="top-right-buttons">
+      <button class="btn login">Login</button>
+      <button class="btn signup">Sign Up</button>
+    </div>
+    <div class="hero-image">
+        <img src="{{ url_for('static', filename='images/robot.png') }}" alt="Robot with Laptop" />
+    </div>
+  </main>
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-logo">
+        <img src="{{ url_for('static', filename='images/Java-Camp.png') }}" alt="Java-Camp Logo" class="footer-logo-img">
+      </div>
+  
+      <div class="footer-links">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Learn Java</a></li>
+          <li><a href="#">Code Playground</a></li>
+          <li><a href="#">Quizzes</a></li>
+          <li><a href="#">Projects</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+  
+      <div class="footer-social">
+        <h3>Follow Us</h3>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+    </div>
+  
+    <div class="footer-bottom">
+      <p>© 2025 Java-Camp. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
+

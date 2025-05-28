@@ -1,0 +1,227 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+    color: #333;
+    display: flex;
+    min-height: 100vh;
+}
+
+#navbar {
+    position: fixed;
+    min-width: 290px;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 100%;
+    border-right: 2px solid #ccc;
+    background-color: #f8f9fa;
+}
+
+#navbar header {
+    padding: 20px;
+    text-align: center;
+    font-size: 1.8em;
+    color: #2c3e50;
+    border-bottom: 1px solid #ddd;
+}
+
+#navbar ul {
+    list-style: none;
+    padding: 0;
+    overflow-y: auto;
+    height: calc(100% - 80px);
+}
+
+#navbar li {
+    border-bottom: 1px solid #eee;
+}
+
+.nav-link {
+    display: block;
+    padding: 15px 20px;
+    color: #333;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.nav-link:hover {
+    background-color: #e9ecef;
+    color: #000;
+}
+
+#main-doc {
+    margin-left: 310px;
+    padding: 20px;
+    max-width: 1000px;
+}
+
+.main-section {
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.main-section header {
+    font-size: 1.8em;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #eee;
+}
+
+.main-section p {
+    margin: 15px 0;
+    color: #444;
+}
+
+.main-section ul {
+    margin: 15px 0;
+    padding-left: 40px;
+}
+
+.main-section li {
+    margin: 10px 0;
+    color: #555;
+}
+
+code {
+    display: block;
+    padding: 15px;
+    margin: 15px 0;
+    background-color: #f8f9fa;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    font-family: 'Courier New', Courier, monospace;
+    white-space: pre;
+    overflow-x: auto;
+}
+
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+    }
+
+    #navbar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        border-right: none;
+        border-bottom: 2px solid #ccc;
+    }
+
+    #navbar ul {
+        height: auto;
+        border-top: 1px solid #eee;
+    }
+
+    #main-doc {
+        margin-left: 0;
+        padding: 15px;
+    }
+}
+
+
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2c3e50;
+    --background-color: #ffffff;
+    --text-color: #333333;
+    --code-bg-color: #f4f4f4;
+    --border-color: #e0e0e0;
+    --highlight-color: #f1c40f;
+    --info-box-color: #e8f4f8;
+    --note-color: #fff8e1;
+    --table-header-bg: #f2f2f2;
+    --table-border: #ddd;
+    --navbar-bg: #f8f9fa;
+}
+
+.dark-theme {
+    --primary-color: #4fa3d1;
+    --secondary-color: #ecf0f1;
+    --background-color: #1a1a1a;
+    --text-color: #f0f0f0;
+    --code-bg-color: #2d2d2d;
+    --border-color: #444444;
+    --highlight-color: #f39c12;
+    --info-box-color: #2c3e50;
+    --note-color: #3c3c3c;
+    --table-header-bg: #2c2c2c;
+    --table-border: #444;
+    --navbar-bg: #252525;
+}
+
+/* Make sure these elements use the CSS variables */
+body {
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+#navbar {
+    background-color: var(--navbar-bg);
+    border-color: var(--border-color);
+}
+
+code {
+    background-color: var(--code-bg-color);
+    color: var(--text-color);
+}
+
+.info-box {
+    background-color: var(--info-box-color);
+    border-color: var(--primary-color);
+}
+
+.note {
+    background-color: var(--note-color);
+}
+
+table {
+    border-color: var(--table-border);
+}
+
+th, td {
+    border-color: var(--table-border);
+}
+
+thead tr {
+    background-color: var(--table-header-bg);
+}
+
+
+/* Add to your existing CSS */
+
+/* Icon styling */
+.fab, .fas {
+    margin-right: 10px;
+    color: #2c3e50;
+}
+
+#navbar .fab.fa-java {
+    font-size: 1.5em;
+    color: #f89820;
+    margin-right: 15px;
+}
+
+#navbar .nav-link i {
+    width: 20px;
+    text-align: center;
+}
+
+.main-section header i {
+    color: #f89820;
+}
+
+/* Hover effects for nav links */
+.nav-link:hover i {
+    transform: scale(1.1);
+    transition: transform 0.2s ease;
+}
