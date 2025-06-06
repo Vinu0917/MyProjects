@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Mia | Wander With Mia</title>
+    <link rel="stylesheet" href="about.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for social icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">Wander With Mia</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html" class="active">About</a></li>
+            <li><a href="destinations.html">Destinations</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+
+    <!-- About Hero Section -->
+    <section class="about-hero">
+        <div class="container">
+            <h1>About Mia</h1>
+        </div>
+    </section>
+
+    <!-- About Content Section -->
+    <section class="about-content">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-text">
+                    <h2>My Journey</h2>
+                    <p>Born and raised in a small coastal town, I've always been fascinated by the horizon and what lies beyond it. My passion for travel began when I was just 16, during a family trip to Italy that opened my eyes to the beauty of different cultures, cuisines, and landscapes.</p>
+                    
+                    <p>After graduating with a degree in Photography and Digital Media, I spent five years working in corporate marketing. While the job paid well, I found myself living for those precious vacation days when I could explore new destinations. In 2020, I made the life-changing decision to leave my 9-to-5 behind and pursue my passion for travel storytelling full-time.</p>
+                    
+                    <h2>My Travel Philosophy</h2>
+                    <p>I believe travel is about more than just visiting famous landmarks or checking countries off a list. It's about immersing yourself in different cultures, connecting with locals, and finding those hidden gems that don't make it into guidebooks. Whether I'm camping under the stars in Morocco's Sahara Desert or navigating the bustling streets of Tokyo, I seek authentic experiences that challenge my perspective.</p>
+                    
+                    <h2>Favorite Destinations</h2>
+                    <p>While every place I visit holds a special place in my heart, a few destinations have truly changed me. The serene beauty of Iceland's landscapes taught me to appreciate silence. The warmth and resilience of the Vietnamese people showed me the power of community. And the ancient temples of Kyoto reminded me how important it is to honor tradition in our fast-paced modern world.</p>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1527631746610-bca00a040d60?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80" alt="Mia traveling">
+                    <div class="quote">
+                        <p>"The world is a book, and those who do not travel read only one page."</p>
+                        <cite>— Saint Augustine</cite>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="social-icons">
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="#" aria-label="Blog"><i class="fas fa-blog"></i></a>
+        </div>
+        <p class="copyright">&copy; 2025 Wander With Mia. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Simple mobile navigation toggle
+        document.querySelector('.burger').addEventListener('click', () => {
+            document.querySelector('.nav-links').classList.toggle('nav-active');
+            document.querySelector('.burger').classList.toggle('toggle');
+        });
+    </script>
+</body>
+</html>

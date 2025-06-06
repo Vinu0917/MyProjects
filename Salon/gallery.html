@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - LushLocks Studio</title>
+    <link rel="stylesheet" href="gallery.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="brand">LushLocks Studio</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="gallery.html" class="active">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <h1>Our Gallery</h1>
+            <p>Explore our portfolio of beautiful transformations and salon experiences</p>
+        </div>
+    </header>
+
+    <!-- Gallery Categories -->
+    <section class="gallery-categories">
+        <div class="container">
+            <div class="category-tabs">
+                <button class="category-tab active" data-category="all">All</button>
+                <button class="category-tab" data-category="hair">Hair Styling</button>
+                <button class="category-tab" data-category="facial">Facials</button>
+                <button class="category-tab" data-category="bridal">Bridal</button>
+                <button class="category-tab" data-category="nails">Nail Art</button>
+                <button class="category-tab" data-category="interior">Salon Interior</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Grid -->
+    <section class="gallery-section">
+        <div class="container">
+            <div class="gallery-grid">
+                <!-- Hair Styling -->
+                <div class="gallery-item" data-category="hair">
+                    <div class="gallery-image">
+                        <img src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Hair Styling 1">
+                        <div class="overlay">
+                            <div class="overlay-content">
+                                <h3>Elegant Waves</h3>
+                                <p>Professional styling for special occasions</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="hair">
+                    <div class="gallery-image">
+                        <img src="https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Hair Styling 2">
+                        <div class="overlay">
+                            <div class="overlay-content">
+                                <h3>Color Transformation</h3>
+                                <p>Vibrant hair coloring techniques</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Facials -->
+                <div class="gallery-item" data-category="facial">
+                    <div class="gallery-image">
+                        <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Facial Treatment 1">
+                        <div class="overlay">
+                            <div class="overlay-content">
+                                <h3>Rejuvenating Facial</h3>
+                                <p>Revitalize your skin with our premium treatments</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="facial">
+                    <div class="gallery-image">
+                        <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Facial Treatment 2">
+                        <div class="overlay">
+                            <div class="overlay-content">
+                                <h3>Hydrating Mask</h3>
+                                <p>Deep hydration for glowing skin</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bridal -->
+                <div class="gallery-item" data-category="bridal">
+                    <div class="gallery-image">
+                        <img src="https://www.rachellambertphotography.co.uk/wp-content/uploads/2024/08/rachel_lambert_photography_wedding_josephine_robert_king_arthur_gower_0046.jpg" alt="Bridal Look 1">
+                        <div class="overlay">
+                            <div class="overlay-content">
+                                <h3>Bridal Elegance</h3>
+                                <p>Complete bridal styling packages</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="bridal">
+                    <div class="gallery-image">
+                        <img src="https://img.freepik.com/premium-photo/bride-poses-photo-front-metal-gate_872233-31.jpg" alt="Bridal Look 2">
+                        <div class="overlay">
+                            <div class="overlay-content">
+                                <h3>Wedding Day Perfection</h3>
+                                <p>Hair and makeup for your special day</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Nail Art -->
+                <div class="gallery-item" data-category="nails">
+                    <div class="gallery-image">
+                        <img src="https://t3.ftcdn.net/jpg/03/97/00/46/360_F_397004694_dA9u8WMzFLGXnkiS4I1BzRo7ph9En3sG.jpg" alt="Nail Art 1">
+                        <div class="overlay">
+                            <div class="overlay-content">
+                                <h3>Creative Nail Designs</h3>
+                                <p>Express your style with custom nail art</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="nails">
+                    <div class="gallery-image">
+                        <img src="https://st2.depositphotos.com/4368651/6753/i/450/depositphotos_67531037-stock-photo-floral-design-on-nails.jpg" alt="Nail Art 2">
+                        <div class="overlay">
+                            <div class="overlay-content">
+                                <h3>Creative Nail Designs</h3>
+                                <p>Express your style with custom nail art</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="nails">
+                    <div class="gallery-image">
+                        <img src="https://images.unsplash.com/photo-1519014816548-bf5fe059798b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Nail Art 2">
+                        <div class="overlay">
+                            <div class="overlay-content">
+                                <h3>Elegant Manicure</h3>
+                                <p>Classic and sophisticated nail treatments</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Salon Interior -->
+                <div class="gallery-item" data-category="interior">
+                    <div class="gallery-image">
+                        <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Salon Interior 1">
+                        <div class="overlay">
+                            <div class="overlay-content">
+                                <h3>Our Elegant Space</h3>
+                                <p>Designed for comfort and luxury</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>LushLocks Studio</h3>
+                    <p>Where Beauty Meets Elegance</p>
+                </div>
+                <div class="social-links">
+                    <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 LushLocks Studio. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.hamburger').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('show');
+        });
+
+        // Gallery filtering
+        const categoryTabs = document.querySelectorAll('.category-tab');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+
+        categoryTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Update active tab
+                categoryTabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+
+                // Filter gallery items
+                const category = tab.getAttribute('data-category');
+                
+                galleryItems.forEach(item => {
+                    if (category === 'all' || item.getAttribute('data-category') === category) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vinuji Jayandee Balasooriya - CV</title>
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background-color: #121212;
+            color: #eeeeee;
+            line-height: 1.6;
+            font-size: 16px;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Typography */
+        h1, h2, h3 {
+            font-weight: 600;
+            margin-bottom: 0.5em;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            color: #ffffff;
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            color: #ffffff;
+        }
+        
+        h3 {
+            font-size: 1.2rem;
+            color: #dddddd;
+        }
+        
+        p {
+            margin-bottom: 1rem;
+        }
+        
+        ul {
+            list-style-position: inside;
+            margin-bottom: 1rem;
+        }
+        
+        /* Links */
+        a {
+            color: #1e90ff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        a:hover {
+            color: #64b5f6;
+            text-decoration: underline;
+        }
+        
+        /* Header */
+        .header {
+            padding: 60px 0 30px;
+            text-align: center;
+            border-bottom: 1px solid #333333;
+            position: relative;
+        }
+        
+        .job-title {
+            color: #1e90ff;
+            font-weight: 400;
+            margin-top: 0.5rem;
+        }
+        
+        /* Download PDF Button */
+        .download-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: #1e90ff;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+        }
+        
+        .download-btn:hover {
+            background-color: #0078e7;
+        }
+        
+        /* Main Content */
+        .main-content {
+            padding: 40px 0;
+        }
+        
+        /* Sections */
+        .section {
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #333333;
+        }
+        
+        .section:last-child {
+            border-bottom: none;
+        }
+        
+        .section-title {
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 3px;
+            background-color: #1e90ff;
+        }
+        
+        /* Personal Info */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .info-item {
+            margin-bottom: 15px;
+        }
+        
+        .info-label {
+            margin-bottom: 5px;
+            color: #1e90ff;
+        }
+        
+        /* Skills */
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            list-style: none;
+            gap: 10px;
+        }
+        
+        .skill-item {
+            background-color: #1e1e1e;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+        
+        /* Experience */
+        .experience-item, .education-item {
+            margin-bottom: 25px;
+        }
+        
+        .job-position, .degree {
+            color: #ffffff;
+            margin-bottom: 5px;
+        }
+        
+        .company, .institution {
+            color: #1e90ff;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+        
+        .responsibilities {
+            padding-left: 20px;
+            list-style-type: disc;
+        }
+        
+        /* Sample Work Section */
+        .sample-work-link {
+            display: inline-block;
+            background-color: #1e90ff;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 5px;
+            margin-top: 15px;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+        }
+        
+        .sample-work-link:hover {
+            background-color: #0078e7;
+            text-decoration: none;
+        }
+        
+        /* Languages */
+        .languages-list {
+            list-style: none;
+        }
+        
+        .language-item {
+            margin-bottom: 10px;
+        }
+        
+        .language-name {
+            font-weight: 500;
+        }
+        
+        .language-level {
+            color: #aaaaaa;
+            margin-left: 5px;
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: #1a1a1a;
+            padding: 20px 0;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #888888;
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .header {
+                padding: 40px 0 20px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+            
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .section {
+                margin-bottom: 30px;
+                padding-bottom: 20px;
+            }
+            
+            .download-btn {
+                position: relative;
+                top: 0;
+                right: 0;
+                margin-top: 20px;
+                display: block;
+                width: 100%;
+            }
+        }
+        
+        /* Print Styles */
+        @media print {
+            body {
+                background-color: white;
+                color: black;
+                font-size: 12pt;
+            }
+            
+            .container {
+                width: 100%;
+                max-width: 100%;
+                padding: 0;
+            }
+            
+            .download-btn {
+                display: none;
+            }
+            
+            .header {
+                padding: 20px 0;
+                border-bottom-color: #cccccc;
+            }
+            
+            h1, h2 {
+                color: black;
+            }
+            
+            h3 {
+                color: #333333;
+            }
+            
+            .job-title {
+                color: #333333;
+            }
+            
+            .section {
+                page-break-inside: avoid;
+                border-bottom-color: #cccccc;
+            }
+            
+            .section-title::after {
+                background-color: #333333;
+            }
+            
+            .info-label {
+                color: #333333;
+            }
+            
+            .skill-item {
+                background-color: #f0f0f0;
+                color: black;
+                border: 1px solid #cccccc;
+            }
+            
+            .company, .institution {
+                color: #333333;
+            }
+            
+            a {
+                color: #0066cc;
+                text-decoration: underline;
+            }
+            
+            .sample-work-link {
+                background-color: #f0f0f0;
+                color: #0066cc;
+                border: 1px solid #cccccc;
+            }
+            
+            .footer {
+                background-color: white;
+                color: #333333;
+            }
+        }
+    </style>
+</head>
+<body class="dark-theme">
+    <header class="header">
+        <div class="container">
+            <button class="download-btn" onclick="window.print()">Download PDF</button>
+            <h1 class="name">Vinuji Jayandee Balasooriya</h1>
+            <h2 class="job-title">Creative Designer – Social Media</h2>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <section class="personal-info section">
+                <h2 class="section-title">Personal Info</h2>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <h3 class="info-label">Phone</h3>
+                        <p class="info-value">0757240725</p>
+                    </div>
+                    <div class="info-item">
+                        <h3 class="info-label">Email</h3>
+                        <p class="info-value">
+                            <a href="mailto:balasooriya.vinuji@gmail.com" class="info-link">balasooriya.vinuji@gmail.com</a>
+                        </p>
+                    </div>
+                    <div class="info-item">
+                        <h3 class="info-label">GitHub</h3>
+                        <p class="info-value">
+                            <a href="https://github.com/Vinu0917" class="info-link" target="_blank" rel="noopener noreferrer">github.com/Vinu0917</a>
+                        </p>
+                    </div>
+                    <div class="info-item">
+                        <h3 class="info-label">LinkedIn</h3>
+                        <p class="info-value">
+                            <a href="https://www.linkedin.com/in/vinuji-balasooriya-93700b333/" class="info-link" target="_blank" rel="noopener noreferrer">linkedin.com/in/vinuji-balasooriya-93700b333</a>
+                        </p>
+                    </div>
+                    <div class="info-item">
+                        <h3 class="info-label">Portfolio</h3>
+                        <p class="info-value">
+                            <a href="https://portfoliovinuji.netlify.app/" class="info-link" target="_blank" rel="noopener noreferrer">portfoliovinuji.netlify.app</a>
+                        </p>
+                    </div>
+                    <div class="info-item">
+                        <h3 class="info-label">Location</h3>
+                        <p class="info-value">Kesbewa, Sri Lanka</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="professional-summary section">
+                <h2 class="section-title">Professional Summary</h2>
+                <p class="summary-text">
+                    Creative and detail-oriented designer experienced in creating engaging social media posts using Canva Pro with access to Canva Pro features. Basic knowledge of Adobe Photoshop and Illustrator. Completed first year university, currently on vacation and available for part-time work.
+                </p>
+            </section>
+
+            <section class="skills section">
+                <h2 class="section-title">Skills</h2>
+                <ul class="skills-list">
+                    <li class="skill-item">Canva Pro (experienced)</li>
+                    <li class="skill-item">Adobe Photoshop (basic)</li>
+                    <li class="skill-item">Adobe Illustrator (basic)</li>
+                    <li class="skill-item">Social media design</li>
+                    <li class="skill-item">Branding/promotional graphics</li>
+                    <li class="skill-item">Web designing</li>
+                    <li class="skill-item">Attention to detail</li>
+                    <li class="skill-item">Creativity</li>
+                    <li class="skill-item">Time management</li>
+                </ul>
+            </section>
+
+            <section class="experience section">
+                <h2 class="section-title">Experience</h2>
+                <div class="experience-item">
+                    <h3 class="job-position">Graphics Designer</h3>
+                    <p class="company">IET Club Editorial Team, IIT</p>
+                    <ul class="responsibilities">
+                        <li>Designed social media posts and promotional banners using Canva Pro</li>
+                        <li>Maintained brand consistency</li>
+                        <li>Collaborated with editorial team</li>
+                    </ul>
+                </div>
+                <div class="experience-item">
+                    <h3 class="job-position">Entertainment Team Member</h3>
+                    <p class="company">IIT</p>
+                    <ul class="responsibilities">
+                        <li>Created event promotion content for university platforms</li>
+                    </ul>
+                </div>
+            </section>
+            
+            <section class="sample-work section">
+                <h2 class="section-title">Sample Work</h2>
+                <p>View a collection of my design projects and creative work samples:</p>
+                <a href="https://drive.google.com/drive/folders/sample-portfolio-folder" class="sample-work-link" target="_blank" rel="noopener noreferrer">View Sample Work</a>
+            </section>
+
+            <section class="education section">
+                <h2 class="section-title">Education</h2>
+                <div class="education-item">
+                    <h3 class="degree">BSc (Hons) Computer Science</h3>
+                    <p class="institution">University of Westminster (UK) via IIT Sri Lanka</p>
+                    <p class="education-status">Completed first year</p>
+                </div>
+            </section>
+
+            <section class="languages section">
+                <h2 class="section-title">Languages</h2>
+                <ul class="languages-list">
+                    <li class="language-item">
+                        <span class="language-name">English</span>
+                        <span class="language-level">(fluent)</span>
+                    </li>
+                    <li class="language-item">
+                        <span class="language-name">Sinhala</span>
+                        <span class="language-level">(native)</span>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="availability section">
+                <h2 class="section-title">Availability</h2>
+                <p class="availability-text">
+                    Available immediately for part-time remote or in-house roles.
+                </p>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p class="copyright">&copy; 2023 Vinuji Jayandee Balasooriya</p>
+        </div>
+    </footer>
+</body>
+</html>

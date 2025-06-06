@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Merged Minds</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Add EmailJS SDK here -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <style>
+        /* Mobile Responsiveness Styles */
+        @media (max-width: 768px) {
+            .contact-grid {
+                display: flex;
+                flex-direction: column;
+                gap: 2rem;
+            }
+            
+            .contact-info-card,
+            .contact-form-card {
+                width: 100%;
+                margin: 0;
+            }
+            
+            .contact-methods {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .contact-method {
+                margin-bottom: 1rem;
+                width: 100%;
+            }
+            
+            .social-connect {
+                margin-top: 1.5rem;
+            }
+            
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .form-group {
+                margin-bottom: 1rem;
+            }
+            
+            .submit-button {
+                width: 100%;
+            }
+            
+            .contact-header h1 {
+                font-size: 2rem;
+            }
+            
+            .contact-header p {
+                font-size: 1rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .contact-header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .social-icons {
+                justify-content: center;
+            }
+            
+            .faq-question {
+                font-size: 1rem;
+            }
+            
+            .faq-answer {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="images/logofinal.PNG" alt="Mountain Logo" class="logo-img">
+            </div>
+            <div class="hamburger-menu">
+                <div class="hamburger-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="page-section contact-page">
+        <div class="container">
+            <div class="contact-header">
+                <h1>Contact Us</h1>
+                <p>Get in touch with Merged Minds for your digital needs</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info-card">
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <i class="fas fa-phone"></i>
+                            <div class="method-details">
+                                <h3>Call Us</h3>
+                                <p>+94 074 049 6042</p>
+                            </div>
+                        </div>
+                        <div class="contact-method">
+                            <i class="fas fa-envelope"></i>
+                            <div class="method-details">
+                                <h3>Email Us</h3>
+                                <p>mergemindsofficial@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-method">
+                            <i class="fas fa-clock"></i>
+                            <div class="method-details">
+                                <h3>Working Hours</h3>
+                                <p>Mon - Sat: 9:00 AM - 6:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="social-connect">
+                        <h3>Connect With Us</h3>
+                        <div class="social-icons">
+                            <a href="https://www.facebook.com/profile.php?id=61576925379853" target="_blank" class="social-icon"><i class="fab fa-facebook"></i></a>
+                            <a href="https://www.instagram.com/merged_minds/" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+                            <a href="https://wa.me/94740496042" target="_blank" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form-card">
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="service">Service Required</label>
+                            <select id="service" name="service" required>
+                                <option value="">Select a Service</option>
+                                <option value="it-support">IT Assignment Support</option>
+                                <option value="web-design">Web Design</option>
+                                <option value="social-media">Social Media Posts & Logo Designs</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-button">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question">What services do you offer for first-year IT students?</div>
+                    <div class="faq-answer">We provide comprehensive support for programming assignments and web development tasks. Our team specializes in helping students understand core programming concepts and improve their coding skills through practical projects.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">How do I get started with your services?</div>
+                    <div class="faq-answer">Simply fill out our contact form above or click the 'Get IT Help' button. Our team will respond within 24 hours to discuss your needs and create a personalized support plan.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Do you offer flexible pricing options?</div>
+                    <div class="faq-answer">Yes! We offer various pricing plans to suit different needs and budgets. We also provide special discounts for long-term commitments and group sessions. Check our pricing page for detailed information.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/logofinalwhite.PNG" alt="Mountain Logo" class="footer-logo-img">
+                </div>
+                <div class="footer-links">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/profile.php?id=61576925379853" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/merged_minds/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://wa.me/94740496042" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Merged Minds. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script type="text/javascript">
+      (function() {
+        // Initialize EmailJS with your public key
+        emailjs.init("hMMPegsKz7T3LUPef"); // Your public key
+      })();
+    </script>
+    <script src="js/main.js"></script>
+    <script src="js/responsive.js"></script>
+</body>
+</html>

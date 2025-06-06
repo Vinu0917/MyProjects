@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - LushLocks Studio</title>
+    <link rel="stylesheet" href="about.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="brand">LushLocks Studio</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" class="active">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <h1>About LushLocks Studio</h1>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Our Story</h2>
+                    <p>Founded in 2015 by master stylist Emma Thompson, LushLocks Studio was born from a passion for creating personalized beauty experiences that celebrate individuality. What began as a small, intimate salon has grown into a premier beauty destination while maintaining our commitment to personalized service.</p>
+                    <p>Our philosophy is simple: we believe that beauty is unique to each person, and our role is to enhance your natural features while helping you express your personal style. Every client who walks through our doors is treated to a bespoke experience tailored to their specific needs and desires.</p>
+                    <h2>Our Team</h2>
+                    <p>Our team of skilled professionals brings together decades of combined experience in the beauty industry. Each stylist and technician undergoes rigorous training and stays current with the latest techniques and trends through ongoing education and professional development.</p>
+                    <p>We pride ourselves on creating a warm, welcoming environment where clients can relax and enjoy being pampered by experts who are passionate about their craft and dedicated to exceeding expectations.</p>
+                    <h2>Our Values</h2>
+                    <ul class="values-list">
+                        <li><span>Excellence</span> - We strive for perfection in every service we provide</li>
+                        <li><span>Creativity</span> - We approach each client as a unique canvas for artistic expression</li>
+                        <li><span>Integrity</span> - We use only premium products and maintain the highest ethical standards</li>
+                        <li><span>Education</span> - We continuously learn and grow to offer the best techniques</li>
+                        <li><span>Sustainability</span> - We are committed to eco-friendly practices and products</li>
+                    </ul>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1522337660859-02fbefca4702?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Salon Team">
+                    <div class="image-caption">Our award-winning team of stylists</div>
+                    <img src="https://images.unsplash.com/photo-1470259078422-826894b933aa?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Salon Interior" class="second-image">
+                    <div class="image-caption">Our elegant salon space</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>LushLocks Studio</h3>
+                    <p>Where Beauty Meets Elegance</p>
+                </div>
+                <div class="social-links">
+                    <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 LushLocks Studio. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple JavaScript for mobile menu toggle
+        document.querySelector('.hamburger').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('show');
+        });
+    </script>
+</body>
+</html>

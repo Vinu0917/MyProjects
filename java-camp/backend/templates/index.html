@@ -8,6 +8,7 @@
   <meta name="author" content="Vinuji Balasooriya">
   <title>Java-Camp</title>
   <link rel="stylesheet" href="static/css/styles.css" />
+  <script src="main.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
@@ -17,7 +18,7 @@
     <nav>
       <ul class="nav-links">
         <li><a href="#">Home</a></li>
-        <li><a href="#">Learn Java</a></li>
+        <li><a href="{{ url_for('learn_java') }}">Learn Java</a></li>
         <li><a href="#">Code Playground</a></li>
         <li><a href="#">Quizzes</a></li>
         <li><a href="#">Projects</a></li>
@@ -57,7 +58,11 @@
         <h3>Quick Links</h3>
         <ul>
           <li><a href="/">Home</a></li>
-          <li><a href="/playground">Code Playground</a></li>
+          <li><a href="/learn_java">Learn Java</a></li>
+          <li><a href="/code_playground">Code Playground</a></li>
+          <li><a href="/quizzes">Quizzes</a></li>
+          <li><a href="/Projects">Projects</a></li>
+          <li><a href="/roadmap">Roadmap</a></li>
           <li><a href="/about">About</a></li>
           <li><a href="/contact">Contact</a></li>
         </ul>
@@ -77,7 +82,7 @@
     </div>
   
     <div class="footer-bottom">
-      &copy; 2025 YourSiteName. All Rights Reserved.
+      &copy; 2025 Java-Camp Rights Reserved.
     </div>
   </footer>  
 </body>

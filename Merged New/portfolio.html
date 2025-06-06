@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Portfolio - Merged Minds</title>
+    <link rel="stylesheet" href="css/portfolio.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="sub-header">
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="images/logofinalwhite.PNG" alt="Merged Minds Logo">
+                    </a>
+                </div>
+                <div class="nav-links" id="navLinks">
+                    <i class="fas fa-times" onclick="hideMenu()"></i>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="portfolio.html" class="active">Portfolio</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <i class="fas fa-bars" onclick="showMenu()"></i>
+            </nav>
+            <div class="header-content">
+                <h1>Our Portfolio</h1>
+                <p>Showcasing our best work and client success stories</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio-section">
+        <div class="container">
+            <div class="portfolio-filter">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="web">Web Design</button>
+                <button class="filter-btn" data-filter="mobile">Mobile Apps</button>
+                <button class="filter-btn" data-filter="social">Social Media</button>
+            </div>
+            
+            <div class="portfolio-grid">
+                <div class="portfolio-item web">
+                    <div class="portfolio-img">
+                        <img src="images/portfolio-1.jpg" alt="Portfolio Item">
+                        <div class="portfolio-overlay">
+                            <div class="overlay-content">
+                                <h3>Tech Solutions Website</h3>
+                                <p>Web Design & Development</p>
+                                <a href="#" class="btn-small">View Project</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item mobile">
+                    <div class="portfolio-img">
+                        <img src="images/portfolio-2.jpg" alt="Portfolio Item">
+                        <div class="portfolio-overlay">
+                            <div class="overlay-content">
+                                <h3>Fitness Tracker App</h3>
+                                <p>Mobile App Development</p>
+                                <a href="#" class="btn-small">View Project</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item social">
+                    <div class="portfolio-img">
+                        <img src="images/portfolio-3.jpg" alt="Portfolio Item">
+                        <div class="portfolio-overlay">
+                            <div class="overlay-content">
+                                <h3>Fashion Brand Campaign</h3>
+                                <p>Social Media Marketing</p>
+                                <a href="#" class="btn-small">View Project</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item web">
+                    <div class="portfolio-img">
+                        <img src="images/portfolio-4.jpg" alt="Portfolio Item">
+                        <div class="portfolio-overlay">
+                            <div class="overlay-content">
+                                <h3>Restaurant Website</h3>
+                                <p>Web Design & Development</p>
+                                <a href="#" class="btn-small">View Project</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item mobile">
+                    <div class="portfolio-img">
+                        <img src="images/portfolio-5.jpg" alt="Portfolio Item">
+                        <div class="portfolio-overlay">
+                            <div class="overlay-content">
+                                <h3>Travel Guide App</h3>
+                                <p>Mobile App Development</p>
+                                <a href="#" class="btn-small">View Project</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item social">
+                    <div class="portfolio-img">
+                        <img src="images/portfolio-6.jpg" alt="Portfolio Item">
+                        <div class="portfolio-overlay">
+                            <div class="overlay-content">
+                                <h3>Product Launch Campaign</h3>
+                                <p>Social Media Marketing</p>
+                                <a href="#" class="btn-small">View Project</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Studies Section -->
+    <section class="case-studies">
+        <div class="container">
+            <h2>Case Studies</h2>
+            <p class="section-desc">Detailed insights into our successful projects</p>
+            
+            <div class="case-study">
+                <div class="case-img">
+                    <img src="images/case-study-1.jpg" alt="Case Study">
+                </div>
+                <div class="case-content">
+                    <h3>Tech Solutions Website Redesign</h3>
+                    <p>Tech Solutions approached us with a challenge: their existing website was outdated and not generating enough leads. We redesigned their website with a focus on user experience and conversion optimization.</p>
+                    <h4>Results:</h4>
+                    <ul>
+                        <li>50% increase in website traffic</li>
+                        <li>75% increase in lead generation</li>
+                        <li>30% improvement in user engagement</li>
+                    </ul>
+                    <a href="#" class="btn">Read Full Case Study</a>
+                </div>
+            </div>
+            
+            <div class="case-study reverse">
+                <div class="case-content">
+                    <h3>Fitness Tracker Mobile App</h3>
+                    <p>We developed a comprehensive fitness tracking mobile app that allows users to track their workouts, set goals, and monitor their progress. The app includes features such as workout plans, nutrition tracking, and social sharing.</p>
+                    <h4>Results:</h4>
+                    <ul>
+                        <li>100,000+ downloads in the first month</li>
+                        <li>4.8/5 average rating on app stores</li>
+                        <li>85% user retention rate</li>
+                    </ul>
+                    <a href="#" class="btn">Read Full Case Study</a>
+                </div>
+                <div class="case-img">
+                    <img src="images/case-study-2.jpg" alt="Case Study">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Start Your Project?</h2>
+            <p>Let's discuss your project and create something amazing together</p>
+            <a href="contact.html" class="btn btn-large">Contact Us Today</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/logofinal.PNG" alt="Merged Minds Logo">
+                    <p>Creating digital experiences that drive results</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-envelope"></i> info@mergedminds.com</p>
+                    <p><i class="fas fa-phone"></i> (123) 456-7890</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Merged Minds. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

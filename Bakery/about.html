@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - SweetBloom Bakery</title>
+    <link rel="stylesheet" href="about.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">SweetBloom</div>
+        <div class="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html" class="active">About</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Our Story</h1>
+            <p class="tagline">Passion baked into every bite</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-content">
+        <div class="about-container">
+            <div class="about-text">
+                <h2>The SweetBloom Journey</h2>
+                <p>SweetBloom Bakery was born from a simple passion for creating delicious, handcrafted treats that bring joy to people's lives. Founded in 2015 by Emma Bloom, our bakery started as a small kitchen operation selling at local farmers' markets.</p>
+                <p>Emma's journey began in her grandmother's kitchen, where she learned the art of traditional baking. After studying pastry arts in Paris, she returned home with a vision to blend classic techniques with innovative flavors.</p>
+                <p>What started as a dream has now grown into a beloved local bakery, but our philosophy remains the same: use the finest ingredients, bake in small batches, and create treats that make people smile.</p>
+            </div>
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Bakery Interior">
+            </div>
+        </div>
+    </section>
+
+    <!-- Philosophy Section -->
+    <section class="philosophy">
+        <h2>Our Baking Philosophy</h2>
+        <div class="philosophy-container">
+            <div class="philosophy-item">
+                <i class="fas fa-leaf"></i>
+                <h3>Quality Ingredients</h3>
+                <p>We source local, organic ingredients whenever possible and never use artificial preservatives or flavors.</p>
+            </div>
+            <div class="philosophy-item">
+                <i class="fas fa-hands"></i>
+                <h3>Handcrafted Care</h3>
+                <p>Every item is made by hand with attention to detail and a commitment to excellence.</p>
+            </div>
+            <div class="philosophy-item">
+                <i class="fas fa-heart"></i>
+                <h3>Community Focus</h3>
+                <p>We believe in supporting our local community through partnerships and sustainable practices.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team">
+        <h2>Meet Our Team</h2>
+        <div class="team-container">
+            <div class="team-member">
+                <div class="member-image">
+                    <img src="https://images.unsplash.com/photo-1566554273541-37a9ca77b91f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Emma Bloom - Founder & Head Baker">
+                </div>
+                <h3>Emma Bloom</h3>
+                <p class="role">Founder & Head Baker</p>
+                <p>Emma brings 15 years of baking experience and a passion for creating memorable desserts.</p>
+            </div>
+            <div class="team-member">
+                <div class="member-image">
+                    <img src="https://images.unsplash.com/photo-1583394293214-28ded15ee548?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Daniel Chen - Pastry Chef">
+                </div>
+                <h3>Daniel Chen</h3>
+                <p class="role">Pastry Chef</p>
+                <p>Daniel specializes in French pastries and brings technical precision to our most intricate creations.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>SweetBloom Bakery</h3>
+                <p>123 Flour Street<br>Sweetville, CA 90210</p>
+            </div>
+            <div class="footer-section">
+                <h3>Opening Hours</h3>
+                <p>Monday - Friday: 7am - 7pm<br>Saturday: 8am - 8pm<br>Sunday: 8am - 5pm</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 SweetBloom Bakery. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple JavaScript for mobile menu toggle
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

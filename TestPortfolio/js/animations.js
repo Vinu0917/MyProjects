@@ -6,24 +6,49 @@ document.addEventListener('DOMContentLoaded', () => {
         let count = 0;
         let index = 0;
         let currentText = '';
-        let letter = '';
+        let isDeleting = false;
         
-        (function type() {
-            if (count === texts.length) {
-                count = 0;
-            }
-            currentText = texts[count];
-            letter = currentText.slice(0, ++index);
-            
-            document.getElementById('changing-text').textContent = letter;
-            if (letter.length === currentText.length) {
-                count++;
-                index = 0;
-                setTimeout(type, 2000);
+        // Create text span and cursor span
+        const textSpan = document.createElement('span');
+        const cursorSpan = document.createElement('span');
+        cursorSpan.classList.add('typing-cursor');
+        cursorSpan.textContent = '|';
+        
+        const changingTextElement = document.getElementById('changing-text');
+        changingTextElement.innerHTML = ''; // Clear existing content
+        changingTextElement.appendChild(textSpan);
+        changingTextElement.appendChild(cursorSpan);
+        
+        function type() {
+            const current = count % texts.length;
+            const fullText = texts[current];
+
+            if (isDeleting) {
+                currentText = fullText.substring(0, index - 1);
+                index--;
             } else {
-                setTimeout(type, 100);
+                currentText = fullText.substring(0, index + 1);
+                index++;
             }
-        })();
+
+            textSpan.textContent = currentText;
+
+            let typeSpeed = isDeleting ? 50 : 100;
+
+            if (!isDeleting && index === fullText.length) {
+                // Pause at end of typing
+                typeSpeed = 2000;
+                isDeleting = true;
+            } else if (isDeleting && index === 0) {
+                isDeleting = false;
+                count++;
+                typeSpeed = 500;
+            }
+
+            setTimeout(type, typeSpeed);
+        }
+
+        type();
     }
     
     // Scroll animations using Intersection Observer

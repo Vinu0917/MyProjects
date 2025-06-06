@@ -41,34 +41,12 @@
     animation: glitch-anim2 2s linear infinite alternate-reverse;
 }
 
-/* Typewriter effect */
+/* Typewriter effect - updated */
 .typewriter {
     overflow: hidden;
-    border-right: 0.15em solid var(--accent-primary);
     white-space: nowrap;
     margin: 0 auto;
     letter-spacing: 0.15em;
-    animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
-}
-
-@keyframes typing {
-    from { width: 0 }
-    to { width: 100% }
-}
-
-@keyframes blink-caret {
-    from, to { border-color: transparent }
-    50% { border-color: var(--accent-primary) }
-}
-
-/* Hover effects */
-.hover-glow {
-    transition: var(--transition-normal);
-}
-
-.hover-glow:hover {
-    text-shadow: 0 0 8px var(--accent-primary);
-    color: var(--accent-primary);
 }
 
 /* Page transitions */
@@ -103,4 +81,130 @@
 @keyframes pageExit {
     from { transform: scaleY(1); }
     to { transform: scaleY(0); }
+}
+
+/* Typing cursor animation */
+.typing-cursor {
+    display: inline-block;
+    margin-left: 2px;
+    width: 2px;
+    animation: blink 0.7s infinite;
+    color: inherit;
+    font-weight: bold;
+    font-size: 1.2em;
+    vertical-align: middle;
+    position: relative;
+    top: -2px;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* Ensure the changing text container has proper styling */
+#changing-text {
+    display: inline-flex;
+    align-items: center;
+    min-width: 200px;
+    position: relative;
+    white-space: nowrap;
+}
+
+#changing-text span:first-child {
+    display: inline-block;
+}
+
+/* Add smooth transitions for text changes */
+#changing-text, .typing-cursor {
+    transition: all 0.1s ease;
+}
+
+/* Modern Custom Mouse Cursor */
+.custom-cursor {
+    width: 10px;
+    height: 10px;
+    background-color: var(--accent-primary);
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 10000;
+    transform: translate(-50%, -50%) rotate(45deg);
+    transition: transform 0.1s ease-out, width 0.1s ease-out, height 0.1s ease-out;
+    will-change: transform;
+    backface-visibility: hidden;
+}
+
+.cursor-ring {
+    width: 30px;
+    height: 30px;
+    border: 1.5px solid var(--accent-primary);
+    clip-path: polygon(0 0, 100% 0, 100% 15%, 15% 15%, 15% 100%, 0 100%);
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: transform 0.15s ease-out, width 0.15s ease-out, height 0.15s ease-out;
+    will-change: transform;
+    backface-visibility: hidden;
+}
+
+/* Interactive states */
+.cursor-hover {
+    width: 20px;
+    height: 20px;
+    background-color: rgba(var(--accent-primary-rgb), 0.5);
+    clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+    transform: translate(-50%, -50%) rotate(0deg);
+}
+
+.cursor-ring-hover {
+    width: 40px;
+    height: 40px;
+    border-color: rgba(var(--accent-primary-rgb), 0.5);
+    clip-path: polygon(0 0, 100% 0, 100% 25%, 25% 25%, 25% 100%, 0 100%);
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+.cursor-click {
+    width: 15px;
+    height: 15px;
+    transform: translate(-50%, -50%) rotate(180deg) scale(0.9);
+}
+
+.cursor-ring-click {
+    width: 25px;
+    height: 25px;
+    transform: translate(-50%, -50%) scale(0.9);
+}
+
+/* Hide default cursor */
+body {
+    cursor: none !important;
+}
+
+a, button, input[type="button"], input[type="submit"], [role="button"] {
+    cursor: none !important;
+}
+
+/* Add subtle animation for cursor ring */
+@keyframes cursorPulse {
+    0% { transform: translate(-50%, -50%) scale(1); }
+    50% { transform: translate(-50%, -50%) scale(1.1); }
+    100% { transform: translate(-50%, -50%) scale(1); }
+}
+
+.cursor-ring {
+    animation: cursorPulse 2s ease-in-out infinite;
+}
+
+:root {
+    --accent-primary: #64ffda;
+    --accent-primary-rgb: 100, 255, 218;
+    --accent-secondary: #64ffda;
+    --accent-tertiary: #64ffda;
 }

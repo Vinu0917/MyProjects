@@ -115,6 +115,7 @@ img {
     transform: translate(-50%, -50%);
     z-index: 9999;
     transition: transform 0.1s ease;
+    opacity: 0;
 }
 
 .cursor-follower {
@@ -127,6 +128,7 @@ img {
     transform: translate(-50%, -50%);
     z-index: 9998;
     transition: all 0.3s ease;
+    opacity: 0;
 }
 
 /* Background elements */
@@ -616,6 +618,7 @@ section {
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     position: relative;
     overflow: hidden;
+    color: var(--text-secondary);
 }
 
 .footer .social-icon::before {
@@ -634,20 +637,21 @@ section {
 .footer .social-icon:hover {
     transform: translateY(-8px) scale(1.05);
     border-color: transparent;
-    color: var(--text-primary);
+    color: #ffffff;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
 .footer .social-icon:hover::before {
-    opacity: 0.8;
+    opacity: 1;
 }
 
 .footer .social-icon i {
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .footer .social-icon:hover i {
     transform: scale(1.2);
+    color: #ffffff;
 }
 
 .footer-grid {
@@ -1159,10 +1163,60 @@ section {
     align-items: center;
     padding-top: var(--space-md);
 }
+
+.footer-bottom .social-icons {
+    display: flex;
+    gap: var(--space-md);
+}
+
+.footer-bottom .social-icon {
+    width: 40px;
+    height: 40px;
+    background: rgba(10, 25, 47, 0.95);
+    border: 1px solid var(--accent-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--fs-md);
+    color: var(--accent-primary);
+    transition: all 0.3s ease;
+}
+
+.footer-bottom .social-icon:hover {
+    background: #0a1629; /* Much darker navy blue */
+    color: var(--accent-primary);
+    transform: translateY(-5px);
+    border-color: var(--accent-primary);
+    box-shadow: 0 5px 15px rgba(10, 22, 41, 0.8);
+}
+
+/* Light theme social icons */
+[data-theme="light"] .footer-bottom .social-icon {
+    background: rgba(26, 26, 26, 0.95);
+    border-color: var(--accent-primary);
+    color: var(--accent-primary);
+}
+
+[data-theme="light"] .footer-bottom .social-icon:hover {
+    background: #1a1a1a; /* Very dark gray */
+    color: var(--accent-primary);
+    border-color: var(--accent-primary);
+}
+
+.footer-bottom .social-icon i {
+    transition: transform 0.3s ease;
+}
+
+.footer-bottom .social-icon:hover i {
+    transform: scale(1.2);
+}
+
 .section-header {
     text-align: center;
-    margin-bottom: 2rem; /* Reduce this value from the original */
+    margin-bottom: 2rem;
 }
+
 .copyright {
     color: var(--text-tertiary);
     font-size: var(--fs-xs);

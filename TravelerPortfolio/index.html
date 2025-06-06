@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wander With Mia | Travel Portfolio</title>
+    <link rel="stylesheet" href="home.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for social icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">Wander With Mia</div>
+        <ul class="nav-links">
+            <li><a href="home.html" class="active">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="destinations.html">Destinations</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Wander With Mia</h1>
+            <p class="tagline">Exploring the world, one story at a time</p>
+            <a href="#" class="btn">Read My Stories</a>
+        </div>
+    </section>
+
+    <!-- About Preview Section -->
+    <section class="about-preview">
+        <div class="container">
+            <h2>Hello, I'm Mia</h2>
+            <p>A passionate traveler with an insatiable wanderlust and a camera always in hand. I left my corporate job three years ago to pursue my dream of exploring the hidden corners of our beautiful planet. Through my journeys, I aim to inspire others to step outside their comfort zones and experience the transformative power of travel. Join me as I share authentic stories, stunning photography, and practical tips from my adventures around the globe.</p>
+        </div>
+    </section>
+
+    <!-- Featured Destinations Section -->
+    <section class="featured-destinations">
+        <div class="container">
+            <h2>Featured Destinations</h2>
+            <div class="destinations-grid">
+                <div class="destination-card">
+                    <div class="destination-img" id="iceland-img"></div>
+                    <h3>Iceland</h3>
+                    <p>Where fire meets ice in a landscape of breathtaking contrasts</p>
+                </div>
+                <div class="destination-card">
+                    <div class="destination-img" id="bali-img"></div>
+                    <h3>Bali</h3>
+                    <p>A spiritual paradise with lush jungles and vibrant culture</p>
+                </div>
+                <div class="destination-card">
+                    <div class="destination-img" id="japan-img"></div>
+                    <h3>Japan</h3>
+                    <p>Ancient traditions blend seamlessly with futuristic innovation</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Travel Quote Section -->
+    <section class="quote-section">
+        <div class="container">
+            <blockquote>
+                <p>"Travel isn't always pretty. It isn't always comfortable. Sometimes it hurts, it even breaks your heart. But that's okay. The journey changes you; it should change you."</p>
+                <cite>— Anthony Bourdain</cite>
+            </blockquote>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="social-icons">
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="#" aria-label="Blog"><i class="fas fa-blog"></i></a>
+        </div>
+        <p class="copyright">&copy; 2025 Wander With Mia. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Simple mobile navigation toggle
+        document.querySelector('.burger').addEventListener('click', () => {
+            document.querySelector('.nav-links').classList.toggle('nav-active');
+            document.querySelector('.burger').classList.toggle('toggle');
+        });
+    </script>
+</body>
+</html>

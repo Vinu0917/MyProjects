@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - CodeCrafted by Aiden</title>
+    <link rel="stylesheet" href="contact.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="logo">CodeCrafted</div>
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="contact-container">
+        <h1>Get in Touch</h1>
+        
+        <div class="contact-content">
+            <div class="contact-info">
+                <h2>Contact Information</h2>
+                <div class="contact-methods">
+                    <div class="contact-method">
+                        <img src="https://cdn-icons-png.flaticon.com/512/552/552486.png" alt="Email">
+                        <a href="mailto:aiden@example.com">aiden@example.com</a>
+                    </div>
+                    <div class="contact-method">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3536/3536505.png" alt="LinkedIn">
+                        <a href="https://linkedin.com" target="_blank">LinkedIn Profile</a>
+                    </div>
+                    <div class="contact-method">
+                        <img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="GitHub">
+                        <a href="https://github.com" target="_blank">GitHub Profile</a>
+                    </div>
+                </div>
+
+                <div class="workspace-image">
+                    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c" alt="Tech Workspace">
+                </div>
+            </div>
+
+            <form class="contact-form">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="6" required></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <div class="social-links">
+            <a href="https://github.com" target="_blank"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub"></a>
+            <a href="https://linkedin.com" target="_blank"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn"></a>
+            <a href="mailto:aiden@example.com" class="email-link">Email Me</a>
+        </div>
+    </footer>
+</body>
+</html>

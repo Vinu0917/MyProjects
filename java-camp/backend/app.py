@@ -30,7 +30,9 @@ def replace_public_class_name_with_main(java_code):
     else:
         # No public class found, return as-is
         return java_code
-
+@app.route('/learn-java')
+def learn_java():
+    return render_template('learn-java.html')
 @app.route('/')
 def playground():
     return render_template('code_playground.html')
