@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vinuji Jayandee Balasooriya - CV</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         /* Reset and Base Styles */
         * {
@@ -12,10 +15,20 @@
             box-sizing: border-box;
         }
         
+        :root {
+            --primary-color: #6c63ff;
+            --secondary-color: #ff6584;
+            --dark-bg: #121212;
+            --darker-bg: #0a0a0a;
+            --light-text: #f8f8f8;
+            --gray-text: #aaaaaa;
+            --border-color: #333333;
+        }
+        
         body {
-            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            background-color: #121212;
-            color: #eeeeee;
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--light-text);
             line-height: 1.6;
             font-size: 16px;
         }
@@ -35,17 +48,18 @@
         
         h1 {
             font-size: 2.5rem;
-            color: #ffffff;
+            color: var(--light-text);
+            letter-spacing: 1px;
         }
         
         h2 {
             font-size: 1.8rem;
-            color: #ffffff;
+            color: var(--light-text);
         }
         
         h3 {
             font-size: 1.2rem;
-            color: #dddddd;
+            color: var(--light-text);
         }
         
         p {
@@ -59,28 +73,30 @@
         
         /* Links */
         a {
-            color: #1e90ff;
+            color: var(--primary-color);
             text-decoration: none;
-            transition: color 0.3s ease;
+            transition: all 0.3s ease;
         }
         
         a:hover {
-            color: #64b5f6;
-            text-decoration: underline;
+            color: var(--secondary-color);
+            text-decoration: none;
         }
         
         /* Header */
         .header {
             padding: 60px 0 30px;
             text-align: center;
-            border-bottom: 1px solid #333333;
+            border-bottom: 1px solid var(--border-color);
             position: relative;
+            background: linear-gradient(135deg, var(--darker-bg), var(--dark-bg));
         }
         
         .job-title {
-            color: #1e90ff;
+            color: var(--primary-color);
             font-weight: 400;
             margin-top: 0.5rem;
+            letter-spacing: 1px;
         }
         
         /* Download PDF Button */
@@ -88,40 +104,48 @@
             position: absolute;
             top: 20px;
             right: 20px;
-            background-color: #1e90ff;
+            background: linear-gradient(135deg, var(--primary-color), #8a84ff);
             color: white;
             border: none;
-            padding: 10px 15px;
-            border-radius: 5px;
+            padding: 10px 20px;
+            border-radius: 30px;
             cursor: pointer;
             font-weight: 500;
-            transition: background-color 0.3s ease;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(108, 99, 255, 0.3);
         }
         
         .download-btn:hover {
-            background-color: #0078e7;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(108, 99, 255, 0.4);
         }
         
         /* Main Content */
         .main-content {
             padding: 40px 0;
+            background-color: var(--dark-bg);
         }
         
         /* Sections */
         .section {
             margin-bottom: 40px;
-            padding-bottom: 30px;
-            border-bottom: 1px solid #333333;
+            padding: 25px;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.03);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         
-        .section:last-child {
-            border-bottom: none;
+        .section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
         }
         
         .section-title {
             margin-bottom: 20px;
             position: relative;
             padding-bottom: 10px;
+            display: inline-block;
         }
         
         .section-title::after {
@@ -129,9 +153,10 @@
             position: absolute;
             left: 0;
             bottom: 0;
-            width: 50px;
+            width: 100%;
             height: 3px;
-            background-color: #1e90ff;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            border-radius: 3px;
         }
         
         /* Personal Info */
@@ -143,11 +168,17 @@
         
         .info-item {
             margin-bottom: 15px;
+            transition: transform 0.3s ease;
+        }
+        
+        .info-item:hover {
+            transform: translateX(5px);
         }
         
         .info-label {
             margin-bottom: 5px;
-            color: #1e90ff;
+            color: var(--primary-color);
+            font-weight: 500;
         }
         
         /* Skills */
@@ -155,28 +186,47 @@
             display: flex;
             flex-wrap: wrap;
             list-style: none;
-            gap: 10px;
+            gap: 12px;
         }
         
         .skill-item {
-            background-color: #1e1e1e;
-            padding: 8px 15px;
-            border-radius: 20px;
+            background: linear-gradient(135deg, rgba(108, 99, 255, 0.2), rgba(255, 101, 132, 0.2));
+            padding: 8px 18px;
+            border-radius: 30px;
             font-size: 0.9rem;
+            border: 1px solid rgba(108, 99, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .skill-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(108, 99, 255, 0.2);
+            background: linear-gradient(135deg, rgba(108, 99, 255, 0.3), rgba(255, 101, 132, 0.3));
         }
         
         /* Experience */
         .experience-item, .education-item {
             margin-bottom: 25px;
+            padding: 15px;
+            border-left: 3px solid var(--primary-color);
+            background-color: rgba(255, 255, 255, 0.02);
+            border-radius: 0 5px 5px 0;
+            transition: all 0.3s ease;
+        }
+        
+        .experience-item:hover, .education-item:hover {
+            background-color: rgba(255, 255, 255, 0.05);
+            transform: translateX(5px);
         }
         
         .job-position, .degree {
-            color: #ffffff;
+            color: var(--light-text);
             margin-bottom: 5px;
+            font-weight: 600;
         }
         
         .company, .institution {
-            color: #1e90ff;
+            color: var(--primary-color);
             font-weight: 500;
             margin-bottom: 10px;
         }
@@ -186,20 +236,26 @@
             list-style-type: disc;
         }
         
+        .responsibilities li {
+            margin-bottom: 5px;
+        }
+        
         /* Sample Work Section */
         .sample-work-link {
             display: inline-block;
-            background-color: #1e90ff;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             color: white;
-            padding: 12px 20px;
-            border-radius: 5px;
+            padding: 12px 25px;
+            border-radius: 30px;
             margin-top: 15px;
             font-weight: 500;
-            transition: background-color 0.3s ease;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(108, 99, 255, 0.3);
         }
         
         .sample-work-link:hover {
-            background-color: #0078e7;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(108, 99, 255, 0.4);
             text-decoration: none;
         }
         
@@ -209,25 +265,31 @@
         }
         
         .language-item {
-            margin-bottom: 10px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
         }
         
         .language-name {
             font-weight: 500;
+            margin-right: 10px;
         }
         
         .language-level {
-            color: #aaaaaa;
-            margin-left: 5px;
+            color: var(--gray-text);
+            background-color: rgba(255, 255, 255, 0.05);
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
         }
         
         /* Footer */
         .footer {
-            background-color: #1a1a1a;
-            padding: 20px 0;
+            background-color: var(--darker-bg);
+            padding: 25px 0;
             text-align: center;
             font-size: 0.9rem;
-            color: #888888;
+            color: var(--gray-text);
         }
         
         /* Responsive Adjustments */
@@ -250,7 +312,7 @@
             
             .section {
                 margin-bottom: 30px;
-                padding-bottom: 20px;
+                padding: 20px 15px;
             }
             
             .download-btn {
@@ -263,18 +325,20 @@
             }
         }
         
-        /* Print Styles */
+        /* Print Styles - Maintaining Dark Theme */
         @media print {
             body {
-                background-color: white;
-                color: black;
-                font-size: 12pt;
+                background-color: var(--dark-bg) !important;
+                color: var(--light-text) !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
             }
             
             .container {
                 width: 100%;
                 max-width: 100%;
-                padding: 0;
+                padding: 0 15px;
             }
             
             .download-btn {
@@ -283,58 +347,59 @@
             
             .header {
                 padding: 20px 0;
-                border-bottom-color: #cccccc;
+                background: var(--darker-bg) !important;
             }
             
-            h1, h2 {
-                color: black;
-            }
-            
-            h3 {
-                color: #333333;
+            h1, h2, h3 {
+                color: var(--light-text) !important;
             }
             
             .job-title {
-                color: #333333;
+                color: var(--primary-color) !important;
             }
             
             .section {
                 page-break-inside: avoid;
-                border-bottom-color: #cccccc;
+                background-color: rgba(255, 255, 255, 0.03) !important;
+                box-shadow: none;
+                margin-bottom: 20px;
             }
             
             .section-title::after {
-                background-color: #333333;
+                background: linear-gradient(90deg, var(--primary-color), var(--secondary-color)) !important;
             }
             
             .info-label {
-                color: #333333;
+                color: var(--primary-color) !important;
             }
             
             .skill-item {
-                background-color: #f0f0f0;
-                color: black;
-                border: 1px solid #cccccc;
+                background: rgba(108, 99, 255, 0.2) !important;
+                color: var(--light-text) !important;
+                border: 1px solid rgba(108, 99, 255, 0.3) !important;
             }
             
             .company, .institution {
-                color: #333333;
+                color: var(--primary-color) !important;
             }
             
             a {
-                color: #0066cc;
-                text-decoration: underline;
+                color: var(--primary-color) !important;
             }
             
             .sample-work-link {
-                background-color: #f0f0f0;
-                color: #0066cc;
-                border: 1px solid #cccccc;
+                background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)) !important;
+                color: white !important;
             }
             
             .footer {
-                background-color: white;
-                color: #333333;
+                background-color: var(--darker-bg) !important;
+                color: var(--gray-text) !important;
+            }
+            
+            .experience-item, .education-item {
+                border-left: 3px solid var(--primary-color) !important;
+                background-color: rgba(255, 255, 255, 0.02) !important;
             }
         }
     </style>
@@ -470,7 +535,7 @@
 
     <footer class="footer">
         <div class="container">
-            <p class="copyright">&copy; 2023 Vinuji Jayandee Balasooriya</p>
+            <p class="copyright">&copy; 2025 Vinuji Jayandee Balasooriya</p>
         </div>
     </footer>
 </body>
