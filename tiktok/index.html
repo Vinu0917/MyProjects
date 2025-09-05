@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Ceylon Beats — Sri Lankan Music Visualizer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="stage" id="stage">
+    <div class="overlay"></div>
+    <div class="sl-border"></div>
+    <div class="logo">CEYLON<span>BEATS</span></div>
+    <div class="visualizer-container">
+      <canvas id="vis"></canvas>
+    </div>
+    <div class="particles" id="particles"></div>
+    <div class="controls">
+      <div class="track-info">
+        <div class="track-title">Dew Pura Atheki</div>
+        <div class="track-artist">Various Artists</div>
+      </div>
+      <button id="playBtn">PLAY</button>
+    </div>
+    <div class="equalizer-bars">
+      <div class="eq-bar"></div>
+      <div class="eq-bar"></div>
+      <div class="eq-bar"></div>
+      <div class="eq-bar"></div>
+      <div class="eq-bar"></div>
+    </div>
+    <!-- Audio -->
+    <audio id="song" src="dew-pura-atheki-various-artists.mp3" crossorigin="anonymous"></audio>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
