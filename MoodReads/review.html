@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MoodReads – Reviews</title>
+  <link rel="stylesheet" href="css/review.css" />
+</head>
+<body>
+  <header>
+    <h1>MoodReads</h1>
+    <nav>
+      <a href="home.html">Home</a>
+      <a href="mood.html">Mood</a>
+      <a href="review.html" class="active">Review</a>
+      <a href="community.html">Community</a>
+      <a href="profile.html">Profile</a>
+      <a href="settings.html">Settings</a>
+      <a href="notifications.html">Notifications</a>
+      <a href="index.html">Logout</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Write and Read Reviews</h2>
+    <form id="review-form">
+      <label for="book-title">Book Title</label>
+      <input type="text" id="book-title" placeholder="Enter book title" required />
+
+      <label for="review-text">Your Review</label>
+      <textarea id="review-text" rows="5" placeholder="Write your thoughts..." required></textarea>
+
+      <button type="submit">Submit Review</button>
+    </form>
+
+    <section id="reviews-list">
+      <!-- Example reviews will appear here -->
+    </section>
+  </main>
+
+  <script src="js/app.js"></script>
+  <script>
+    const reviewForm = document.getElementById("review-form");
+    const reviewsList = document.getElementById("reviews-list");
+
+    reviewForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const title = document.getElementById("book-title").value.trim();
+      const text = document.getElementById("review-text").value.trim();
+
+      if (!title || !text) return;
+
+      const reviewCard = document.createElement("article");
+      reviewCard.className = "review-card";
+
+      reviewCard.innerHTML = `
+        <h3>${title}</h3>
+        <p>${text}</p>
+      `;
+
+      reviewsList.prepend(reviewCard);
+
+      reviewForm.reset();
+    });
+  </script>
+</body>
+</html>
