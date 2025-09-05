@@ -3,36 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Skills | Tech Portfolio</title>
+    <title>Skills| Tech Portfolio</title>
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/animations.css">
     <link rel="stylesheet" href="css/glassmorphism.css">
+    <link rel="stylesheet" href="css/3d-effects.css"> <!-- Added 3D effects CSS -->
     <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Poppins:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+          
 </head>
 <body>
     <!-- Custom Cursor -->
     <div class="cursor"></div>
     <div class="cursor-follower"></div>
-    
+
     <!-- Particle Background -->
     <div id="particles-js"></div>
-    
+
     <!-- 3D Background Elements -->
     <canvas id="webgl-background"></canvas>
-    
+
     <!-- Navigation -->
-    <nav class="main-nav">
+    <nav class="main-nav glass-nav"> <!-- Added glass-nav class -->
         <div class="nav-container">
             <div class="logo">
-                <a href="index.html">YourName<span>.</span></a>
+                <a href="index.html"><span class="gradient-text">Portfolio</span><span>.</span></a> <!-- Added gradient-text class -->
             </div>
             <div class="nav-links">
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="skills.html" class="active">Skills</a></li>
+                    <li><a href="education.html">Education</a></li>
                     <li><a href="projects.html">Projects</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
@@ -50,161 +55,189 @@
 
     <!-- Page Transition -->
     <div class="page-transition"></div>
-    
-    <!-- Skills Section -->
-    <section class="skills">
+
+    <section class="skills-section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">My<span class="highlight">Skills</span></h2>
-                <div class="section-line"></div>
+                <h2 class="section-title"><span class="gradient-text">Skills</span></h2> <!-- Changed highlight to gradient-text -->
             </div>
-            
-            <div class="skills-intro">
-                <p>I've developed a diverse set of technical and soft skills that enable me to create engaging digital experiences. Here's what I bring to the table:</p>
-            </div>
-            
+            <p class="section-subtitle">A blend of development and design skills to create interactive experiences.</p>
+
             <div class="skills-grid">
-                <div class="skill-card glass-card fade-in">
-                    <div class="skill-icon">
-                        <img src="assets/icons/html5.svg" alt="HTML5">
-                    </div>
-                    <h3>HTML</h3>
-                    <p>Structuring web pages with semantic HTML elements.</p>
-                    <div class="skill-level">
-                        <div class="skill-progress" data-level="90%"></div>
-                    </div>
+                <div class="skill-card">
+                    <i class="devicon-html5-plain" style="color: #E34F26; font-size: 48px;"></i>
+                    <h3>HTML5</h3>
+                    <p>Building structured and semantic web pages efficiently.</p>
                 </div>
-                
-                <div class="skill-card glass-card fade-in">
-                    <div class="skill-icon">
-                        <img src="assets/icons/css3.svg" alt="CSS3">
-                    </div>
-                    <h3>CSS</h3>
-                    <p>Styling web pages with modern CSS techniques.</p>
-                    <div class="skill-level">
-                        <div class="skill-progress" data-level="85%"></div>
-                    </div>
+
+                <div class="skill-card">
+                    <i class="devicon-css3-plain" style="color: #1572B6; font-size: 48px;"></i>
+                    <h3>CSS3</h3>
+                    <p>Creating visually appealing and responsive web designs.</p>
                 </div>
-                
-                <div class="skill-card glass-card fade-in">
-                    <div class="skill-icon">
-                        <img src="assets/icons/javascript.svg" alt="JavaScript">
-                    </div>
+
+                <div class="skill-card">
+                    <i class="devicon-javascript-plain colored" style="color: #F7DF1E; font-size: 48px;"></i>
                     <h3>JavaScript</h3>
-                    <p>Building interactive and dynamic web applications.</p>
-                    <div class="skill-level">
-                        <div class="skill-progress" data-level="80%"></div>
-                    </div>
+                    <p>Adding interactivity and dynamic behavior to web pages.</p>
                 </div>
-                
-                <div class="skill-card glass-card fade-in">
-                    <div class="skill-icon">
-                        <img src="assets/icons/python.svg" alt="Python">
-                    </div>
+
+                <div class="skill-card">
+                    <i class="devicon-react-original colored" style="color: #61DAFB; font-size: 48px;"></i>
+                    <h3>React.js</h3>
+                    <p>Building reusable and interactive UI components.</p>
+                </div>
+
+                <div class="skill-card">
+                    <i class="devicon-python-plain colored" style="color: #ebf30c; font-size: 48px;"></i>
                     <h3>Python</h3>
-                    <p>Writing clean and efficient code for various applications.</p>
-                    <div class="skill-level">
-                        <div class="skill-progress" data-level="75%"></div>
-                    </div>
+                    <p>Writing efficient scripts and applications for data and automation.</p>
                 </div>
-                
-                <div class="skill-card glass-card fade-in">
-                    <div class="skill-icon">
-                        <img src="assets/icons/ux-ui.svg" alt="UI/UX Design">
-                    </div>
-                    <h3>UI/UX Design</h3>
-                    <p>Creating user-friendly and engaging designs.</p>
-                    <div class="skill-level">
-                        <div class="skill-progress" data-level="85%"></div>
-                    </div>
+
+                <div class="skill-card">
+                    <i class="devicon-java-plain" style="color: #007396; font-size: 48px;"></i>
+                    <h3>Java</h3>
+                    <p>Developing object-oriented applications and software solutions.</p>
                 </div>
-                
-                <div class="skill-card glass-card fade-in">
-                    <div class="skill-icon">
-                        <img src="assets/icons/github.svg" alt="Git & GitHub">
-                    </div>
-                    <h3>Git & GitHub</h3>
-                    <p>Version control and collaboration using Git.</p>
-                    <div class="skill-level">
-                        <div class="skill-progress" data-level="80%"></div>
-                    </div>
+
+                <div class="skill-card">
+                    <i class="devicon-figma-plain colored" style="color: #F24E1E; font-size: 48px;"></i>
+                    <h3>Figma</h3>
+                    <p>Designing modern UI/UX layouts and prototypes collaboratively.</p>
                 </div>
-                
-                <div class="skill-card glass-card fade-in">
-                    <div class="skill-icon">
-                        <img src="assets/icons/communication.svg" alt="Communication">
-                    </div>
-                    <h3>Communication</h3>
-                    <p>Effectively expressing ideas and collaborating with teams.</p>
-                    <div class="skill-level">
-                        <div class="skill-progress" data-level="90%"></div>
-                    </div>
+
+                <div class="skill-card">
+                    <i class="devicon-photoshop-plain" style="color: #31A8FF; font-size: 48px;"></i>
+                    <h3>Photoshop</h3>
+                    <p>Editing images and creating graphics for digital projects.</p>
                 </div>
-                
-                <div class="skill-card glass-card fade-in">
-                    <div class="skill-icon">
-                        <img src="assets/icons/teamwork.svg" alt="Teamwork">
-                    </div>
-                    <h3>Teamwork</h3>
-                    <p>Working efficiently with diverse teams to achieve goals.</p>
-                    <div class="skill-level">
-                        <div class="skill-progress" data-level="95%"></div>
-                    </div>
+
+                <div class="skill-card">
+                    <i class="devicon-git-plain colored" style="color: #F05032; font-size: 48px;"></i>
+                    <h3>Git</h3>
+                    <p>Managing version control and tracking project changes efficiently.</p>
                 </div>
-            </div>
-            
-            <div class="tools-section">
-                <h3>Tools & <span class="highlight">Technologies</span></h3>
-                
-                <div class="tools-grid">
-                    <div class="tool-item glass-card slide-up">
-                        <img src="assets/icons/react.svg" alt="React.js">
-                        <span>React.js</span>
-                    </div>
-                    <div class="tool-item glass-card slide-up">
-                        <img src="assets/icons/sass.svg" alt="Sass">
-                        <span>Sass</span>
-                    </div>
-                    <div class="tool-item glass-card slide-up">
-                        <img src="assets/icons/figma.svg" alt="Figma">
-                        <span>Figma</span>
-                    </div>
-                    <div class="tool-item glass-card slide-up">
-                        <img src="assets/icons/vscode.svg" alt="VS Code">
-                        <span>VS Code</span>
-                    </div>
-                    <div class="tool-item glass-card slide-up">
-                        <img src="assets/icons/bootstrap.svg" alt="Bootstrap">
-                        <span>Bootstrap</span>
-                    </div>
-                    <div class="tool-item glass-card slide-up">
-                        <img src="assets/icons/tailwind.svg" alt="Tailwind CSS">
-                        <span>Tailwind CSS</span>
-                    </div>
-                    <div class="tool-item glass-card slide-up">
-                        <img src="assets/icons/npm.svg" alt="npm">
-                        <span>npm</span>
-                    </div>
-                    <div class="tool-item glass-card slide-up">
-                        <img src="assets/icons/webpack.svg" alt="Webpack">
-                        <span>Webpack</span>
-                    </div>
+
+                <div class="skill-card">
+                    <i class="devicon-github-original" style="color: #a2a0a0; font-size: 48px;"></i>
+                    <h3>GitHub</h3>
+                    <p>Collaborating and sharing projects in a cloud-based environment.</p>
                 </div>
+                    <!-- Soft Skills -->
+
+                    <div class="skill-card">
+                        <i class="fa fa-comments" aria-hidden="true" style="color: #FF6B6B; font-size: 48px;"></i>
+                        <h3>Communication</h3>
+                        <p>Effectively conveying ideas and collaborating with teams.</p>
+                    </div>
+
+                    <div class="skill-card">
+                        <i class="fa fa-refresh" aria-hidden="true" style="color: #4ECDC4; font-size: 48px;"></i>
+                        <h3>Adaptability</h3>
+                        <p>Quickly adjusting to new technologies and changing environments.</p>
+                    </div>
+
+                    <div class="skill-card">
+                        <i class="fa fa-users" aria-hidden="true" style="color: #88b6e6; font-size: 48px;"></i>
+                        <h3>Teamwork</h3>
+                        <p>Working collaboratively to achieve shared goals efficiently.</p>
+                    </div>
+
+                    <div class="skill-card">
+                        <i class="fa fa-lightbulb-o" aria-hidden="true" style="color: #FFD93D; font-size: 48px;"></i>
+                        <h3>Problem-Solving</h3>
+                        <p>Analyzing issues and finding effective solutions creatively.</p>
+                    </div>
+
+                    <div class="skill-card">
+                        <i class="fa fa-paint-brush" aria-hidden="true" style="color: #ca4dc0; font-size: 48px;"></i>
+                        <h3>Creativity</h3>
+                        <p>Generating innovative ideas and unique design solutions.</p>
+                    </div>
+
+                    <div class="skill-card">
+                        <i class="fa fa-child" aria-hidden="true" style="color: #60934c; font-size: 48px;"></i>
+                        <h3>Leadership</h3>
+                        <p>Guiding and motivating teams to achieve successful outcomes.</p>
+                    </div>
+
+                </div>
+
             </div>
         </div>
     </section>
-    
+
+    <!-- Footer -->
+    <footer class="footer glass-card"> <!-- Added glass-card class -->
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <a href="index.html"><span class="gradient-text">Portfolio</span><span>.</span></a> <!-- Added gradient-text class -->
+                    </div>
+                    <p>A passionate frontend developer focused on creating interactive and user-friendly web experiences.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h3 class="footer-heading">Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html" class="active">About</a></li>
+                        <li><a href="skills.html">Skills</a></li>
+                        <li><a href="education.html">Education</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3 class="footer-heading">Contact Info</h3>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> graphixlab0917@gmail.com</li>
+                        <li><i class="fas fa-phone"></i>+94 75 724 0725</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Colombo, Sri Lanka</li>
+
+                    </ul>
+                </div>
+                
+                <div class="footer-newsletter">
+                    <h3 class="footer-heading">Newsletter</h3>
+                    <p>Subscribe to receive updates on my latest projects and tech articles.</p>
+                    <form class="newsletter-form">
+                        <input type="email" class="newsletter-input" placeholder="Your Email">
+                        <button type="submit" class="newsletter-btn">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-divider"></div>
+            
+            <div class="footer-bottom">
+                <div class="copyright">© 2025 Portfolio. All rights reserved.</div>
+                <div class="social-icons">
+                    <a href="#" class="social-icon" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="#" class="social-icon" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" class="social-icon" aria-label="WhatsApp">
+                        <i class="fab fa-whatsapp" ></i>
+                    </a>
+                    <a href="#" class="social-icon" aria-label="Dribbble">
+                        <i class="fab fa-dribbble"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
     <!-- Scripts -->
     <script src="vendor/gsap/gsap.min.js"></script>
     <script src="vendor/three.js/three.min.js"></script>
     <script src="vendor/particles.js/particles.min.js"></script>
-    <script src="vendor/barba.js/barba.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script src="js/cursor.js"></script>
     <script src="js/animations.js"></script>
-    <script src="js/particles.js"></script>
-    <script src="js/three-background.js"></script>
-    <script src="js/page-transitions.js"></script>
-    <script src="js/skills-animation.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>

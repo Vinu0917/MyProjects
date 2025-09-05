@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/animations.css">
     <link rel="stylesheet" href="css/glassmorphism.css">
+    <link rel="stylesheet" href="css/3d-effects.css">
     <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Poppins:wght@300;400;500;600;700&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -23,16 +24,17 @@
     <canvas id="webgl-background"></canvas>
     
     <!-- Navigation -->
-    <nav class="main-nav">
+    <nav class="main-nav glass-nav">
         <div class="nav-container">
             <div class="logo">
-                <a href="index.html">YourName<span>.</span></a>
+                <a href="index.html"><span class="gradient-text">Portfolio</span><span>.</span></a>
             </div>
             <div class="nav-links">
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="skills.html">Skills</a></li>
+                    <li><a href="education.html">Education</a></li>
                     <li><a href="projects.html">Projects</a></li>
                     <li><a href="contact.html" class="active">Contact</a></li>
                 </ul>
@@ -55,8 +57,7 @@
     <section class="contact">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Contact<span class="highlight">Me</span></h2>
-                <div class="section-line"></div>
+                <h2 class="section-title">Contact<span class="gradient-text">Me</span></h2>
             </div>
             
             <div class="contact-intro">
@@ -157,25 +158,65 @@
     </section>
     
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer glass-card">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <a href="index.html">YourName<span>.</span></a>
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <a href="index.html"><span class="gradient-text">Portfolio</span><span>.</span></a>
+                    </div>
+                    <p>A passionate frontend developer focused on creating interactive and user-friendly web experiences.</p>
                 </div>
-                <div class="footer-nav">
+                
+                <div class="footer-links">
+                    <h3 class="footer-heading">Quick Links</h3>
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="about.html">About</a></li>
+                        <li><a href="education.html">Education</a></li>
                         <li><a href="skills.html">Skills</a></li>
                         <li><a href="projects.html">Projects</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
+                
+                <div class="footer-contact">
+                    <h3 class="footer-heading">Contact Info</h3>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> graphixlab0917@gmail.com</li>
+                        <li><i class="fas fa-phone"></i>+94 75 724 0725</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Colombo, Sri Lanka</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-newsletter">
+                    <h3 class="footer-heading">Newsletter</h3>
+                    <p>Subscribe to receive updates on my latest projects and tech articles.</p>
+                    <form class="newsletter-form">
+                        <input type="email" class="newsletter-input" placeholder="Your Email">
+                        <button type="submit" class="newsletter-btn">Subscribe</button>
+                    </form>
+                </div>
             </div>
+            
+            <div class="footer-divider"></div>
+            
             <div class="footer-bottom">
-                <p>&copy; 2023 YourName. All Rights Reserved.</p>
-                <p>Designed & Built with <span class="heart">❤</span></p>
+                <div class="copyright">© 2025 Portfolio. All rights reserved.</div>
+                <div class="social-icons">
+                    <a href="#" class="social-icon" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="#" class="social-icon" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" class="social-icon" aria-label="WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="#" class="social-icon" aria-label="Dribbble">
+                        <i class="fab fa-dribbble"></i>
+                    </a>
+                </div>
             </div>
         </div>
     </footer>

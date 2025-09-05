@@ -208,3 +208,121 @@ a, button, input[type="button"], input[type="submit"], [role="button"] {
     --accent-secondary: #64ffda;
     --accent-tertiary: #64ffda;
 }
+
+/* Add to your existing animations.css */
+
+/* Reveal animations for sections */
+.reveal-element {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal-element.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Staggered reveal for multiple elements */
+.stagger-reveal > * {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Hover scale effect */
+.hover-scale {
+    transition: transform 0.3s ease;
+}
+
+.hover-scale:hover {
+    transform: scale(1.05);
+}
+
+/* Pulse on hover effect */
+.pulse-on-hover:hover {
+    animation: pulse-hover 1.5s infinite;
+}
+
+@keyframes pulse-hover {
+    0% {
+        box-shadow: 0 0 0 0 rgba(100, 255, 218, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(100, 255, 218, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(100, 255, 218, 0);
+    }
+}
+
+/* Slide up animation */
+.slide-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.slide-up.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Hover rotate effect */
+.hover-rotate {
+    transition: transform 0.5s ease;
+}
+
+.hover-rotate:hover {
+    transform: rotate(5deg) translateY(-5px);
+}
+
+/* Enhanced glitch effect */
+.glitch-text {
+    position: relative;
+    font-family: 'Orbitron', sans-serif;
+    color: var(--text-primary);
+    letter-spacing: 2px;
+    text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75),
+               -0.025em -0.05em 0 rgba(0, 255, 0, 0.75),
+               0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
+    animation: glitch 500ms infinite;
+}
+
+@keyframes glitch {
+    0% {
+        text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75),
+                   -0.025em -0.05em 0 rgba(0, 255, 0, 0.75),
+                   0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
+    }
+    14% {
+        text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75),
+                   -0.025em -0.05em 0 rgba(0, 255, 0, 0.75),
+                   0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
+    }
+    15% {
+        text-shadow: -0.05em -0.025em 0 rgba(255, 0, 0, 0.75),
+                   0.025em 0.025em 0 rgba(0, 255, 0, 0.75),
+                   -0.05em -0.05em 0 rgba(0, 0, 255, 0.75);
+    }
+    49% {
+        text-shadow: -0.05em -0.025em 0 rgba(255, 0, 0, 0.75),
+                   0.025em 0.025em 0 rgba(0, 255, 0, 0.75),
+                   -0.05em -0.05em 0 rgba(0, 0, 255, 0.75);
+    }
+    50% {
+        text-shadow: 0.025em 0.05em 0 rgba(255, 0, 0, 0.75),
+                   0.05em 0 0 rgba(0, 255, 0, 0.75),
+                   0 -0.05em 0 rgba(0, 0, 255, 0.75);
+    }
+    99% {
+        text-shadow: 0.025em 0.05em 0 rgba(255, 0, 0, 0.75),
+                   0.05em 0 0 rgba(0, 255, 0, 0.75),
+                   0 -0.05em 0 rgba(0, 0, 255, 0.75);
+    }
+    100% {
+        text-shadow: -0.025em 0 0 rgba(255, 0, 0, 0.75),
+                   -0.025em -0.025em 0 rgba(0, 255, 0, 0.75),
+                   -0.025em -0.05em 0 rgba(0, 0, 255, 0.75);
+    }
+}

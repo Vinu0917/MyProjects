@@ -8,6 +8,7 @@
     box-shadow: var(--glass-shadow);
     padding: var(--space-lg);
     transition: var(--transition-normal);
+    color: var(--text-primary);
 }
 
 .glass-card:hover {
@@ -17,10 +18,11 @@
 }
 
 .glass-nav {
-    background: rgba(10, 25, 47, 0.7);
+    background: var(--glass-bg);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--glass-border);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
 
 .glass-button {

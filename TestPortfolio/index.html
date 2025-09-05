@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vinuji Balasooriya | Tech Portfolio</title>
+    <title>Vinuji Balasooriya | Frontend Developer</title>
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/animations.css">
     <link rel="stylesheet" href="css/glassmorphism.css">
+    <link rel="stylesheet" href="css/3d-effects.css">
     <link rel="stylesheet" href="css/responsive.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Poppins:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Poppins:wght@300;400;500;600;700;800&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
@@ -23,16 +24,17 @@
     <canvas id="webgl-background"></canvas>
 
     <!-- Navigation -->
-    <nav class="main-nav">
+    <nav class="main-nav glass-nav">
         <div class="nav-container">
             <div class="logo">
-                <a href="index.html">Portfolio<span>.</span></a>
+                <a href="index.html"><span class="gradient-text">Portfolio</span><span>.</span></a>
             </div>
             <div class="nav-links">
                 <ul>
                     <li><a href="index.html" class="active">Home</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="skills.html">Skills</a></li>
+                    <li><a href="education.html">Education</a></li>
                     <li><a href="projects.html">Projects</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
@@ -51,40 +53,39 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <div class="hero-content">
-                <h1 class="glitch-text">Hello,<br>I'm <span class="highlight">Vinuji Balasooriya</span></h1>
-                <h2 class="typewriter">I'm a <span id="changing-text"></span></h2>
-                <p class="hero-description">First-year Computer Science student at the University of Westminster with a passion for web development, AI, and design.I enjoy turning ideas into interactive and visually appealing experiences, whether through coding or graphic design. Always eager to learn and explore new technologies, I'm on a journey to grow as a developer and designer. Welcome to my portfolio!</p>
+            <div class="hero-content reveal-element">
+                <p class="pre-heading">Hi there, I'm</p>
+                <h1><span class="gradient-text" data-text="Vinuji Balasooriya">Vinuji Balasooriya</span></h1>
+                <h2 class="typewriter">I build <span id="changing-text"></span></h2>
+                <p class="hero-description">First-year Computer Science student at the University of Westminster with a passion for web development, game development, and design. I enjoy creating interactive and visually appealing experiences, combining front-end development, UI/UX design, and graphic design to bring ideas to life.</p>
                 <div class="hero-cta">
                     <a href="projects.html" class="primary-btn">View My Work</a>
                     <a href="contact.html" class="secondary-btn">Get In Touch</a>
                 </div>
-                <div class="social-icons">
+                <div class="social-icons stagger-reveal">
                     <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
                     <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
                     <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
                     <a href="#" class="social-icon"><i class="fab fa-dribbble"></i></a>
                 </div>
             </div>
-            <div class="hero-image">
-                <!-- Profile image -->
-                <div class="profile-image-container">
-                    <img src="assests/images/Vinu's Avatar.jpg" alt="Your Name - Developer" class="profile-image">
+            <div class="hero-image reveal-element">
+                <!-- Profile image with enhanced effects -->
+                <div class="profile-image-container tilt-card float-animation">
+                    <img src="assests/images/Vinu's Avatar.jpg" alt="Vinuji Balasooriya - Developer" class="profile-image">
                     <div class="image-overlay"></div>
                 </div>
-                <!-- 3D animated avatar or tech illustration (keeping as fallback) -->
-                <div class="model-container" id="avatar-model" style="display: none;"></div>
             </div>
         </div>
-        
     </section>
-     <!-- Footer -->
-     <footer class="footer">
+
+    <!-- Footer -->
+    <footer class="footer glass-card">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-about">
                     <div class="footer-logo">
-                        <a href="index.html">Portfolio<span>.</span></a>
+                        <a href="index.html"><span class="gradient-text">Portfolio</span><span>.</span></a>
                     </div>
                     <p>A passionate frontend developer focused on creating interactive and user-friendly web experiences.</p>
                 </div>
@@ -94,6 +95,7 @@
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="about.html">About</a></li>
+                        <li><a href="education.html">Education</a></li>
                         <li><a href="skills.html">Skills</a></li>
                         <li><a href="projects.html">Projects</a></li>
                         <li><a href="contact.html">Contact</a></li>
@@ -103,9 +105,10 @@
                 <div class="footer-contact">
                     <h3 class="footer-heading">Contact Info</h3>
                     <ul>
-                        <li><i class="fas fa-envelope"></i> balasooriya.vinuji@gmail.com</li>
+                        <li><i class="fas fa-envelope"></i> graphixlab0917@gmail.com</li>
                         <li><i class="fas fa-phone"></i>+94 75 724 0725</li>
-                        <li><i class="fas fa-map-marker-alt"></i> Westminster, London</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Colombo, Sri Lanka</li>
+
                     </ul>
                 </div>
                 
@@ -142,11 +145,14 @@
     </footer>
 
     <!-- Scripts -->
-    <script src="vendor/gsap/gsap.min.js"></script>
-    <script src="vendor/three.js/three.min.js"></script>
-    <script src="vendor/particles.js/particles.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script src="js/cursor.js"></script>
     <script src="js/animations.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/scroll-effects.js"></script>
 </body>
 </html>

@@ -1,0 +1,45 @@
+/* 3D Card Effects */
+.card-3d {
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.card-3d:hover {
+    transform: translateZ(10px) rotateX(5deg) rotateY(5deg);
+}
+
+.card-3d::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: var(--gradient-primary);
+    opacity: 0;
+    transition: opacity 0.6s;
+    z-index: -1;
+}
+
+.card-3d:hover::before {
+    opacity: 0.1;
+}
+
+.tilt-card {
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+.tilt-card-inner {
+    transition: transform 0.5s;
+}
+
+/* Floating animation for cards */
+@keyframes float-card {
+    0% { transform: translateY(0px) translateZ(0); }
+    50% { transform: translateY(-10px) translateZ(10px); }
+    100% { transform: translateY(0px) translateZ(0); }
+}
+
+.float-animation {
+    animation: float-card 4s ease-in-out infinite;
+}
