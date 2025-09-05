@@ -15,11 +15,11 @@ function Card({ darkMode, onThemeToggle }) {
       <p className="card--email">balasooriya.vinuji@gmail.com</p>
 
       <div className="card--buttons">
-        <button className="email-btn">
+        <button className="email-btn" onClick={() => window.location = "mailto:balasooriya.vinuji@gmail.com?subject=Introduction%20-%20Vinuji%20Balasooriya"}>
           <i className="fas fa-envelope"></i> Email
         </button>
-        <button className="linkedin-btn">
-          <i className="fab fa-linkedin"></i> LinkedIn
+        <button className="linkedin-btn" onClick={() => window.open("https://www.linkedin.com/in/vinuji-balasooriya-93700b333/", "_blank")}>
+          <i className="fab fa-linkedin"></i> LinkedIn 
         </button>
       </div>
 
@@ -40,16 +40,16 @@ function Card({ darkMode, onThemeToggle }) {
       </div>
 
       <div className="card--footer">
-        <a href="https://www.linkedin.com/in/vinuji-balasooriya-93700b333/" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.linkedin.com/in/vinuji-balasooriya-93700b333/" target="_blank" rel="LinkedIn Vinuji Balasooriya">
           <i className="fab fa-linkedin"></i>
         </a>
-        <a href="https://www.facebook.com/profile.php?id=61561702864573" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.facebook.com/profile.php?id=61561702864573" target="_blank" rel="Facebook Vinuji Balasooriya">
           <i className="fab fa-facebook"></i>
         </a>
-        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+        <a href="href=https://www.instagram.com/lm_vinu/" target="_blank" rel="Instergram Vinuji Balasooriya">
           <i className="fab fa-instagram"></i>
         </a>
-        <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+        <a href="https://github.com/Vinu0917" target="_blank" rel="GitHub Vinuji Balasooriya">
           <i className="fab fa-github"></i>
         </a>
       </div>
