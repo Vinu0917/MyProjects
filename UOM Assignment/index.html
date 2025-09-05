@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travelexia</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Bar with 5 hyperlinks -->
+    <nav class="navbar">
+        <div class="logo">Travelexia</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#destinations">Destinations</a></li>
+            <li><a href="#packages">Packages</a></li>
+            <li><a href="#tips">Travel Tips</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#" class="nav-book-btn">Book Now</a></li>
+        </ul>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="animated-title">Explore The World</h1>
+            <p>Discover amazing destinations with our premium travel packages</p>
+            <button class="cta-button">Book Now</button>
+        </div>
+    </header>
+
+    <!-- Destinations Section with 5 images -->
+    <section id="destinations" class="section">
+        <h2>Popular Destinations</h2>
+        <div class="destinations-container">
+            <div class="destination-card">
+                <img src="https://i.pinimg.com/1200x/98/51/0a/98510a0c6013f5913fac4b6d6c3aac12.jpg" alt="Paris">
+                <h3>Paris, France</h3>
+                <p>Experience the city of love with its iconic Eiffel Tower and charming streets.</p>
+            </div>
+            <div class="destination-card">
+                <img src="https://i.pinimg.com/736x/67/6f/6a/676f6a242558b7c08f7d2a63fb951b2e.jpg" alt="Tokyo">
+                <h3>Tokyo, Japan</h3>
+                <p>Immerse yourself in the perfect blend of tradition and futuristic technology.</p>
+            </div>
+            <div class="destination-card">
+                <img src="https://i.pinimg.com/736x/38/e5/c7/38e5c784036d0d789c37a50e3e634432.jpg" alt="Bali">
+                <h3>Bali, Indonesia</h3>
+                <p>Relax on pristine beaches and explore lush landscapes in this tropical paradise.</p>
+            </div>
+            <div class="destination-card">
+                <img src="https://i.pinimg.com/736x/62/56/7a/62567ad90a25c17b5baa70d243137310.jpg" alt="New York">
+                <h3>New York, USA</h3>
+                <p>Discover the city that never sleeps with its iconic skyline and vibrant culture.</p>
+            </div>
+            <div class="destination-card">
+                <img src="https://i.pinimg.com/736x/23/8f/3d/238f3d70a4b435bd1274d255c81f0327.jpg" alt="Santorini">
+                <h3>Santorini, Greece</h3>
+                <p>Enjoy breathtaking views of white-washed buildings and the azure Aegean Sea.</p>
+            </div>
+            <div class="destination-card">
+                <img src="https://i.pinimg.com/1200x/31/a8/2c/31a82cb567f38198f0d99583030864ce.jpg" alt="Bali">
+                <h3>Bangkok, Thailand</h3>
+                <p>Immerse yourself in vibrant street life, golden temples, and mouth-watering cuisine.</p>
+            </div>
+            <div class="destination-card">
+                <img src="https://i.pinimg.com/1200x/f6/f7/f3/f6f7f3b578127e314a513b13c06c9509.jpg" alt="New York">
+                <h3>Sydney, Australia</h3>
+                <p>Bask in the charm of iconic landmarks, harbors, and laid-back coastal vibes.</p>
+            </div>
+            <div class="destination-card">
+                <img src="https://i.pinimg.com/736x/9a/5c/70/9a5c7030d5ff28245c3ca37e332234c5.jpg" alt="Santorini">
+                <h3>Toronto, Canada</h3>
+                <p>Experience Canada’s most diverse city with a lively arts scene and multicultural spirit.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Packages Section with Table -->
+    <section id="packages" class="section">
+        <h2>Travel Packages</h2>
+        <div class="table-container">
+            <table class="packages-table">
+                <thead>
+                    <tr>
+                        <th>Package</th>
+                        <th>Duration</th>
+                        <th>Includes</th>
+                        <th>Price</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>European Adventure</td>
+                        <td>10 days</td>
+                        <td>Flights, Hotels, Tours</td>
+                        <td>$2,499</td>
+                        <td><button class="book-package-btn">Book Now</button></td>
+                    </tr>
+                    <tr>
+                        <td>Asian Discovery</td>
+                        <td>14 days</td>
+                        <td>Flights, Hotels, Meals, Tours</td>
+                        <td>$3,299</td>
+                        <td><button class="book-package-btn">Book Now</button></td>
+                    </tr>
+                    <tr>
+                        <td>Tropical Getaway</td>
+                        <td>7 days</td>
+                        <td>Flights, Resort Stay, Activities</td>
+                        <td>$1,899</td>
+                        <td><button class="book-package-btn">Book Now</button></td>
+                    </tr>
+                    <tr>
+                        <td>American Road Trip</td>
+                        <td>12 days</td>
+                        <td>Car Rental, Hotels, Attractions</td>
+                        <td>$2,199</td>
+                        <td><button class="book-package-btn">Book Now</button></td>
+                    </tr>
+                    <tr>
+                        <td>Mediterranean Cruise</td>
+                        <td>8 days</td>
+                        <td>Cabin, All Meals, Entertainment</td>
+                        <td>$2,799</td>
+                        <td><button class="book-package-btn">Book Now</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Travel Tips Section with List -->
+    <section id="tips" class="section">
+        <h2>Essential Travel Tips</h2>
+        <div class="tips-container">
+            <ul class="tips-list">
+                <li>
+                    <h3>Pack Light</h3>
+                    <p>Only bring essentials to avoid excess baggage fees and make travel easier.</p>
+                </li>
+                <li>
+                    <h3>Travel Insurance</h3>
+                    <p>Always purchase travel insurance for unexpected emergencies or cancellations.</p>
+                </li>
+                <li>
+                    <h3>Local Currency</h3>
+                    <p>Exchange some money to local currency before your trip for immediate expenses.</p>
+                </li>
+                <li>
+                    <h3>Digital Copies</h3>
+                    <p>Keep digital copies of important documents like passports and reservations.</p>
+                </li>
+                <li>
+                    <h3>Learn Basic Phrases</h3>
+                    <p>Learn a few basic phrases in the local language of your destination.</p>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+    <h2>Contact Us</h2>
+    <div class="contact-container">
+        <form id="contact-form" action="mailto:mergedpress@gmail.com" method="post" enctype="text/plain">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="submit-button">Send Message</button>
+        </form>
+    </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-column">
+                <div class="footer-logo">Travelexia</div>
+                <p class="footer-description">Your trusted partner for unforgettable travel experiences around the world.</p>
+            </div>
+            <div class="footer-column">
+                <h3 class="footer-heading">Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#destinations">Destinations</a></li>
+                    <li><a href="#packages">Packages</a></li>
+                    <li><a href="#tips">Travel Tips</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3 class="footer-heading">Legal</h3>
+                <ul class="footer-links">
+                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="terms-of-service.html">Terms of Service</a></li>
+                    <li><a href="booking-conditions.html">Booking Conditions</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3 class="footer-heading">Contact Us</h3>
+                <address class="footer-contact">
+                    <p><i class="footer-icon location-icon"></i> 123 Travel Street, Adventure City</p>
+                    <p><i class="footer-icon phone-icon"></i> +1 (555) 123-4567</p>
+                    <p><i class="footer-icon email-icon"></i> info@travelexia.com</p>
+                </address>
+                <div class="footer-social">
+                    <a href="#" class="social-icon facebook-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon instagram-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon twitter-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon pinterest-icon" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="copyright">
+                &copy; 2025 Travelexia. All rights reserved.
+            </div>
+            <div class="footer-payment">
+                <span class="payment-icon visa"></span>
+                <span class="payment-icon mastercard"></span>
+                <span class="payment-icon amex"></span>
+                <span class="payment-icon paypal"></span>
+            </div>
+        </div>
+    <!-- Booking Modal -->
+    <div id="booking-modal" class="modal">
+        <div class="modal-content">
+            <span id="close-modal" class="close-modal">&times;</span>
+            <h2>Book Your Travel Package</h2>
+            <form id="booking-form">
+                <div class="form-group">
+                    <label for="package">Package</label>
+                    <select id="package" name="package" required>
+                        <option value="" disabled selected>Select a package</option>
+                        <option value="European Adventure">European Adventure</option>
+                        <option value="Asian Discovery">Asian Discovery</option>
+                        <option value="Tropical Getaway">Tropical Getaway</option>
+                        <option value="American Road Trip">American Road Trip</option>
+                        <option value="Mediterranean Cruise">Mediterranean Cruise</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="travelers">Number of Travelers</label>
+                    <input type="number" id="travelers" name="travelers" min="1" max="10" required>
+                </div>
+                <div class="form-group">
+                    <label for="travel-date">Preferred Travel Date</label>
+                    <input type="date" id="travel-date" name="travel-date" required>
+                </div>
+                <div class="form-group">
+                    <label for="booking-name">Full Name</label>
+                    <input type="text" id="booking-name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="booking-email">Email</label>
+                    <input type="email" id="booking-email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="booking-phone">Phone Number</label>
+                    <input type="tel" id="booking-phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="special-requests">Special Requests</label>
+                    <textarea id="special-requests" name="special-requests" rows="3"></textarea>
+                </div>
+                <button type="submit" class="submit-button">Submit Booking Request</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Font Awesome for icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+    <script src="booking.js"></script>
+</body>
+</html>
