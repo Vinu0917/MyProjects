@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Confirmation - CineSphere</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <h1>CineSphere</h1>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="#">Movies</a>
+            <a href="#">Theaters</a>
+            <a href="#">About</a>
+        </div>
+        <div class="theme-toggle">
+            <i class="fas fa-moon"></i>
+        </div>
+    </nav>
+
+    <!-- Confirmation Section -->
+    <section class="confirmation-container">
+        <div class="confirmation-card">
+            <div class="confirmation-header">
+                <i class="fas fa-check-circle"></i>
+                <h2>Booking Confirmed!</h2>
+                <p>Thank you for booking with CineSphere</p>
+            </div>
+            <div class="confirmation-details">
+                <h3>Booking Details</h3>
+                <div class="detail-item">
+                    <span>Movie:</span>
+                    <span id="conf-movie"><!-- Movie title will be added dynamically --></span>
+                </div>
+                <div class="detail-item">
+                    <span>Date:</span>
+                    <span id="conf-date"><!-- Selected date will be added dynamically --></span>
+                </div>
+                <div class="detail-item">
+                    <span>Time:</span>
+                    <span id="conf-time"><!-- Selected time will be added dynamically --></span>
+                </div>
+                <div class="detail-item">
+                    <span>Seats:</span>
+                    <span id="conf-seats"><!-- Selected seats will be added dynamically --></span>
+                </div>
+                <div class="detail-item total">
+                    <span>Total Amount:</span>
+                    <span id="conf-total"><!-- Total amount will be added dynamically --></span>
+                </div>
+            </div>
+            <div class="confirmation-footer">
+                <p>A confirmation has been sent to your email.</p>
+                <div class="confirmation-actions">
+                    <a href="index.html" class="btn-secondary">Back to Home</a>
+                    <button class="btn-primary" id="download-ticket">Download Ticket</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>CineSphere🎥</h3>
+                <p>Your ultimate destination for movie tickets booking.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">Movies</a></li>
+                    <li><a href="#">Theaters</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 CineSphere. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

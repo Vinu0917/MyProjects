@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies - CineSphere</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <h1>CineSphere</h1>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="movies.html" class="active">Movies</a>
+            <a href="theaters.html">Theaters</a>
+            <a href="about.html">About</a>
+        </div>
+        <div class="theme-toggle">
+            <i class="fas fa-moon"></i>
+        </div>
+    </nav>
+
+    <!-- Movies Header -->
+    <section class="page-header">
+        <div class="header-content">
+            <h1>All Movies</h1>
+            <p>Browse our collection of the latest blockbusters</p>
+        </div>
+    </section>
+
+    <!-- Search and Filter Section -->
+    <section class="search-filter-container">
+        <div class="search-box">
+            <input type="text" id="movie-search" placeholder="Search movies...">
+            <button id="search-btn"><i class="fas fa-search"></i></button>
+        </div>
+        <div class="filter-options">
+            <select id="genre-filter">
+                <option value="">All Genres</option>
+                <option value="Action">Action</option>
+                <option value="Adventure">Adventure</option>
+                <option value="Animation">Animation</option>
+                <option value="Comedy">Comedy</option>
+                <option value="Crime">Crime</option>
+                <option value="Drama">Drama</option>
+                <option value="Sci-Fi">Sci-Fi</option>
+                <option value="Thriller">Thriller</option>
+                <option value="War">War</option>
+            </select>
+        </div>
+    </section>
+
+    <!-- Movies Grid -->
+    <section class="movie-section">
+        <div class="movie-grid" id="all-movies-grid">
+            <!-- Movie cards will be dynamically added here using JavaScript -->
+        </div>
+    </section>
+
+    <!-- Movie Details Modal -->
+    <div class="modal" id="movie-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-body">
+                <div class="modal-movie-details">
+                    <div class="modal-movie-poster" id="modal-poster">
+                        <!-- Movie poster will be added dynamically -->
+                    </div>
+                    <div class="modal-movie-info">
+                        <h2 id="modal-title"><!-- Movie title will be added dynamically --></h2>
+                        <div class="modal-movie-meta">
+                            <span id="modal-duration"><!-- Duration will be added dynamically --></span>
+                            <span id="modal-genre"><!-- Genre will be added dynamically --></span>
+                            <span id="modal-rating"><!-- Rating will be added dynamically --></span>
+                        </div>
+                        <p id="modal-description"><!-- Description will be added dynamically --></p>
+                        <button class="btn-primary" id="modal-book-btn">Book Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>CineSphere🎥</h3>
+                <p>Your ultimate destination for movie tickets booking.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="movies.html">Movies</a></li>
+                    <li><a href="theaters.html">Theaters</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 CineSphere. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
