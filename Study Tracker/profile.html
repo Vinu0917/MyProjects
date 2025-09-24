@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#4f46e5" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="tracker.css" />
+  <title>Profile — Study Tracker</title>
+</head>
+<body>
+  <header class="app-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">📚 Study Tracker</a>
+      <nav class="nav">
+        <button id="logout-btn" class="btn btn-ghost">Logout</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="profile-header card">
+      <div class="profile-avatar">
+        <div id="avatar-img">👤</div>
+      </div>
+      <div class="profile-info">
+        <h2>Welcome, <span id="username-display">User</span></h2>
+        <p>Total study hours: <span id="total-hours">0</span></p>
+        <p>Current streak: <span id="streak-count">0</span> days</p>
+      </div>
+    </div>
+
+    <div id="alert-box" class="alert-box" aria-live="polite"></div>
+
+    <section class="card">
+      <h3>Add Study Session</h3>
+      <form id="log-form" class="form" autocomplete="off">
+        <div class="form-row">
+          <label for="subject">Subject</label>
+          <input id="subject" name="subject" type="text" placeholder="e.g., JavaScript" required />
+        </div>
+        <div class="form-row">
+          <label for="date">Date</label>
+          <input id="date" name="date" type="date" required />
+        </div>
+        <div class="form-row time-inputs">
+          <label>Study Time</label>
+          <div class="time-range">
+            <div class="time-input">
+              <label for="start-time">Start Time</label>
+              <input id="start-time" name="start-time" type="time" required />
+            </div>
+            <div class="time-input">
+              <label for="end-time">End Time</label>
+              <input id="end-time" name="end-time" type="time" required />
+            </div>
+          </div>
+          <p id="calculated-hours" class="calculated-time">Calculated hours: 0.00</p>
+        </div>
+        <div class="actions">
+          <button class="btn" type="submit">Add Log</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="card">
+      <h3>Your Study Logs</h3>
+      
+      <div id="chart-container" class="chart-container">
+        <!-- Simple chart will be rendered here -->
+      </div>
+
+      <div class="table-wrap">
+        <table class="table" id="logs-table">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Subject</th>
+              <th>Hours</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="logs-tbody">
+            <!-- rows rendered by JS -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Study Tracker PWA</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

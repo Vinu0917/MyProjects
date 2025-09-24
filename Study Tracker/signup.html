@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up - Study Tracker</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="manifest" href="manifest.json">
+</head>
+<body class="auth-page">
+
+  <div class="auth-container">
+    <div class="auth-form-wrapper">
+      <a href="index.html" class="nav-brand" style="justify-content: center; margin-bottom: 2rem; text-decoration: none;">
+        <span class="brand-icon">📚</span>
+        <span class="brand-text">Study Tracker</span>
+      </a>
+      <h2>Create Account</h2>
+      <p class="auth-subtitle">Start tracking your study progress today</p>
+      
+      <form class="form" id="signup-form">
+        <div class="form-group">
+          <label for="signup-username">Username</label>
+          <input type="text" id="signup-username" name="username" required 
+                 placeholder="Choose a username" minlength="3">
+        </div>
+        
+        <div class="form-group">
+          <label for="signup-password">Password</label>
+          <input type="password" id="signup-password" name="password" required 
+                 placeholder="Create a password" minlength="6">
+        </div>
+        
+        <div class="form-group">
+          <label>Choose Your Avatar</label>
+          <div class="avatar-grid" id="avatar-grid">
+            <!-- Avatars will be populated by JavaScript -->
+          </div>
+        </div>
+        
+        <button type="submit" class="btn btn-primary btn-full">Create Account</button>
+      </form>
+      
+      <p class="auth-switch">
+        Already have an account? 
+        <a href="login.html" class="link-btn">Sign in</a>
+      </p>
+    </div>
+  </div>
+
+  <div class="alert-container" id="alert-container"></div>
+  <script src="app_new.js"></script>
+</body>
+</html>

@@ -1,62 +1,235 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Study Tracker</title>
-    <link rel="stylesheet" href="tracker.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Track your study sessions, monitor progress, and achieve your learning goals">
+  <meta name="theme-color" content="#6366f1">
+  <title>Study Tracker - Your Learning Companion</title>
+  
+  <!-- PWA Manifest -->
+  <link rel="manifest" href="manifest.json">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>Study Tracker</h1>
-        <p class="subtitle">Track your study hours and progress</p>
-    </header>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-brand">
+        <span class="brand-icon">📚</span>
+        <span class="brand-text">Study Tracker</span>
+      </div>
+      <div class="nav-menu" id="nav-menu">
+        <a href="login.html" class="nav-btn">Login</a>
+        <a href="signup.html" class="nav-btn nav-btn-primary">Sign Up</a>
+      </div>
+    </div>
+  </nav>
 
-    <main>
-        <section class="form-container">
-            <h2>Add New Study Session</h2>
-            <form id="study-form">
-                <div class="form-group">
-                    <label for="subject">Subject:</label>
-                    <input type="text" id="subject" name="subject" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="hours">Hours Studied:</label>
-                    <input type="number" id="hours" name="hours" min="0.1" step="0.1" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="date">Date:</label>
-                    <input type="date" id="date" name="date" required>
-                </div>
-                
-                <button type="submit" class="submit-btn">Add Study Session</button>
-            </form>
-        </section>
+  <!-- Main Content -->
+  <main class="main-content">
+    <!-- Landing Page -->
+    <section class="hero-section" id="landing-page">
+      <div class="hero-container">
+        <div class="hero-content">
+          <h1 class="hero-title">
+            Master Your <span class="text-gradient">Learning Journey</span>
+          </h1>
+          <p class="hero-description">
+            Track study sessions, visualize progress, and achieve your academic goals with our intuitive study tracking platform.
+          </p>
+          <div class="hero-actions">
+            <a href="signup.html" class="btn btn-primary btn-large">
+              Get Started Free
+            </a>
+            <button class="btn btn-outline" id="learn-more-btn">
+              Learn More
+            </button>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="study-animation">
+            <div class="book-stack">
+              <div class="book book-1"></div>
+              <div class="book book-2"></div>
+              <div class="book book-3"></div>
+            </div>
+            <div class="progress-rings">
+              <div class="ring ring-1"></div>
+              <div class="ring ring-2"></div>
+              <div class="ring ring-3"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <section class="logs-container">
-            <h2>Study Logs</h2>
-            <table id="study-logs">
-                <thead>
-                    <tr>
-                        <th>Subject</th>
-                        <th>Hours</th>
-                        <th>Date</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- Study logs will be added here dynamically -->
-                </tbody>
-            </table>
-        </section>
-    </main>
+    <!-- Features Section -->
+    <section class="features-section" id="features">
+      <div class="container">
+        <h2 class="section-title">Why Choose Study Tracker?</h2>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">⏱️</div>
+            <h3>Time Tracking</h3>
+            <p>Accurately log your study sessions with start and end times</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">📊</div>
+            <h3>Progress Analytics</h3>
+            <p>Visualize your learning progress with interactive charts</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🎯</div>
+            <h3>Goal Setting</h3>
+            <p>Set and track study goals to stay motivated</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🔥</div>
+            <h3>Streak Counter</h3>
+            <p>Build consistent study habits with streak tracking</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <footer>
-        <p class="quote">"The expert in anything was once a beginner." — Helen Hayes</p>
-    </footer>
 
-    <script src="tracker.js"></script>
+    <!-- Dashboard (Hidden by default) -->
+    <section class="dashboard-section hidden" id="dashboard">
+      <div class="dashboard-container">
+        <!-- Dashboard Header -->
+        <header class="dashboard-header">
+          <div class="user-info">
+            <div class="user-avatar" id="user-avatar">👤</div>
+            <div class="user-details">
+              <h2 class="user-name" id="user-name">Welcome</h2>
+              <p class="user-stats">
+                <span id="total-hours">0</span> hours studied • 
+                <span id="study-streak">0</span> day streak
+              </p>
+            </div>
+          </div>
+          <button class="btn btn-outline" id="logout-btn">Logout</button>
+        </header>
+
+        <!-- Quick Stats -->
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-icon">📚</div>
+            <div class="stat-content">
+              <div class="stat-value" id="total-sessions">0</div>
+              <div class="stat-label">Total Sessions</div>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">⏰</div>
+            <div class="stat-content">
+              <div class="stat-value" id="avg-session">0h</div>
+              <div class="stat-label">Avg Session</div>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">🎯</div>
+            <div class="stat-content">
+              <div class="stat-value" id="subjects-count">0</div>
+              <div class="stat-label">Subjects</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Add Study Session -->
+        <div class="card">
+          <h3 class="card-title">Log Study Session</h3>
+          <form class="form" id="study-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="study-subject">Subject</label>
+                <input type="text" id="study-subject" name="subject" required 
+                       placeholder="e.g., Mathematics, Physics">
+              </div>
+              <div class="form-group">
+                <label for="study-date">Date</label>
+                <input type="date" id="study-date" name="date" required>
+              </div>
+            </div>
+            
+            <div class="form-row">
+              <div class="form-group">
+                <label for="start-time">Start Time</label>
+                <input type="time" id="start-time" name="startTime" required>
+              </div>
+              <div class="form-group">
+                <label for="end-time">End Time</label>
+                <input type="time" id="end-time" name="endTime" required>
+              </div>
+            </div>
+            
+            <div class="duration-display">
+              <span class="duration-label">Duration:</span>
+              <span class="duration-value" id="duration-display">0 hours</span>
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Add Session</button>
+          </form>
+        </div>
+
+        <!-- Study Progress Chart -->
+        <div class="card">
+          <h3 class="card-title">Study Progress</h3>
+          <div class="chart-container">
+            <canvas id="progress-chart" width="400" height="200"></canvas>
+          </div>
+        </div>
+
+        <!-- Study Log Form (Dashboard Only) -->
+        <div class="card" id="study-log-card" style="margin-bottom: 2rem;">
+          <h3 class="card-title">Log Study Session</h3>
+          <form id="study-form" class="form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject" placeholder="e.g., Mathematics" required>
+              </div>
+              <div class="form-group">
+                <label for="date">Date</label>
+                <input type="date" id="date" name="date" required>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="start-time">Start Time</label>
+                <input type="time" id="start-time" name="start-time" required>
+              </div>
+              <div class="form-group">
+                <label for="end-time">End Time</label>
+                <input type="time" id="end-time" name="end-time" required>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Log Session</button>
+          </form>
+        </div>
+
+        <!-- Recent Sessions -->
+        <div class="card">
+          <h3 class="card-title">Recent Sessions</h3>
+          <div class="sessions-list" id="sessions-list">
+            <!-- Sessions will be populated by JavaScript -->
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+
+  <!-- Alert System -->
+  <div class="alert-container" id="alert-container"></div>
+
+  <!-- Scripts -->
+  <script src="app_new.js"></script>
 </body>
 </html>

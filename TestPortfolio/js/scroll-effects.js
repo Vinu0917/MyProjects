@@ -133,44 +133,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
         }
-        
-        // Initialize animations for skill cards
-        const skillCards = document.querySelectorAll('.skill-card');
-        if (skillCards.length > 0) {
-            gsap.fromTo(skillCards, 
-                { y: 30, opacity: 0 },
-                { 
-                    y: 0, 
-                    opacity: 1, 
-                    duration: 0.6, 
-                    stagger: 0.15,
-                    scrollTrigger: {
-                        trigger: skillCards[0].parentElement,
-                        start: "top 75%",
-                        toggleActions: "play none none none"
-                    }
-                }
-            );
-        }
-        
-        // Initialize animations for tool items
-        const toolItems = document.querySelectorAll('.tool-item');
-        if (toolItems.length > 0) {
-            gsap.fromTo(toolItems, 
-                { y: 20, opacity: 0 },
-                { 
-                    y: 0, 
-                    opacity: 1, 
-                    duration: 0.4, 
-                    stagger: 0.1,
-                    scrollTrigger: {
-                        trigger: toolItems[0].parentElement,
-                        start: "top 80%",
-                        toggleActions: "play none none none"
-                    }
-                }
-            );
-        }
     }
     
     // Tilt effect for cards with class .tilt-card

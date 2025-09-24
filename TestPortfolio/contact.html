@@ -227,25 +227,8 @@
     <script src="vendor/particles.js/particles.min.js"></script>
     <script src="js/cursor.js"></script>
     <script src="js/animations.js"></script>
+    <script src="js/page-transitions.js"></script>
     <script src="js/main.js"></script>
     <script src="js/form-validation.js"></script>
-    <script>
-        // Form submission handling
-        document.getElementById('contact-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Here you would typically add AJAX to send the form data
-            // For demonstration, we'll just show the success message
-            document.querySelector('.success-message').style.display = 'block';
-            
-            // Reset form after submission
-            this.reset();
-            
-            // Hide success message after 5 seconds
-            setTimeout(function() {
-                document.querySelector('.success-message').style.display = 'none';
-            }, 5000);
-        });
-    </script>
 </body>
 </html>
