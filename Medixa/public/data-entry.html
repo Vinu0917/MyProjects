@@ -92,6 +92,17 @@
     const tableBody = document.querySelector("#medicineTable tbody");
     const messageDiv = document.getElementById("message");
 
+    function showMessage(text, type = "success") {
+      messageDiv.textContent = text;
+      messageDiv.className = type;
+
+      // Auto-hide after 3 seconds
+      setTimeout(() => {
+        messageDiv.textContent = "";
+        messageDiv.className = "";
+      }, 3000);
+    }
+
     async function loadMedicines() {
       try {
         const res = await fetch(`${BASE_URL}/medicines`);
@@ -118,8 +129,7 @@
         addDeleteListeners();
       } catch (err) {
         console.error(err);
-        messageDiv.textContent = "❌ Server error";
-        messageDiv.className = "error";
+        showMessage("❌ Server error", "error");
       }
     }
 
@@ -154,8 +164,7 @@
               const res = await fetch(`${BASE_URL}/medicines/${id}`, { method: "DELETE" });
 
               if (res.ok) {
-                messageDiv.textContent = "✅ Medicine deleted successfully!";
-                messageDiv.className = "success";
+                showMessage("✅ Medicine deleted successfully!", "success");
                 loadMedicines();
               } else {
                 let response = {};
@@ -164,13 +173,12 @@
                     response = await res.json();
                   }
                 } catch (_) {}
-                messageDiv.textContent = response.message || "❌ Error deleting medicine";
-                messageDiv.className = "error";
+                showMessage("❌ Error deleting medicine", "error");
+
               }
             } catch (err) {
               console.error(err);
-              messageDiv.textContent = "❌ Server error while deleting";
-              messageDiv.className = "error";
+              showMessage("❌ Server error while deleting", "error");
             }
           });
         });
@@ -181,9 +189,14 @@
       e.preventDefault();
       const price = parseFloat(document.getElementById("price").value);
       const quantity = parseInt(document.getElementById("quantity").value);
-      if (price < 0) { messageDiv.textContent = "❌ Price cannot be negative"; messageDiv.className="error"; return; }
-      if (quantity < 0) { messageDiv.textContent = "❌ Quantity cannot be negative"; messageDiv.className="error"; return; }
-
+      if (price < 0) {
+        showMessage("❌ Price cannot be negative", "error");
+        return;
+      }
+      if (quantity < 0) {
+        showMessage("❌ Quantity cannot be negative", "error");
+        return;
+      }
       const data = {
         brandName: document.getElementById("brandName").value.trim() || null,
         genericName: document.getElementById("genericName").value.trim(),
@@ -206,18 +219,15 @@
         }
 
         if (res.status === 201) {
-          messageDiv.textContent = response.message || "✅ Medicine added successfully!";
-          messageDiv.className = "success";
+          showMessage("✅ Medicine added successfully!", "success");
           form.reset();
           loadMedicines();
         } else {
-          messageDiv.textContent = response.message || "❌ Server error";
-          messageDiv.className = "error";
+          showMessage("❌ Server error", "error");
         }
       } catch (err) {
         console.error(err);
-        messageDiv.textContent = "✅ Medicine added successfully!"; // assume success if no JSON
-        messageDiv.className = "success";
+        showMessage("✅ Medicine added successfully!", "success");
         loadMedicines();
       }
     });
