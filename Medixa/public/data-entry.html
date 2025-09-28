@@ -3,47 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <title>Medicine Data Entry</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin: 20px; }
-    h2 { text-align: center; }
-    form { width: 60%; margin: 20px auto; padding: 15px; border: 1px solid #ccc; border-radius: 8px; }
-    label { display: block; margin: 10px 0 5px; }
-    input, select { width: 100%; padding: 8px; margin-bottom: 10px; }
-    button { padding: 10px 20px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer; }
-    table { width: 90%; margin: 20px auto; border-collapse: collapse; }
-    th, td { border: 1px solid gray; padding: 8px; text-align: center; }
-    th { background-color: lightblue; }
-    #message { text-align: center; margin-top: 10px; font-weight: bold; }
-    .error { color: red; }
-    .success { color: green; }
-    .action-btn { cursor: pointer; background: none; border: none; font-size: 16px; }
-
-    /* Custom popup styles */
-    .popup-overlay {
-      position: fixed;
-      top: 0; left: 0; width: 100%; height: 100%;
-      background: rgba(0,0,0,0.5);
-      display: flex; justify-content: center; align-items: center;
-      z-index: 1000;
-    }
-    .popup-box {
-      background: white;
-      padding: 20px 30px;
-      border-radius: 10px;
-      text-align: center;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    }
-    .popup-box button {
-      margin: 10px;
-      padding: 8px 16px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      font-weight: bold;
-    }
-    .popup-box .confirm { background-color: #4CAF50; color: white; }
-    .popup-box .cancel { background-color: #f44336; color: white; }
-  </style>
+  <!-- ✅ Link to external CSS file -->
+  <link rel="stylesheet" href="data-entry.css">
 </head>
 <body>
   <h2>Add Medicine</h2>
@@ -71,6 +32,15 @@
   <p id="message"></p>
 
   <h2 style="text-align:center;">Medicine List</h2>
+
+  <!-- ✅ Search Box -->
+  <div class="search-container">
+    <input 
+      type="text" 
+      id="searchBox" 
+      placeholder="Search by Brand or Generic Name"
+      class="search-input"
+    >
   <table id="medicineTable">
     <thead>
       <tr>
@@ -92,17 +62,18 @@
     const tableBody = document.querySelector("#medicineTable tbody");
     const messageDiv = document.getElementById("message");
 
+    // Show messages
     function showMessage(text, type = "success") {
       messageDiv.textContent = text;
       messageDiv.className = type;
 
-      // Auto-hide after 3 seconds
       setTimeout(() => {
         messageDiv.textContent = "";
         messageDiv.className = "";
       }, 3000);
     }
 
+    // Load all medicines
     async function loadMedicines() {
       try {
         const res = await fetch(`${BASE_URL}/medicines`);
@@ -129,66 +100,17 @@
         addDeleteListeners();
       } catch (err) {
         console.error(err);
-        showMessage("❌ Server error", "error");
+        showMessage("❌ Server error while loading medicines", "error");
       }
     }
 
-    function showPopup(message, onConfirm) {
-      const overlay = document.createElement("div");
-      overlay.className = "popup-overlay";
-
-      const box = document.createElement("div");
-      box.className = "popup-box";
-      box.innerHTML = `
-        <p>${message}</p>
-        <button class="confirm">Yes</button>
-        <button class="cancel">No</button>
-      `;
-
-      overlay.appendChild(box);
-      document.body.appendChild(overlay);
-
-      box.querySelector(".cancel").onclick = () => document.body.removeChild(overlay);
-      box.querySelector(".confirm").onclick = () => {
-        onConfirm();
-        document.body.removeChild(overlay);
-      };
-    }
-
-    function addDeleteListeners() {
-      document.querySelectorAll(".delete-btn").forEach(btn => {
-        btn.addEventListener("click", () => {
-          const id = btn.getAttribute("data-id");
-          showPopup("Do you really want to delete this medicine?", async () => {
-            try {
-              const res = await fetch(`${BASE_URL}/medicines/${id}`, { method: "DELETE" });
-
-              if (res.ok) {
-                showMessage("✅ Medicine deleted successfully!", "success");
-                loadMedicines();
-              } else {
-                let response = {};
-                try {
-                  if (res.headers.get("Content-Type")?.includes("application/json")) {
-                    response = await res.json();
-                  }
-                } catch (_) {}
-                showMessage("❌ Error deleting medicine", "error");
-
-              }
-            } catch (err) {
-              console.error(err);
-              showMessage("❌ Server error while deleting", "error");
-            }
-          });
-        });
-      });
-    }
-
+    // Add new medicine
     form.addEventListener("submit", async e => {
       e.preventDefault();
+
       const price = parseFloat(document.getElementById("price").value);
       const quantity = parseInt(document.getElementById("quantity").value);
+
       if (price < 0) {
         showMessage("❌ Price cannot be negative", "error");
         return;
@@ -197,6 +119,7 @@
         showMessage("❌ Quantity cannot be negative", "error");
         return;
       }
+
       const data = {
         brandName: document.getElementById("brandName").value.trim() || null,
         genericName: document.getElementById("genericName").value.trim(),
@@ -222,17 +145,79 @@
           showMessage("✅ Medicine added successfully!", "success");
           form.reset();
           loadMedicines();
+        } else if (res.status === 409) {
+          showMessage("❌ Medicine with same generic & unit already exists!", "error");
         } else {
-          showMessage("❌ Server error", "error");
+          showMessage("❌ Server error while adding medicine", "error");
         }
+
       } catch (err) {
         console.error(err);
-        showMessage("✅ Medicine added successfully!", "success");
-        loadMedicines();
+        showMessage("❌ Server error while adding medicine", "error");
       }
     });
 
+    // Filter table rows based on search
+    function filterTable() {
+      const searchValue = document.getElementById("searchBox").value.toLowerCase();
+      const rows = document.querySelectorAll("#medicineTable tbody tr");
+
+      rows.forEach(row => {
+        const brand = row.cells[0].textContent.toLowerCase();
+        const generic = row.cells[1].textContent.toLowerCase();
+        row.style.display = (brand.includes(searchValue) || generic.includes(searchValue)) ? "" : "none";
+      });
+    }
+
+    // Delete popup
+    function showPopup(message, onConfirm) {
+      const overlay = document.createElement("div");
+      overlay.className = "popup-overlay";
+
+      const box = document.createElement("div");
+      box.className = "popup-box";
+      box.innerHTML = `
+        <p>${message}</p>
+        <button class="confirm">Yes</button>
+        <button class="cancel">No</button>
+      `;
+
+      overlay.appendChild(box);
+      document.body.appendChild(overlay);
+
+      box.querySelector(".cancel").onclick = () => document.body.removeChild(overlay);
+      box.querySelector(".confirm").onclick = () => {
+        onConfirm();
+        document.body.removeChild(overlay);
+      };
+    }
+
+    // Delete medicine
+    function addDeleteListeners() {
+      document.querySelectorAll(".delete-btn").forEach(btn => {
+        btn.addEventListener("click", () => {
+          const id = btn.getAttribute("data-id");
+          showPopup("Do you really want to delete this medicine?", async () => {
+            try {
+              const res = await fetch(`${BASE_URL}/medicines/${id}`, { method: "DELETE" });
+              if (res.ok) {
+                showMessage("✅ Medicine deleted successfully!", "success");
+                loadMedicines();
+              } else {
+                showMessage("❌ Error deleting medicine", "error");
+              }
+            } catch (err) {
+              console.error(err);
+              showMessage("❌ Server error while deleting", "error");
+            }
+          });
+        });
+      });
+    }
+
+    // Init
     window.onload = loadMedicines;
-  </script>
+    document.getElementById("searchBox").addEventListener("input", filterTable);
+</script>
 </body>
 </html>
