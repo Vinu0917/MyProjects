@@ -6,11 +6,8 @@ const medicineSchema = new mongoose.Schema({
   unit: { type: String, required: true },
   price: { type: Number, required: true, min: 0 },
 });
-const exists = await Medicine.findOne({
-    genericName: data.genericName,
-    unit: data.unit,
-    brandName: data.brandName // null allowed
-});
+// Create a unique index to prevent duplicates
 medicineSchema.index({ brandName: 1, genericName: 1, unit: 1 }, { unique: true });
 
+// Export the model
 module.exports = mongoose.model("Medicine", medicineSchema);

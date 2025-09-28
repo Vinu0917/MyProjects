@@ -38,8 +38,6 @@ router.delete("/delete", async (req, res) => {
   }
 });
 
-module.exports = router;
-
 // Get medicines by generic name
 router.get("/search/:genericName", async (req, res) => {
     const { genericName } = req.params;
@@ -51,3 +49,5 @@ router.get("/search/:genericName", async (req, res) => {
         res.json({ success: false, error });
     }
 });
+
+module.exports = router;
