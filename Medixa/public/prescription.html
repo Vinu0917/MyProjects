@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Medixa - Prescription Book</title>
+</head>
+<body>
+  <h2>Medixa: Prescription Book</h2>
+
+  <form id="prescriptionForm">
+    <input type="text" id="patientName" placeholder="Patient Name" required /><br /><br />
+    <input type="number" id="age" placeholder="Age" min="0" /><br /><br />
+    <input type="text" id="doctorName" placeholder="Doctor Name" required /><br /><br />
+    <input type="text" id="medicineName" placeholder="Medicine Name" required /><br /><br />
+    <label>Unit:</label>
+        <select id="unit" required>
+            <option value="">--Select Unit--</option>
+            <option value="Tablet">Tablet</option>
+            <option value="Capsule">Capsule</option>
+            <option value="Syrup (ml)">Syrup (ml)</option>
+            <option value="Injection (vial)">Injection (vial)</option>
+            <option value="Cream (tube)">Cream (tube)</option>
+            <option value="Drops (ml)">Drops (ml)</option>
+            <option value="Ointment (g)">Ointment (g)</option>
+            <option value="Powder (g)">Powder (g)</option>
+        </select>
+        <br /><br />
+    <input type="number" id="price" placeholder="Price" min="0" step="0.01" required /><br /><br />
+    <button type="submit">Add Record</button>
+  </form>
+
+  <br />
+  <button id="downloadBtn">Download Excel</button>
+
+  <p id="msg"></p>
+
+  <script>
+    const form = document.getElementById("prescriptionForm");
+    const msg = document.getElementById("msg");
+    const downloadBtn = document.getElementById("downloadBtn");
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const age = Number(document.getElementById("age").value);
+      const price = Number(document.getElementById("price").value);
+
+        if (age < 0) {
+            alert("❌ Patient's age cannot be negative");
+            return;
+        }
+        if (price < 0) {
+            alert("❌ Price cannot be negative");
+            return;
+        }
+      const data = {
+        patientName: document.getElementById("patientName").value,
+        age: age,
+        doctorName: document.getElementById("doctorName").value,
+        medicineName: document.getElementById("medicineName").value,
+        unit: document.getElementById("unit").value,
+        price: price
+      };
+
+      const res = await fetch("/api/prescriptions/add", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data)
+      });
+
+      const response = await res.json();
+      if (response.success) {
+        msg.textContent = "✅ Record saved successfully!";
+        form.reset();
+      } else {
+        msg.textContent = "❌ Error saving record";
+      }
+    });
+
+    downloadBtn.addEventListener("click", () => {
+      window.location.href = "/api/prescriptions/download";
+    });
+  </script>
+</body>
+</html>

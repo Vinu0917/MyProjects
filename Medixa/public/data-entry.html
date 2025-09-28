@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Medicine Data Entry</title>
+</head>
+<body>
+  <h2>Add Medicine</h2>
+  <form id="medicineForm">
+    <input type="text" id="brandName" placeholder="Brand Name" /><br /><br />
+    <input type="text" id="genericName" placeholder="Generic Name" required /><br /><br />
+    <label>Unit:</label>
+        <select id="unit" required>
+            <option value="">--Select Unit--</option>
+            <option value="Tablet">Tablet</option>
+            <option value="Capsule">Capsule</option>
+            <option value="Syrup (ml)">Syrup (ml)</option>
+            <option value="Injection (vial)">Injection (vial)</option>
+            <option value="Cream (tube)">Cream (tube)</option>
+            <option value="Drops (ml)">Drops (ml)</option>
+            <option value="Ointment (g)">Ointment (g)</option>
+            <option value="Powder (g)">Powder (g)</option>
+        </select>
+        <br /><br />
+    <input type="number" id="price" placeholder="Price" min="0" step="0.01" required /><br /><br />
+    <button type="submit">Add Medicine</button>
+  </form>
+
+  <p id="message"></p>
+
+  <script>
+    document.getElementById("medicineForm").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const price = parseFloat(document.getElementById("price").value);
+        if (price < 0) {
+            alert("❌ Price cannot be negative");
+            return;
+        }
+      const data = {
+        brandName: document.getElementById("brandName").value.trim() || null,
+        genericName: document.getElementById("genericName").value.trim(),
+        unit: document.getElementById("unit").value,
+        price: price,
+      };
+
+      const res = await fetch("/api/medicines/add", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      const response = await res.json();
+      const msg = document.getElementById("message");
+
+      if (response.exists) {
+        const confirmDelete = confirm(response.message);
+        if (confirmDelete) {
+          await fetch("/api/medicines/delete", {
+            method: "DELETE",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(data),
+          });
+          msg.textContent = "Existing medicine deleted. You can add a new one now.";
+        } else {
+          msg.textContent = "No changes made.";
+        }
+      } else if (response.success) {
+        msg.textContent = "✅ Medicine added successfully!";
+      } else {
+        msg.textContent = "❌ Error adding medicine";
+      }
+    });
+  </script>
+</body>
+</html>

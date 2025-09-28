@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Medixa - Cashier Billing</title>
+  <style>
+    table, th, td { border: 1px solid black; border-collapse: collapse; padding: 5px; }
+  </style>
+</head>
+<body>
+  <h2>Medixa: Cashier Billing</h2>
+
+  <!-- Search Generic Name -->
+  <input type="text" id="genericName" placeholder="Enter Generic Name" />
+  <button id="searchBtn">Search</button><br /><br />
+
+  <!-- Brand & Unit Selection -->
+  <label>Brand:</label>
+  <select id="brandSelect"></select><br /><br />
+
+  <label>Unit:</label>
+  <select id="unitSelect"></select><br /><br />
+
+  <label>Price:</label>
+  <input type="number" id="price" readonly /><br /><br />
+
+  <button id="addBtn">Add to Bill</button>
+
+  <h3>Bill List</h3>
+  <table id="billTable">
+    <thead>
+      <tr>
+        <th>Brand</th>
+        <th>Generic</th>
+        <th>Unit</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <h3>Total: <span id="total">0</span></h3>
+
+  <script>
+    const searchBtn = document.getElementById("searchBtn");
+    const genericInput = document.getElementById("genericName");
+    const brandSelect = document.getElementById("brandSelect");
+    const unitSelect = document.getElementById("unitSelect");
+    const priceInput = document.getElementById("price");
+    const addBtn = document.getElementById("addBtn");
+    const billTableBody = document.querySelector("#billTable tbody");
+    const totalSpan = document.getElementById("total");
+
+    let currentMedicines = [];
+
+    searchBtn.addEventListener("click", async () => {
+      const genericName = genericInput.value.trim();
+      if (!genericName) return alert("Enter a generic name");
+
+      const res = await fetch(`/api/medicines/search/${genericName}`);
+      const data = await res.json();
+
+      if (data.success && data.medicines.length > 0) {
+        currentMedicines = data.medicines;
+
+        // Fill brand dropdown
+        brandSelect.innerHTML = "";
+        data.medicines.forEach((med, i) => {
+            const option = document.createElement("option");
+            option.value = i;
+            option.textContent = med.brandName || "No Brand"; // <-- updated line
+            brandSelect.appendChild(option);
+        });
+
+
+        updateUnitAndPrice();
+      } else {
+        alert("No medicine found");
+        brandSelect.innerHTML = "";
+        unitSelect.innerHTML = "";
+        priceInput.value = "";
+        currentMedicines = [];
+      }
+    });
+
+    brandSelect.addEventListener("change", updateUnitAndPrice);
+
+    function updateUnitAndPrice() {
+      const index = brandSelect.value;
+      if (currentMedicines[index]) {
+        const med = currentMedicines[index];
+
+        // Set unit dropdown
+        unitSelect.innerHTML = "";
+        const option = document.createElement("option");
+        option.value = med.unit;
+        option.textContent = med.unit;
+        unitSelect.appendChild(option);
+
+        // Set price (readonly)
+        priceInput.value = med.price;
+      }
+    }
+
+    addBtn.addEventListener("click", () => {
+      const index = brandSelect.value;
+      if (!currentMedicines[index]) return;
+
+      const med = currentMedicines[index];
+      const row = document.createElement("tr");
+      row.innerHTML = `
+        <td>${med.brandName}</td>
+        <td>${med.genericName}</td>
+        <td>${unitSelect.value}</td>
+        <td>${med.price}</td>
+      `;
+      billTableBody.appendChild(row);
+
+      // Update total
+      const currentTotal = Number(totalSpan.textContent);
+      totalSpan.textContent = currentTotal + Number(med.price);
+    });
+  </script>
+</body>
+</html>
