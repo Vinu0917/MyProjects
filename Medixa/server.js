@@ -28,7 +28,7 @@ const medicineSchema = new mongoose.Schema({
 });
 
 // Unique index on genericName + unit + strength (brandName optional)
-medicineSchema.index({ genericName: 1, unit: 1, strength: 1 }, { unique: true });
+medicineSchema.index({ genericName: 1, unit: 1, strength: 1, brandName: 1 }, { unique: true, sparse: true });
 
 const Medicine = mongoose.model("Medicine", medicineSchema);
 
@@ -55,8 +55,10 @@ app.post("/medicines", async (req, res) => {
     } catch (err) {
         console.error("Error adding medicine:", err);
         if (err.code === 11000) {
-            res.status(400).json({ message: "Medicine already exists!" });
-        } else {
+            res.status(409).json({
+                message: "A medicine with the same generic name, unit, strength, and brand already exists."
+            });
+        }else {
             res.status(500).json({ message: "Server error" });
         }
     }
