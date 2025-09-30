@@ -23,7 +23,18 @@
       <option value="Ointment (g)">Ointment (g)</option>
       <option value="Powder (g)">Powder (g)</option>
     </select><br>
-    <input type="text" id="strength" placeholder="Strength / Dosage (e.g., 500mg)" /><br>
+    <label>Strength:</label>
+    <div style="display:flex; gap:8px;">
+      <input type="number" id="strengthValue" placeholder="e.g., 500" min="0" style="width:70%;" />
+      <select id="strengthUnit" style="width:30%;">
+        <option value="mg">mg</option>
+        <option value="ml">ml</option>
+        <option value="g">g</option>
+        <option value="mcg">mcg</option>
+        <option value="IU">IU</option>
+      </select>
+    </div>
+    <br>
     <input type="number" id="price" placeholder="Price" min="0" step="0.01" required /><br>
     <input type="number" id="quantity" placeholder="Quantity" min="0" required /><br>
     <button type="submit">Add Medicine</button>
@@ -119,12 +130,15 @@
         showMessage("❌ Quantity cannot be negative", "error");
         return;
       }
+      const strengthValue = document.getElementById("strengthValue").value.trim();
+      const strengthUnit = document.getElementById("strengthUnit").value;
+      const strength = strengthValue ? `${strengthValue}${strengthUnit}` : null;
 
       const data = {
         brandName: document.getElementById("brandName").value.trim() || null,
         genericName: document.getElementById("genericName").value.trim(),
         unit: document.getElementById("unit").value,
-        strength: document.getElementById("strength").value.trim() || null,
+        strength,
         price,
         quantity
       };
